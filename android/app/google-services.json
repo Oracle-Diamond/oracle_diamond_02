@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1024151116492",
+    "project_id": "oracle-diamond-02",
+    "storage_bucket": "oracle-diamond-02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1024151116492:android:98430f56c9927799188069",
+        "android_client_info": {
+          "package_name": "com.example.oracle_diamond_02"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1024151116492-5t4ufgn5ajltau1av8oh5veng4r89mk2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFgdksbfVdVQ1OM46UcxO-40ScjkNT8ng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1024151116492-5t4ufgn5ajltau1av8oh5veng4r89mk2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

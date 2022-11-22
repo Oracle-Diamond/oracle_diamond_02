@@ -85,31 +85,52 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
+        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text("UTM",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 28.0,
-                  fontWeight: FontWeight.bold)),
-          Image.asset(
-                'assets/UTMLogo.png',
-                height: 20,
-                width: 20,
-              ),
-          const Text("Sports Hall Booking System",
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 44.0,
-                  fontWeight: FontWeight.normal)),
           const SizedBox(
-            height: 44.0,
+            height: 5.0,
+          ),
+          const Text("User Login",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 20.0,
+                fontWeight: FontWeight.bold,
+              )),
+          const SizedBox(
+            height: 25.0,
+          ),
+          Container(
+            height:0.6,
+            width:350.0,
+            color:Colors.grey,),
+          const SizedBox(
+            height: 25.0,
+          ),
+          Image.network(
+            // <-- SEE HERE
+            'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
+            height: 150,
+            width: 290,
+            alignment: const Alignment(0,0.5),
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          //const Text("Sports Hall Booking System",
+             // textAlign: TextAlign.center,
+              //style: TextStyle(
+                 // color: Colors.black,
+                 // fontSize: 30.0,
+                 // fontWeight: FontWeight.normal)),
+          const SizedBox(
+            height: 30.0,
           ),
           TextField(
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: "User Email",
+              hintText: "UTM Email",
               prefixIcon: Icon(Icons.mail, color: Colors.black),
             ),
           ),
@@ -120,7 +141,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
             obscureText: true,
             decoration: const InputDecoration(
-              hintText: "User Password",
+              hintText: "Password",
               prefixIcon: Icon(Icons.lock, color: Colors.black),
             ),
           ),
@@ -129,15 +150,15 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           const Text("Forgot password?",
               style: TextStyle(
-                color: Colors.blue,
+                color: Color.fromARGB(255, 206, 84, 84),
               )),
           const SizedBox(
-            height: 88.0,
+            height: 30.0,
           ),
           Container(
             width: double.infinity,
             child: RawMaterialButton(
-              fillColor: const Color(0xFF0069FE),
+              fillColor: const Color.fromARGB(255, 206, 84, 84),
               elevation: 0.0,
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               shape: RoundedRectangleBorder(

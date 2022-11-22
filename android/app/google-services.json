@@ -29,6 +29,13 @@
             {
               "client_id": "1024151116492-5t4ufgn5ajltau1av8oh5veng4r89mk2.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1024151116492-v4suvl2e2g9k4hfq1ranglb96rhqtuq9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.oracleDiamond02"
+              }
             }
           ]
         }

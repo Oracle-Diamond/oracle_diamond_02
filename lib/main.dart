@@ -34,6 +34,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
         body: FutureBuilder(
             future: _initializeFirebase(),
             builder: (context, snapshot) {
@@ -124,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                  // fontSize: 30.0,
                  // fontWeight: FontWeight.normal)),
           const SizedBox(
-            height: 30.0,
+            height: 30.00,
           ),
           TextField(
             controller: _emailController,
@@ -132,6 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
             decoration: const InputDecoration(
               hintText: "UTM Email",
               prefixIcon: Icon(Icons.mail, color: Colors.black),
+              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
             ),
           ),
           const SizedBox(
@@ -143,6 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
             decoration: const InputDecoration(
               hintText: "Password",
               prefixIcon: Icon(Icons.lock, color: Colors.black),
+              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
             ),
           ),
           const SizedBox(

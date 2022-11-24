@@ -12,15 +12,34 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 400.0,
-      height: 0.5,
-      color: Color.fromARGB(255, 206, 84, 84),
-      child: Center(
-          child: Text(
-        'Welcome, Admin',
-        style: TextStyle(color: Colors.white),
-      )),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 206, 84, 84),
+        toolbarHeight: 200.0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+        leading: const IconButton(
+          icon: Icon(Icons.menu),
+          tooltip: 'Navigation menu',
+          onPressed: null,
+        ),
+        title: const Text('Welcome, Admin'), 
+      ),
+
+      floatingActionButton: const FloatingActionButton(
+        tooltip: 'Add', // used by assistive technologies
+        onPressed: null,
+        child: Icon(Icons.add),
+      ),
+      
+    //return Container(
+      //width: 400.0,
+      //height: 0.5,
+      //color: Color.fromARGB(255, 180, 180, 180),
+      //child: Center(
+          //child: Text(
+        //'Welcome, Admin',
+        //style: TextStyle(color: Colors.white, fontSize: 16.0),
+      //)),
       //body: (const SizedBox(
       //width: 400.0,
       //height: 150.0,

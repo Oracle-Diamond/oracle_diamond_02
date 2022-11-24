@@ -12,9 +12,18 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+    
+    Container(
+      constraints: BoxConstraints.expand(),
+      decoration: const BoxDecoration(
+        image: DecorationImage(image: AssetImage("assets/images/sportsbg.png"))
+      ),
+    );
+
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 206, 84, 84),
+        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
         toolbarHeight: 200.0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         leading: const IconButton(
@@ -25,11 +34,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: const Text('Welcome, Admin'), 
       ),
 
-      floatingActionButton: const FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
         tooltip: 'Add', // used by assistive technologies
-        onPressed: null,
-        child: Icon(Icons.add),
+        onPressed: () {
+          print("You have pressed 'Info!");
+        },
+        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
+        child: const Text('Info')
       ),
+      
       
     //return Container(
       //width: 400.0,

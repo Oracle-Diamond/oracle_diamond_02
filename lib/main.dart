@@ -102,9 +102,10 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 25.0,
           ),
           Container(
-            height:0.6,
-            width:350.0,
-            color:Colors.grey,),
+            height: 0.6,
+            width: 350.0,
+            color: Colors.grey,
+          ),
           const SizedBox(
             height: 25.0,
           ),
@@ -113,17 +114,17 @@ class _LoginScreenState extends State<LoginScreen> {
             'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
             height: 150,
             width: 290,
-            alignment: const Alignment(0,0.5),
+            alignment: const Alignment(0, 0.5),
           ),
           const SizedBox(
             height: 20.0,
           ),
           //const Text("Sports Hall Booking System",
-             // textAlign: TextAlign.center,
-              //style: TextStyle(
-                 // color: Colors.black,
-                 // fontSize: 30.0,
-                 // fontWeight: FontWeight.normal)),
+          // textAlign: TextAlign.center,
+          //style: TextStyle(
+          // color: Colors.black,
+          // fontSize: 30.0,
+          // fontWeight: FontWeight.normal)),
           const SizedBox(
             height: 30.00,
           ),
@@ -131,7 +132,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: "UTM Email",
+              hintText: "UTM Username",
               prefixIcon: Icon(Icons.mail, color: Colors.black),
               enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
             ),

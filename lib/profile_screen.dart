@@ -12,10 +12,21 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("Welcome to your profile page"),
-      ) ,
+    return Container(
+      width: 400.0,
+      height: 0.5,
+      color: Color.fromARGB(255, 206, 84, 84),
+      child: Center(
+          child: Text(
+        'Welcome, Admin',
+        style: TextStyle(color: Colors.white),
+      )),
+      //body: (const SizedBox(
+      //width: 400.0,
+      //height: 150.0,
+      //child: DecoratedBox(decoration: const BoxDecoration(color: Colors.red)),
+      //child: Center(child: Text 'Welcome')
+      //)),
     );
   }
 }

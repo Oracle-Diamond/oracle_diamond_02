@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:oracle_diamond_02/facilities.dart';
+import 'package:oracle_diamond_02/main.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class Facilities extends StatefulWidget {
+  Facilities({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<Facilities> createState() => _FacilitiesState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _FacilitiesState extends State<Facilities> {
   @override
   Widget build(BuildContext context) {
-    
     Container(
       constraints: BoxConstraints.expand(),
       decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/images/sportsbg.png"))
-      ),
+          image:
+              DecorationImage(image: AssetImage("assets/images/sportsbg.png"))),
     );
 
     return Scaffold(
@@ -26,35 +25,35 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 206, 84, 84),
         toolbarHeight: 200.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
         leading: const IconButton(
           icon: Icon(Icons.menu),
           tooltip: 'Navigation menu',
           onPressed: null,
         ),
-        title: const Text('Welcome, Admin'), 
+        title: const Text('Facilities'),
       ),
 
       floatingActionButton: FloatingActionButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-        tooltip: 'Add', // used by assistive technologies
-         onPressed: () {
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
+          tooltip: 'Add', // used by assistive technologies
+          onPressed: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => Facilities()));
+                .push(MaterialPageRoute(builder: (_) => HomePage()));
           },
-        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-        child: const Text('Info')
-      ),
-      
-      
-    //return Container(
+          backgroundColor: const Color.fromARGB(255, 206, 84, 84),
+          child: const Text('Info')),
+
+      //return Container(
       //width: 400.0,
       //height: 0.5,
       //color: Color.fromARGB(255, 180, 180, 180),
       //child: Center(
-          //child: Text(
-        //'Welcome, Admin',
-        //style: TextStyle(color: Colors.white, fontSize: 16.0),
+      //child: Text(
+      //'Welcome, Admin',
+      //style: TextStyle(color: Colors.white, fontSize: 16.0),
       //)),
       //body: (const SizedBox(
       //width: 400.0,

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:oracle_diamond_02/profile_screen.dart';
+import 'package:oracle_diamond_02/profile_screen2.dart';
 
 void main() async {
   runApp(const MyApp());

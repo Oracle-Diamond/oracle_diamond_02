@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/profile_screen.dart';
+import 'package:oracle_diamond_02/facilities.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -30,11 +31,12 @@ class _HomePageState extends State<HomePage> {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
+
 //Hi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: FutureBuilder(
             future: _initializeFirebase(),
             builder: (context, snapshot) {
@@ -102,9 +104,10 @@ class _LoginScreenState extends State<LoginScreen> {
             height: 25.0,
           ),
           Container(
-            height:0.6,
-            width:350.0,
-            color:Colors.grey,),
+            height: 0.6,
+            width: 350.0,
+            color: Colors.grey,
+          ),
           const SizedBox(
             height: 25.0,
           ),
@@ -113,17 +116,17 @@ class _LoginScreenState extends State<LoginScreen> {
             'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
             height: 150,
             width: 290,
-            alignment: const Alignment(0,0.5),
+            alignment: const Alignment(0, 0.5),
           ),
           const SizedBox(
             height: 20.0,
           ),
           //const Text("Sports Hall Booking System",
-             // textAlign: TextAlign.center,
-              //style: TextStyle(
-                 // color: Colors.black,
-                 // fontSize: 30.0,
-                 // fontWeight: FontWeight.normal)),
+          // textAlign: TextAlign.center,
+          //style: TextStyle(
+          // color: Colors.black,
+          // fontSize: 30.0,
+          // fontWeight: FontWeight.normal)),
           const SizedBox(
             height: 30.00,
           ),
@@ -131,10 +134,10 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: "UTM Email",
-              prefixIcon: Icon(Icons.mail, color: Colors.black),
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
-            ),
+                hintText: "UTM Email",
+                prefixIcon: Icon(Icons.mail, color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)))),
           ),
           const SizedBox(
             height: 26.0,
@@ -143,10 +146,10 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
             obscureText: true,
             decoration: const InputDecoration(
-              hintText: "Password",
-              prefixIcon: Icon(Icons.lock, color: Colors.black),
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
-            ),
+                hintText: "Password",
+                prefixIcon: Icon(Icons.lock, color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)))),
           ),
           const SizedBox(
             height: 12.0,

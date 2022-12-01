@@ -23,7 +23,7 @@ environment:
   sdk: '>=2.18.2 <3.0.0'
 
   #sprint 2 - afiq
-  flutter: ">=1.17.0" 
+  # flutter: ">=1.17.0" 
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -51,7 +51,7 @@ dev_dependencies:
 
   #sprint 2 - afiq
   mockito: ^5.0.17
-  build_runner: ^2.1.7
+  # build_runner: ^2.1.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

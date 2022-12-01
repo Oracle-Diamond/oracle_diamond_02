@@ -22,6 +22,9 @@ version: 1.0.0+1
 environment:
   sdk: '>=2.18.2 <3.0.0'
 
+  #sprint 2 - afiq
+  flutter: ">=1.17.0" 
+
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
 # consider running `flutter pub upgrade --major-versions`. Alternatively,
@@ -31,9 +34,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
   firebase_core: ^2.1.1
 
+  #sprint 2 - afiq
+  table_calendar: ^3.0.6
+  intl: ^0.17.0
+  provider: ^6.0.3
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -42,6 +48,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  #sprint 2 - afiq
+  mockito: ^5.0.17
+  build_runner: ^2.1.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

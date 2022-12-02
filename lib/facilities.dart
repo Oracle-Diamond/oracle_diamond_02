@@ -22,7 +22,7 @@ class _FacilitiesState extends State<Facilities> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 173, 161, 161),
+      backgroundColor: Color.fromARGB(255, 209, 195, 195),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -54,11 +54,7 @@ class _FacilitiesState extends State<Facilities> {
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
                         image: NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
-                          height: 150,
-                          width: 290,
-                          alignment: const Alignment(0, 0.5),
-                        ),
+                            'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png'),
                         fit: BoxFit.cover)),
                 child: Container(
                   decoration: BoxDecoration(
@@ -74,7 +70,7 @@ class _FacilitiesState extends State<Facilities> {
                       Text(
                         "Facilities",
                         style: TextStyle(
-                            color: Colors.white,
+                            color: Color.fromARGB(255, 212, 210, 210),
                             fontSize: 35,
                             fontWeight: FontWeight.bold),
                       ),
@@ -86,13 +82,12 @@ class _FacilitiesState extends State<Facilities> {
                         margin: EdgeInsets.symmetric(horizontal: 40),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            color: Colors.white),
+                            color: Color.fromARGB(255, 206, 84, 84)),
                         child: Center(
                             child: Text(
                           "Reserve Now",
                           style: TextStyle(
-                              color: Colors.grey[900],
-                              fontWeight: FontWeight.bold),
+                              color: Colors.white, fontWeight: FontWeight.bold),
                         )),
                       ),
                       SizedBox(

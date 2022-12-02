@@ -11,10 +11,12 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,  //firebase line
   );                                                  //firebase line
   
+  //test feature: booking calendar and time slot
   initializeDateFormatting()
       .then((_) => runApp(const BookingCalendarDemoApp()));
 }
 
+//feature: booking calendar - start
 class BookingCalendarDemoApp extends StatefulWidget {
   const BookingCalendarDemoApp({Key? key}) : super(key: key);
 
@@ -112,5 +114,5 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
         ));
   }
 }
-
+//feature: booking calendar - end
 

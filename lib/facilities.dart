@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:oracle_diamond_02/main.dart';
 import 'package:oracle_diamond_02/assets.dart';
+import 'package:oracle_diamond_02/page_badminton.dart';
 
 class Facilities extends StatefulWidget {
   Facilities({super.key});

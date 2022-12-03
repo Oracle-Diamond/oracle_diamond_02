@@ -25,7 +25,10 @@ class _FacilitiesState extends State<Facilities> {
     return Scaffold(
         backgroundColor: Color.fromARGB(255, 209, 195, 195),
         appBar: AppBar(
-          backgroundColor: Colors.transparent,
+          backgroundColor: const Color.fromARGB(255, 206, 84, 84),
+          toolbarHeight: 50.0,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
           elevation: 0,
           leading: Icon(Icons.menu),
           title: Text("List of Facilities"),
@@ -50,7 +53,7 @@ class _FacilitiesState extends State<Facilities> {
               children: <Widget>[
                 Container(
                   width: double.infinity,
-                  height: 250,
+                  height: 200,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       image: DecorationImage(
@@ -131,9 +134,9 @@ class _FacilitiesState extends State<Facilities> {
               child: RawMaterialButton(
                   fillColor: const Color.fromARGB(255, 206, 84, 84),
                   elevation: 0.0,
-                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  padding: EdgeInsets.symmetric(horizontal: 40),
                   shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12.0)),
+                      borderRadius: BorderRadius.circular(10)),
                   child: const Text("Reserve",
                       style: TextStyle(
                         color: Colors.white,

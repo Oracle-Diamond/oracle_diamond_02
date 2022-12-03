@@ -11,7 +11,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,  //firebase line
   );                                                  //firebase line
   
-  //test feature: booking calendar and time slot
+  //feature: booking calendar - function call
   initializeDateFormatting()
       .then((_) => runApp(const BookingCalendarDemoApp()));
 }

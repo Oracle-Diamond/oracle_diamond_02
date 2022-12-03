@@ -34,7 +34,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  firebase_core: ^2.1.1
+  #firebase_core: ^2.1.1
 
   #sprint 2 - afiq
   table_calendar: ^3.0.6

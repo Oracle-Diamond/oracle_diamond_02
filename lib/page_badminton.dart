@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:oracle_diamond_02/facilities.dart';
+import 'package:oracle_diamond_02/facilitiesDetails.dart';
 
 class PageBadminton extends StatefulWidget {
   const PageBadminton({super.key});
@@ -34,16 +32,6 @@ class _PageBadmintonState extends State<PageBadminton> {
         ),
         title: const Text('Badminton'),
       ),
-      floatingActionButton: FloatingActionButton(
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-          tooltip: 'Add', // used by assistive technologies
-          onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => Facilities()));
-          },
-          backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-          child: const Text('Info')),
     );
   }
 }

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:oracle_diamond_02/main.dart';
 import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/page_badminton.dart';
+import 'package:oracle_diamond_02/DetailsDataModel.dart';
 
-class Facilities extends StatefulWidget {
-  Facilities({super.key});
+class FacilitiesDetails extends StatefulWidget {
+  final List<FacilitiesDataModel> detailsDataModel;
+  int index;
+  FacilitiesDetails(
+      {Key? key, required this.index, required this.detailsDataModel})
+      : super(key: key);
 
   @override
-  _FacilitiesState createState() => _FacilitiesState();
+  State<FacilitiesDetails> createState() => _FacilitiesState();
 }
 
-class _FacilitiesState extends State<Facilities> {
+class _FacilitiesState extends State<FacilitiesDetails> {
   final List<String> _listItem = [
     badminton,
     tennis,
@@ -25,12 +27,12 @@ class _FacilitiesState extends State<Facilities> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 209, 195, 195),
       appBar: AppBar(
+        title: Text(widget.detailsDataModel[widget.index].name),
         backgroundColor: const Color.fromARGB(255, 206, 84, 84),
         toolbarHeight: 50.0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
         elevation: 0,
         leading: Icon(Icons.menu),
-        title: Text("List of Facilities"),
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.all(10.0),
@@ -127,13 +129,16 @@ class _FacilitiesState extends State<Facilities> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton.extended(
+      floatingActionButton: FloatingActionButton(
+        heroTag: "f2",
         onPressed: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) => BookingCalendarDemoApp()));
+          setState(() {
+            if (widget.index != widget.detailsDataModel.length - 1) {
+              widget.index++;
+            }
+          });
         },
-        label: const Text('Reserve'),
-        backgroundColor: Color.fromARGB(255, 206, 84, 84),
+        child: Icon(Icons.arrow_forward_ios),
       ),
     );
   }

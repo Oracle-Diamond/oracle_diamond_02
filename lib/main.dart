@@ -5,13 +5,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:oracle_diamond_02/profile_screen.dart';
+import 'package:oracle_diamond_02/DetailsDataModel.dart';
+import 'package:oracle_diamond_02/facilitiesDetails.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();          //firebase line 
-  await Firebase.initializeApp(                       //firebase line
-    options: DefaultFirebaseOptions.currentPlatform,  //firebase line
-  );                                                  //firebase line
-  
+  WidgetsFlutterBinding.ensureInitialized(); //firebase line
+  await Firebase.initializeApp(
+    //firebase line
+    options: DefaultFirebaseOptions.currentPlatform, //firebase line
+  ); //firebase line
+
   runApp(const MyApp());
 
   //feature: booking calendar - function call
@@ -43,11 +46,12 @@ class _HomePageState extends State<HomePage> {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
+
 //Hi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: FutureBuilder(
             future: _initializeFirebase(),
             builder: (context, snapshot) {
@@ -145,10 +149,10 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: "UTM Username",
-              prefixIcon: Icon(Icons.mail, color: Colors.black),
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
-            ),
+                hintText: "UTM Username",
+                prefixIcon: Icon(Icons.mail, color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)))),
           ),
           const SizedBox(
             height: 26.0,
@@ -157,10 +161,10 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
             obscureText: true,
             decoration: const InputDecoration(
-              hintText: "Password",
-              prefixIcon: Icon(Icons.lock, color: Colors.black),
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
-            ),
+                hintText: "Password",
+                prefixIcon: Icon(Icons.lock, color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)))),
           ),
           const SizedBox(
             height: 12.0,
@@ -204,8 +208,6 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-
-
 //feature: booking calendar - start
 class BookingCalendarDemoApp extends StatefulWidget {
   const BookingCalendarDemoApp({Key? key}) : super(key: key);
@@ -225,8 +227,8 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     // DateTime.now().endOfDay
     mockBookingService = BookingService(
         serviceName: 'Booking Court',
-        // serviceDuration: 30,  
-        serviceDuration: 60,    //myedit
+        // serviceDuration: 30,
+        serviceDuration: 60, //myedit
         bookingEnd: DateTime(now.year, now.month, now.day, 18, 0),
         bookingStart: DateTime(now.year, now.month, now.day, 8, 0));
   }
@@ -293,7 +295,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
               loadingWidget: const Text('Fetching data...'),
               uploadingWidget: const CircularProgressIndicator(),
               // locale: 'hu_HU',
-              locale: 'en_US',    //myedit
+              locale: 'en_US', //myedit
               startingDayOfWeek: StartingDayOfWeek.tuesday,
               disabledDays: const [6, 7],
             ),
@@ -303,3 +305,53 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
 }
 //feature: booking calendar - end
 
+//feature: details- start
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  static List<String> facilitiesname = [
+    'Badminton',
+    'Pingpong',
+    'Tennis',
+    'Futsal',
+  ];
+
+  final List<FacilitiesDataModel> facilities = List.generate(
+      facilitiesname.length,
+      (index) => FacilitiesDataModel('${facilitiesname[index]}', '${[index]}',
+          '${facilitiesname[index]} Description...'));
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Profile Screen'),
+        ),
+        body: ListView.builder(
+            itemCount: facilities.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  title: Text(facilities[index].name),
+                  leading: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Image.network(facilities[index].ImageUrl),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => FacilitiesDetails(
+                              index: index,
+                              detailsDataModel: facilities,
+                            )));
+                  },
+                ),
+              );
+            }));
+  }
+}

@@ -1,67 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:oracle_diamond_02/facilities.dart';
+import 'package:oracle_diamond_02/facilitiesDetails.dart';
+import 'package:oracle_diamond_02/DetailsDataModel.dart';
+import 'package:oracle_diamond_02/facilitiesDetails.dart';
 
 class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen({Key? key}) : super(key: key);
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  _ProfileScreenState createState() => _ProfileScreenState();
 }
 
 class _ProfileScreenState extends State<ProfileScreen> {
+  static List<String> facilitiesname = [
+    'Badminton',
+    'Pingpong',
+    'Tennis',
+    'Futsal',
+  ];
+
+  final List<FacilitiesDataModel> facilities = List.generate(
+      facilitiesname.length,
+      (index) => FacilitiesDataModel('${facilitiesname[index]}', '${[index]}',
+          '${facilitiesname[index]} Description...'));
+
   @override
   Widget build(BuildContext context) {
-    
-    Container(
-      constraints: BoxConstraints.expand(),
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage("assets/images/sportsbg.png"))
-      ),
-    );
-
     return Scaffold(
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-        toolbarHeight: 200.0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
-        leading: const IconButton(
-          icon: Icon(Icons.menu),
-          tooltip: 'Navigation menu',
-          onPressed: null,
+        appBar: AppBar(
+          title: Text('Profile Screen'),
         ),
-        title: const Text('Welcome, Admin'), 
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
-        tooltip: 'Add', // used by assistive technologies
-         onPressed: () {
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (_) => Facilities()));
-          },
-        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-        child: const Text('Info')
-      ),
-      
-      
-    //return Container(
-      //width: 400.0,
-      //height: 0.5,
-      //color: Color.fromARGB(255, 180, 180, 180),
-      //child: Center(
-          //child: Text(
-        //'Welcome, Admin',
-        //style: TextStyle(color: Colors.white, fontSize: 16.0),
-      //)),
-      //body: (const SizedBox(
-      //width: 400.0,
-      //height: 150.0,
-      //child: DecoratedBox(decoration: const BoxDecoration(color: Colors.red)),
-      //child: Center(child: Text 'Welcome')
-      //)),
-    );
+        body: ListView.builder(
+            itemCount: facilities.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  title: Text(facilities[index].name),
+                  leading: SizedBox(
+                    width: 50,
+                    height: 50,
+                    child: Image.network(facilities[index].ImageUrl),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => FacilitiesDetails(
+                              index: index,
+                              detailsDataModel: facilities,
+                            )));
+                  },
+                ),
+              );
+            }));
   }
 }

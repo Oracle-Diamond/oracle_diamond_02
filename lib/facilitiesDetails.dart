@@ -25,6 +25,7 @@ class _FacilitiesState extends State<FacilitiesDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
         title: Text(widget.detailsDataModel[widget.index].name),
       ),
       body: Column(

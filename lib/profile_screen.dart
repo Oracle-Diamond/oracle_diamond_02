@@ -35,7 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-          title: Text('Profile Screen'),
+          title: Text('list of Facilities'),
         ),
         body: ListView.builder(
             itemCount: facilities.length,

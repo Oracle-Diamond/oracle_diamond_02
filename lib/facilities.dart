@@ -79,20 +79,6 @@ class _FacilitiesState extends State<Facilities> {
                         SizedBox(
                           height: 30,
                         ),
-                        Container(
-                          height: 50,
-                          margin: EdgeInsets.symmetric(horizontal: 40),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color.fromARGB(255, 206, 84, 84)),
-                          child: Center(
-                              child: Text(
-                            "Reserve Now",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          )),
-                        ),
                         SizedBox(
                           height: 30,
                         ),
@@ -141,13 +127,22 @@ class _FacilitiesState extends State<Facilities> {
           ),
         ),
         floatingActionButton: Center(
-          child: ElevatedButton(
-            child: const Text('Reserve'),
-            onPressed: () {
-              Navigator.of(context)
-                  .push(MaterialPageRoute(builder: (_) => PageBadminton()));
-            },
-          ),
+          child: Container(
+              child: RawMaterialButton(
+                  fillColor: const Color.fromARGB(255, 206, 84, 84),
+                  elevation: 0.0,
+                  padding: const EdgeInsets.symmetric(vertical: 20.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12.0)),
+                  child: const Text("Reserve",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 14.0,
+                      )),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (_) => BookingCalendarDemoApp()));
+                  })),
         ));
   }
 }

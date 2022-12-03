@@ -23,129 +23,118 @@ class _FacilitiesState extends State<Facilities> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(255, 209, 195, 195),
-        appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-          toolbarHeight: 50.0,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
-          elevation: 0,
-          leading: Icon(Icons.menu),
-          title: Text("List of Facilities"),
-          actions: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(10.0),
-              child: Container(
-                width: 36,
-                height: 30,
+      backgroundColor: Color.fromARGB(255, 209, 195, 195),
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
+        toolbarHeight: 50.0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+        elevation: 0,
+        leading: Icon(Icons.menu),
+        title: Text("List of Facilities"),
+        actions: <Widget>[
+          Padding(
+            padding: EdgeInsets.all(10.0),
+            child: Container(
+              width: 36,
+              height: 30,
+              decoration: BoxDecoration(
+                  color: Colors.grey[800],
+                  borderRadius: BorderRadius.circular(10)),
+              child: Center(child: Text("0")),
+            ),
+          )
+        ],
+      ),
+      body: SafeArea(
+        child: Container(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            children: <Widget>[
+              Container(
+                width: double.infinity,
+                height: 200,
                 decoration: BoxDecoration(
-                    color: Colors.grey[800],
-                    borderRadius: BorderRadius.circular(10)),
-                child: Center(child: Text("0")),
-              ),
-            )
-          ],
-        ),
-        body: SafeArea(
-          child: Container(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  width: double.infinity,
-                  height: 200,
+                    borderRadius: BorderRadius.circular(20),
+                    image: DecorationImage(
+                        image: NetworkImage(
+                            'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png'),
+                        fit: BoxFit.cover)),
+                child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                          image: NetworkImage(
-                              'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png'),
-                          fit: BoxFit.cover)),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: LinearGradient(
-                            begin: Alignment.bottomRight,
-                            colors: [
-                              Colors.black.withOpacity(.4),
-                              Colors.black.withOpacity(.2),
-                            ])),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Text(
-                          "Facilities",
-                          style: TextStyle(
-                              color: Color.fromARGB(255, 212, 210, 210),
-                              fontSize: 35,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                        SizedBox(
-                          height: 30,
-                        ),
-                      ],
-                    ),
+                      gradient:
+                          LinearGradient(begin: Alignment.bottomRight, colors: [
+                        Colors.black.withOpacity(.4),
+                        Colors.black.withOpacity(.2),
+                      ])),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: <Widget>[
+                      Text(
+                        "Facilities",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 212, 210, 210),
+                            fontSize: 35,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
                   ),
                 ),
-                SizedBox(
-                  height: 20,
-                ),
-                Expanded(
-                    child: GridView.count(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
-                  children: _listItem
-                      .map((item) => Card(
-                            color: Colors.transparent,
-                            elevation: 0,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(
-                                      image: NetworkImage(item),
-                                      fit: BoxFit.cover)),
-                              child: Transform.translate(
-                                offset: Offset(50, -50),
-                                child: Container(
-                                  margin: EdgeInsets.symmetric(
-                                      horizontal: 65, vertical: 63),
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Colors.white),
-                                  child: Icon(
-                                    Icons.bookmark_border,
-                                    size: 15,
-                                  ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Expanded(
+                  child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                children: _listItem
+                    .map((item) => Card(
+                          color: Colors.transparent,
+                          elevation: 0,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(item),
+                                    fit: BoxFit.cover)),
+                            child: Transform.translate(
+                              offset: Offset(50, -50),
+                              child: Container(
+                                margin: EdgeInsets.symmetric(
+                                    horizontal: 65, vertical: 63),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.white),
+                                child: Icon(
+                                  Icons.bookmark_border,
+                                  size: 15,
                                 ),
                               ),
                             ),
-                          ))
-                      .toList(),
-                ))
-              ],
-            ),
+                          ),
+                        ))
+                    .toList(),
+              ))
+            ],
           ),
         ),
-        floatingActionButton: Center(
-          child: Container(
-              child: RawMaterialButton(
-                  fillColor: const Color.fromARGB(255, 206, 84, 84),
-                  elevation: 0.0,
-                  padding: EdgeInsets.symmetric(horizontal: 40),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: const Text("Reserve",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 14.0,
-                      )),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (_) => BookingCalendarDemoApp()));
-                  })),
-        ));
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.of(context).push(
+              MaterialPageRoute(builder: (_) => BookingCalendarDemoApp()));
+        },
+        label: const Text('Reserve'),
+        backgroundColor: Color.fromARGB(255, 206, 84, 84),
+      ),
+    );
   }
 }

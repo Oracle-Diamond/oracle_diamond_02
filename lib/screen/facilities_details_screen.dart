@@ -7,45 +7,90 @@ class FacilitiesDetailsScreen extends StatelessWidget {
 
   FacilitiesDetailsScreen(this.facilities);
 
+  static final String path =
+      "lib/src/pages/hotel/facilities_details_screen.dart";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(facilities.name),
-        backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.network(
-              facilities.ImageUrl,
+      body: Stack(
+        children: <Widget>[
+          Container(
+              foregroundDecoration: BoxDecoration(color: Colors.black26),
+              height: 400,
+              child: Image.asset(facilities.ImageUrl, fit: BoxFit.cover)),
+          SingleChildScrollView(
+            padding: const EdgeInsets.only(top: 16.0, bottom: 20.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                const SizedBox(height: 250),
+                Row(
+                  children: <Widget>[
+                    const SizedBox(width: 16.0),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 8.0,
+                        horizontal: 16.0,
+                      ),
+                    ),
+                    Spacer(),
+                    IconButton(
+                      color: Colors.white,
+                      icon: Icon(Icons.favorite_border),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+                Container(
+                  padding: const EdgeInsets.all(32.0),
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      const SizedBox(height: 30.0),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          child: Text(
+                            "Reserve Now",
+                            style: TextStyle(fontWeight: FontWeight.normal),
+                          ),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (_) => BookingCalendarDemoApp()));
+                          },
+                          style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.red),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 30.0),
+                      Text(
+                        "Description".toUpperCase(),
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 18.0),
+                      ),
+                      const SizedBox(height: 10.0),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          facilities.description,
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 16.0),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                facilities.description,
-                textAlign: TextAlign.justify,
-                style: TextStyle(fontSize: 18.0),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (_) => BookingCalendarDemoApp()));
-          },
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(15.0))),
-          backgroundColor: const Color.fromARGB(255, 206, 84, 84),
-          child: const Text(
-            'Reserve',
-            style: TextStyle(fontSize: 12),
-          )),
     );
   }
 }

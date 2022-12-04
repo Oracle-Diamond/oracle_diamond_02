@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/main.dart';
 import 'package:oracle_diamond_02/model/facilities.dart';
 
 class FacilitiesDetailsScreen extends StatelessWidget {
@@ -32,6 +33,19 @@ class FacilitiesDetailsScreen extends StatelessWidget {
           ],
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) => BookingCalendarDemoApp()));
+          },
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(Radius.circular(15.0))),
+          backgroundColor: const Color.fromARGB(255, 206, 84, 84),
+          child: const Text(
+            'Reserve',
+            style: TextStyle(fontSize: 12),
+          )),
     );
   }
 }

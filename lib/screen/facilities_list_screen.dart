@@ -16,6 +16,11 @@ class FacilitiesListScreen extends StatelessWidget {
               Facilities facilities = facilitiesList[index];
               return Card(
                   child: ListTile(
+                iconColor: Color.fromARGB(255, 14, 13, 13),
+                shape: BeveledRectangleBorder(
+                    side: BorderSide(
+                        color: Color.fromARGB(255, 241, 240, 240), width: 1)),
+                trailing: Icon(Icons.arrow_forward_rounded),
                 title: Text(facilities.name),
                 leading: SizedBox(
                   width: 50,

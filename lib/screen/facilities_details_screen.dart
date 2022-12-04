@@ -6,9 +6,6 @@ class FacilitiesDetailsScreen extends StatelessWidget {
   final Facilities facilities;
 
   FacilitiesDetailsScreen(this.facilities);
-
-  static final String path =
-      "lib/src/pages/hotel/facilities_details_screen.dart";
   @override
   Widget build(BuildContext context) {
     return Scaffold(

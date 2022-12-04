@@ -4,9 +4,9 @@ import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:oracle_diamond_02/profile_screen.dart';
-import 'package:oracle_diamond_02/DetailsDataModel.dart';
-import 'package:oracle_diamond_02/facilitiesDetails.dart';
+import 'package:oracle_diamond_02/model/facilities.dart';
+import 'package:oracle_diamond_02/screen/facilities_details_screen.dart';
+import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //firebase line
@@ -192,8 +192,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => FacilitiesListScreen()));
                 }
               },
               child: const Text("Login",

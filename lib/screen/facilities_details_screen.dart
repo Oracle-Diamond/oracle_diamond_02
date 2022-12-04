@@ -9,7 +9,6 @@ class FacilitiesDetailsScreen extends StatelessWidget {
 
   static final String path =
       "lib/src/pages/hotel/facilities_details_screen.dart";
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +17,7 @@ class FacilitiesDetailsScreen extends StatelessWidget {
           Container(
               foregroundDecoration: BoxDecoration(color: Colors.black26),
               height: 400,
-              child: Image.asset(facilities.ImageUrl, fit: BoxFit.cover)),
+              child: Image.network(facilities.ImageUrl, fit: BoxFit.cover)),
           SingleChildScrollView(
             padding: const EdgeInsets.only(top: 16.0, bottom: 20.0),
             child: Column(
@@ -69,7 +68,7 @@ class FacilitiesDetailsScreen extends StatelessWidget {
                       ),
                       const SizedBox(height: 30.0),
                       Text(
-                        "Description".toUpperCase(),
+                        facilities.name.toUpperCase(),
                         style: TextStyle(
                             fontWeight: FontWeight.w600, fontSize: 18.0),
                       ),

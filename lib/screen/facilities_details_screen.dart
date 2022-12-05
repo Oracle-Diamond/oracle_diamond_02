@@ -76,6 +76,7 @@ class FacilitiesDetailsScreen extends StatelessWidget {
                       const SizedBox(height: 30.0),
                       Text(
                         facilities.name.toUpperCase(),
+                        textAlign: TextAlign.left,
                         style: TextStyle(
                             fontWeight: FontWeight.w600, fontSize: 18.0),
                       ),
@@ -86,7 +87,7 @@ class FacilitiesDetailsScreen extends StatelessWidget {
                           facilities.description,
                           textAlign: TextAlign.justify,
                           style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 16.0),
+                              fontWeight: FontWeight.w400, fontSize: 16.0),
                         ),
                       ),
                     ],

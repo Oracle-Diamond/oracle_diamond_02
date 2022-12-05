@@ -7,6 +7,7 @@ import 'package:intl/date_symbol_data_local.dart';
 import 'package:oracle_diamond_02/model/facilities.dart';
 import 'package:oracle_diamond_02/screen/facilities_details_screen.dart';
 import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
+import 'package:oracle_diamond_02/user_select.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //firebase line
@@ -192,8 +193,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => FacilitiesListScreen()));
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => UserSelect()));
                 }
               },
               child: const Text("Login",

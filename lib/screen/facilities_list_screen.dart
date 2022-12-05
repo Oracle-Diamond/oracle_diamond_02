@@ -24,6 +24,13 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
           "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media"
     },
     {
+      "name": "Tennis Court",
+      "location": "UTM Convention Hall",
+      "type": "Outdoor Courts",
+      "logoText":
+          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media"
+    },
+    {
       "name": "PingPong Court",
       "location": "UTM Convention Hall",
       "type": "Indoor Courts",
@@ -36,13 +43,6 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
       "type": "Indoor Courts",
       "logoText":
           "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/futsal.jpg?alt=media"
-    },
-    {
-      "name": "Tennis Court",
-      "location": "UTM Convention Hall",
-      "type": "Outdoor Courts",
-      "logoText":
-          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media"
     },
   ];
 

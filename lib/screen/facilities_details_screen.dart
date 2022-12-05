@@ -23,6 +23,16 @@ class FacilitiesDetailsScreen extends StatelessWidget {
                 const SizedBox(height: 250),
                 Row(
                   children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Text(
+                        facilities.name,
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28.0,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                     const SizedBox(width: 16.0),
                     Container(
                       padding: const EdgeInsets.symmetric(
@@ -83,6 +93,20 @@ class FacilitiesDetailsScreen extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+          ),
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: AppBar(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              centerTitle: true,
+              title: Text(
+                "List of Facilities",
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.normal),
+              ),
             ),
           ),
         ],

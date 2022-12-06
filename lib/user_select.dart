@@ -12,44 +12,81 @@ class _UserSelectState extends State<UserSelect> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+        body: Padding(
+      padding: const EdgeInsets.all(16.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const SizedBox(
             height: 5.0,
           ),
-          const Text("User Login",
+          const Text("User Select",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20.0,
+                fontSize: 22.0,
                 fontWeight: FontWeight.bold,
               )),
           const SizedBox(
             height: 25.0,
           ),
           Container(
-            height: 0.6,
-            width: 350.0,
-            color: Colors.grey,
+            margin: EdgeInsets.all(16),
+            height: 225,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: Colors.red[400],
+            ),
+            width: double.infinity,
+            child: ElevatedButton(
+                child: Text(
+                  "Admin",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onPressed: () {},
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 239, 83, 80)),
+                )),
           ),
           Container(
             margin: EdgeInsets.all(16),
-            height: 200,
+            height: 225,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: Colors.red[200],
+              color: Colors.red[400],
             ),
-          ),
-          Container(
-            margin: EdgeInsets.all(16),
-            height: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.red[200],
-            ),
+            width: double.infinity,
+            child: ElevatedButton(
+                child: Text(
+                  "Student/Staff",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FacilitiesListScreen(),
+                    ),
+                  );
+                },
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                      Color.fromARGB(255, 239, 83, 80)),
+                )),
           ),
         ],
       ),
-    );
+    ));
   }
 }

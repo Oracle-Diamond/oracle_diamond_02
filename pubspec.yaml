@@ -49,8 +49,15 @@ dependencies:
   firebase_auth: ^4.1.3
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  icons_launcher: ^1.1.7
+
+flutter_launcher_name:
+  name: "UTM SPORT BOOKING"
+
+flutter_icons:
+  image_path: 'assets/images/icon logo.jpg'
+  ios: true
+  android: true
 
   #sprint 2 - afiq
   mockito: ^5.0.17

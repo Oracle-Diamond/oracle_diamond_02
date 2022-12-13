@@ -145,67 +145,86 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.all(4.0),
             child:
             Row(
               children: <Widget>[
+                const SizedBox(width: 15.0),
                 Expanded(
-                  flex: 2,
                   child: _buildTile(
                     color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.sports_soccer_outlined,
-                    title: "Number of Patient",
-                    data: "1200",
-                    
+                    icon: Icons.app_registration_outlined,
+                    title: "Manage Facilities",
+                    data: ""
                   ),
                 ),
-                const SizedBox(width: 16.0),
+                const SizedBox(width: 15.0),
                 Expanded(
                   child: _buildTile(
                     color: Color.fromARGB(255, 206, 84, 84),
                     icon: Icons.portrait,
-                    title: "Admitted",
-                    data: "857",
+                    title: "Reservations",
+                    data: ""
                   ),
                 ),
               ],
             ),
           ),
-          const SizedBox(height: 16.0),
+          const SizedBox(width: 20.0, height: 15.0),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.all(4.0),
             child: Row(
               children: <Widget>[
                 Expanded(
                   child: _buildTile(
                     color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.favorite,
-                    title: "Discharged",
-                    data: "864",
+                    icon: Icons.surround_sound_outlined,
+                    title: "Announcements",
+                    data: "",
                   ),
                 ),
-                const SizedBox(width: 16.0),
+                const SizedBox(width: 20.0, height: 15.0),
                 Expanded(
                   child: _buildTile(
                     color: Color.fromARGB(255, 206, 84, 84),
                     icon: Icons.portrait,
-                    title: "Dropped",
-                    data: "857",
+                    title: "Events",
+                    data: "",
                   ),
                 ),
-                const SizedBox(width: 16.0),
+                //const SizedBox(width: 20.0, height: 15.0),
+                //Expanded(
+                  //child: _buildTile(
+                    //color: Color.fromARGB(255, 206, 84, 84),
+                    //icon: Icons.favorite,
+                    //title: "hehe",
+                    //data: "",
+                  //),
+                //),
+              ],
+            ),
+          ),
+
+          Padding(
+            padding:const EdgeInsets.all(4.0),
+            child: Row(
+              children: <Widget> [
+                const SizedBox(width: 20.0, height: 15.0),
                 Expanded(
                   child: _buildTile(
                     color: Color.fromARGB(255, 206, 84, 84),
                     icon: Icons.favorite,
-                    title: "Arrived",
-                    data: "698",
-                  ),
-                ),
-              ],
-            ),
+                    title: "hehehe",
+                    data: "",
+                  )
+                  )
+              ]
+              
+              ),
+          
+          
           ),
-          const SizedBox(height: 20.0),
+          //const SizedBox(height: 20.0),
         ],
       ),
     );

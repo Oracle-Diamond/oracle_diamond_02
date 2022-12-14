@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/Admin_login.dart';
 import 'package:oracle_diamond_02/main.dart';
 import 'package:oracle_diamond_02/profile_screen2.dart';
 
@@ -53,7 +54,7 @@ class _UserSelectState extends State<UserSelect> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProfileScreen(),
+                      builder: (context) => AdminPage(),
                     ),
                   );
                 },

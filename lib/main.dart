@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
+import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
 void main() async {
@@ -13,10 +14,6 @@ void main() async {
   ); //firebase line
 
   runApp(const MyApp());
-
-  //feature: booking calendar - function call
-  // initializeDateFormatting()
-  //     .then((_) => runApp(const BookingCalendarDemoApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -26,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomePage(),
+      home: UserSelect(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -189,8 +186,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => UserSelect()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => FacilitiesListScreen()));
                 }
               },
               child: const Text("Login",

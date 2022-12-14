@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/main.dart';
 import 'package:oracle_diamond_02/profile_screen2.dart';
-import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});
@@ -84,7 +84,7 @@ class _UserSelectState extends State<UserSelect> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FacilitiesListScreen(),
+                      builder: (context) => HomePage(),
                     ),
                   );
                 },

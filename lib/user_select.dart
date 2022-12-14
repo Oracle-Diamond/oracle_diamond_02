@@ -49,7 +49,14 @@ class _UserSelectState extends State<UserSelect> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfileScreen(),
+                    ),
+                  );
+                },
                 style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
                       Color.fromARGB(255, 239, 83, 80)),
@@ -77,7 +84,7 @@ class _UserSelectState extends State<UserSelect> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => ProfileScreen(),
+                      builder: (context) => FacilitiesListScreen(),
                     ),
                   );
                 },

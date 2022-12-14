@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/Admin_login.dart';
+import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/main.dart';
-import 'package:oracle_diamond_02/profile_screen2.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});

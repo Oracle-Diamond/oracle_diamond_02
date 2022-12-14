@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 //import 'package:flutter_ui_challenges/core/presentation/res/assets.dart';
 //import 'package:cached_network_image/cached_network_image.dart';
 
@@ -138,92 +139,13 @@ class ProfileScreen extends StatelessWidget {
                       ),
                     ),
                     title: Text("In use"),
-                    subtitle: Text("7 courts"),
+                    subtitle: Text("700 courts"),
                   ),
                 ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child:
-            Row(
-              children: <Widget>[
-                const SizedBox(width: 15.0),
-                Expanded(
-                  child: _buildTile(
-                    color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.app_registration_outlined,
-                    title: "Manage Facilities",
-                    data: ""
-                  ),
-                ),
-                const SizedBox(width: 15.0),
-                Expanded(
-                  child: _buildTile(
-                    color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.portrait,
-                    title: "Reservations",
-                    data: ""
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 20.0, height: 15.0),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: _buildTile(
-                    color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.surround_sound_outlined,
-                    title: "Announcements",
-                    data: "",
-                  ),
-                ),
-                const SizedBox(width: 20.0, height: 15.0),
-                Expanded(
-                  child: _buildTile(
-                    color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.portrait,
-                    title: "Events",
-                    data: "",
-                  ),
-                ),
-                //const SizedBox(width: 20.0, height: 15.0),
-                //Expanded(
-                  //child: _buildTile(
-                    //color: Color.fromARGB(255, 206, 84, 84),
-                    //icon: Icons.favorite,
-                    //title: "hehe",
-                    //data: "",
-                  //),
-                //),
               ],
             ),
           ),
 
-          Padding(
-            padding:const EdgeInsets.all(4.0),
-            child: Row(
-              children: <Widget> [
-                const SizedBox(width: 20.0, height: 15.0),
-                Expanded(
-                  child: _buildTile(
-                    color: Color.fromARGB(255, 206, 84, 84),
-                    icon: Icons.favorite,
-                    title: "hehehe",
-                    data: "",
-                  )
-                  )
-              ]
-              
-              ),
-          
-          
-          ),
           //const SizedBox(height: 20.0),
         ],
       ),

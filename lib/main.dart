@@ -30,11 +30,12 @@ class _HomePageState extends State<HomePage> {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
+
 //Hi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: false,
         body: FutureBuilder(
             future: _initializeFirebase(),
             builder: (context, snapshot) {
@@ -132,10 +133,10 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-              hintText: "UTM Username",
-              prefixIcon: Icon(Icons.mail, color: Colors.black),
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
-            ),
+                hintText: "UTM Username",
+                prefixIcon: Icon(Icons.mail, color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)))),
           ),
           const SizedBox(
             height: 26.0,
@@ -144,10 +145,10 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _passwordController,
             obscureText: true,
             decoration: const InputDecoration(
-              hintText: "Password",
-              prefixIcon: Icon(Icons.lock, color: Colors.black),
-              enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(12.0)))
-            ),
+                hintText: "Password",
+                prefixIcon: Icon(Icons.lock, color: Colors.black),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(12.0)))),
           ),
           const SizedBox(
             height: 12.0,

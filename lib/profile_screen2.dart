@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/facilities_manage.dart';
 
 class ProfileScreen extends StatelessWidget {
   static final String path = "lib/src/pages/dashboard/dash3.dart";
@@ -9,7 +10,6 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: _buildBody(context),
-      bottomNavigationBar: _buildBottomBar(),
     );
   }
 

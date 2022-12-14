@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 
-//hello
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});
 

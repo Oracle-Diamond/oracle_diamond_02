@@ -3,10 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:oracle_diamond_02/model/facilities.dart';
-import 'package:oracle_diamond_02/screen/facilities_details_screen.dart';
-import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
 void main() async {

@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/SportBooking.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
@@ -237,7 +238,7 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
     {required dynamic streamResult}) {
     ///here you can parse the streamresult and convert to [List<DateTimeRange>]
     ///Note that this is dynamic, so you need to know what properties are available on your result, in our case the [SportBooking] has bookingStart and bookingEnd property
-      List<DateTimeRange> converted = []
+      List<DateTimeRange> converted = [];
       for (var i = 0; i < streamResult.size; i++) {
         final item = streamResult.docs[i].data();
         converted.add(DateTimeRange(start: (item.bookingStart!), end: (item.bookingEnd!)));

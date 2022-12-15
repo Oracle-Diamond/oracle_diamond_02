@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/facilities_manage.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:oracle_diamond_02/booking_calendar.dart';
-import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
-import 'package:oracle_diamond_02/screen/profile_user.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
 void main() async {
@@ -30,14 +29,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class AdminPage extends StatefulWidget {
+  const AdminPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<AdminPage> createState() => _AdminPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _AdminPageState extends State<AdminPage> {
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
@@ -99,12 +98,11 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             height: 5.0,
           ),
-          const Text("User Login",
+          const Text("Admin Login",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
@@ -138,7 +136,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-                hintText: "UTM Username",
+                hintText: "UTM username",
                 prefixIcon: Icon(Icons.mail, color: Colors.black),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12.0)))),
@@ -181,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 print(user);
                 if (user != null) {
                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => ProfileUser()));
+                      MaterialPageRoute(builder: (context) => ProfileScreen()));
                 }
               },
               child: const Text("Login",
@@ -196,101 +194,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
-//feature: booking calendar - start
-class BookingCalendarDemoApp extends StatefulWidget {
-  const BookingCalendarDemoApp({Key? key}) : super(key: key);
-
-  @override
-  State<BookingCalendarDemoApp> createState() => _BookingCalendarDemoAppState();
-}
-
-class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
-  final now = DateTime.now();
-  late BookingService mockBookingService;
-
-  @override
-  void initState() {
-    super.initState();
-    // DateTime.now().startOfDay
-    // DateTime.now().endOfDay
-    mockBookingService = BookingService(
-        serviceName: 'Booking Court',
-        // serviceDuration: 30,
-        serviceDuration: 60, //myedit
-        bookingEnd: DateTime(now.year, now.month, now.day, 18, 0),
-        bookingStart: DateTime(now.year, now.month, now.day, 8, 0));
-  }
-
-  Stream<dynamic>? getBookingStreamMock(
-      {required DateTime end, required DateTime start}) {
-    return Stream.value([]);
-  }
-
-  Future<dynamic> uploadBookingMock(
-      {required BookingService newBooking}) async {
-    await Future.delayed(const Duration(seconds: 1));
-    converted.add(DateTimeRange(
-        start: newBooking.bookingStart, end: newBooking.bookingEnd));
-    print('${newBooking.toJson()} has been uploaded');
-  }
-
-  List<DateTimeRange> converted = [];
-
-  List<DateTimeRange> convertStreamResultMock({required dynamic streamResult}) {
-    DateTime first = now;
-    DateTime second = now.add(const Duration(minutes: 55));
-    DateTime third = now.subtract(const Duration(minutes: 240));
-    DateTime fourth = now.subtract(const Duration(minutes: 500));
-    converted.add(
-        DateTimeRange(start: first, end: now.add(const Duration(minutes: 30))));
-    converted.add(DateTimeRange(
-        start: second, end: second.add(const Duration(minutes: 23))));
-    converted.add(DateTimeRange(
-        start: third, end: third.add(const Duration(minutes: 15))));
-    converted.add(DateTimeRange(
-        start: fourth, end: fourth.add(const Duration(minutes: 50))));
-    return converted;
-  }
-
-  List<DateTimeRange> generatePauseSlots() {
-    return [
-      DateTimeRange(
-          start: DateTime(now.year, now.month, now.day, 12, 0),
-          end: DateTime(now.year, now.month, now.day, 13, 0))
-    ];
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'UTM Court Booking',
-        theme: ThemeData(
-          primarySwatch: Colors.red,
-        ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('UTM Court Booking'),
-          ),
-          body: Center(
-            child: BookingCalendar(
-              bookingService: mockBookingService,
-              convertStreamResultToDateTimeRanges: convertStreamResultMock,
-              getBookingStream: getBookingStreamMock,
-              uploadBooking: uploadBookingMock,
-              pauseSlots: generatePauseSlots(),
-              pauseSlotText: 'LUNCH',
-              hideBreakTime: false,
-              loadingWidget: const Text('Fetching data...'),
-              uploadingWidget: const CircularProgressIndicator(),
-              // locale: 'hu_HU',
-              locale: 'en_US', //myedit
-              startingDayOfWeek: StartingDayOfWeek.tuesday,
-              disabledDays: const [6, 7],
-            ),
-          ),
-        ));
-  }
-}
-//feature: booking calendar - end
-

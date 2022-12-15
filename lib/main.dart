@@ -1,6 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:oracle_diamond_02/SportBooking.dart';
+import 'package:intl/date_symbol_data_local.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
@@ -15,7 +18,11 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform, //firebase line
   ); //firebase line
 
-  runApp(const MyApp());
+  //runApp(const MyApp());
+
+  initializeDateFormatting()
+      .then((_) => runApp(const BookingCalendarDemoApp()));
+
 }
 
 class MyApp extends StatelessWidget {
@@ -214,14 +221,16 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
 
   ///How you actually get the stream of data from Firestore with the help of the previous function
   ///note that this query filters are for my data structure, you need to adjust it to your solution.
-  Stream<dynamic>? getBookingStreamFirebase(
-    {required DateTime end, required DateTime start}) {
-       return ApiRepository.
-                        .getBookingStream(placeId: 'YOUR_DOC_ID')
-                        .where('bookingStart', isGreaterThanOrEqualTo: start)
-                        .where('bookingStart', isLessThanOrEqualTo: end)
-                        .snapshots(),
-  }
+  
+  //afiq manual comment
+  // Stream<dynamic>? getBookingStreamFirebase(
+  //   {required DateTime end, required DateTime start}) {
+  //      return ApiRepository.
+  //                       .getBookingStream(placeId: 'YOUR_DOC_ID')
+  //                       .where('bookingStart', isGreaterThanOrEqualTo: start)
+  //                       .where('bookingStart', isLessThanOrEqualTo: end)
+  //                       .snapshots(),
+  // }
 
   ///After you fetched the data from firestore, we only need to have a list of datetimes from the bookings:
   List<DateTimeRange> convertStreamResultFirebase(
@@ -275,8 +284,8 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     // DateTime.now().endOfDay
     mockBookingService = BookingService(
         serviceName: 'Booking Court',
-        // serviceDuration: 30,
-        serviceDuration: 60, //myedit
+        // serviceDuration: 30,  
+        serviceDuration: 60,    //myedit
         bookingEnd: DateTime(now.year, now.month, now.day, 18, 0),
         bookingStart: DateTime(now.year, now.month, now.day, 8, 0));
   }
@@ -297,6 +306,9 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
   List<DateTimeRange> converted = [];
 
   List<DateTimeRange> convertStreamResultMock({required dynamic streamResult}) {
+    ///here you can parse the streamresult and convert to [List<DateTimeRange>]
+    ///take care this is only mock, so if you add today as disabledDays it will still be visible on the first load
+    ///disabledDays will properly work with real data
     DateTime first = now;
     DateTime second = now.add(const Duration(minutes: 55));
     DateTime third = now.subtract(const Duration(minutes: 240));
@@ -343,7 +355,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
               loadingWidget: const Text('Fetching data...'),
               uploadingWidget: const CircularProgressIndicator(),
               // locale: 'hu_HU',
-              locale: 'en_US', //myedit
+              locale: 'en_US',    //myedit
               startingDayOfWeek: StartingDayOfWeek.tuesday,
               disabledDays: const [6, 7],
             ),

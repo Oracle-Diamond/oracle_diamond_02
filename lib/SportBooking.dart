@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:sport.bp/util/app_util.dart';
-part 'sport_booking.g.dart';
+part 'SportBooking.g.dart';
 
 @JsonSerializable(explicitToJson: true)
 class SportBooking {

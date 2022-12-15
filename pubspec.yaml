@@ -53,6 +53,15 @@ dependencies:
 dev_dependencies:
   icons_launcher: ^1.1.7
 
+  #afiq
+  build_runner: ^2.1.7
+  json_serializable: ^6.5.4
+  flutter_test:
+    sdk: flutter
+  # booking_calendar:
+  #   path: ../
+  mockito: ^5.0.17
+
 flutter_launcher_name:
   name: "UTM SPORT BOOKING"
 
@@ -60,10 +69,6 @@ flutter_icons:
   image_path: 'assets/images/icon logo.jpg'
   ios: true
   android: true
-
-  #sprint 2 - afiq
-  mockito: ^5.0.17
-  # build_runner: ^2.1.7
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

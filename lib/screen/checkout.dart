@@ -65,49 +65,66 @@ class CheckoutOnePage extends StatelessWidget {
                 ]),
               ),
             ),
-            RoundedContainer(
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.sports_tennis,
-                    color: Color.fromARGB(255, 28, 151, 182),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => FacilitiesListScreen(),
+                ));
+              },
+              child: RoundedContainer(
+                margin: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.sports_tennis,
+                      color: Color.fromARGB(255, 28, 151, 182),
+                    ),
                   ),
+                  title: Text("Facilities Available"),
+                  trailing: Icon(Icons.arrow_forward_ios),
                 ),
-                title: Text("Facilities Available"),
-                trailing: Icon(Icons.arrow_forward_ios),
               ),
             ),
-            RoundedContainer(
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.event_available,
-                    color: Color.fromARGB(255, 224, 214, 66),
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => BookingCalendarDemoApp(),
+                ));
+              },
+              child: RoundedContainer(
+                margin: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.event_available,
+                      color: Color.fromARGB(255, 224, 214, 66),
+                    ),
                   ),
+                  title: Text("View Booking"),
+                  trailing: Icon(Icons.arrow_forward_ios),
                 ),
-                title: Text("View Booking"),
-                trailing: Icon(Icons.arrow_forward_ios),
               ),
             ),
-            RoundedContainer(
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.message,
-                    color: Color.fromARGB(255, 22, 189, 111),
+            GestureDetector(
+              onTap: () {},
+              child: RoundedContainer(
+                margin: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(8.0),
+                child: ListTile(
+                  leading: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.message,
+                      color: Color.fromARGB(255, 22, 189, 111),
+                    ),
                   ),
+                  title: Text("Contact Us"),
+                  trailing: Icon(Icons.arrow_forward_ios),
                 ),
-                title: Text("Contact Us"),
-                trailing: Icon(Icons.arrow_forward_ios),
               ),
             ),
             Container(

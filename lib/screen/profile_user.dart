@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/main.dart';
-import 'package:oracle_diamond_02/screen/facilities_details_screen.dart';
+import 'package:oracle_diamond_02/screen/checkout.dart';
 import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 
 class ProfileUser extends StatefulWidget {
@@ -84,7 +83,7 @@ class _ProfileUserState extends State<ProfileUser> {
                                 padding: EdgeInsets.all(10.0),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
+                                  children: <Widget>[
                                     Text(
                                       "Dashboard",
                                       style: TextStyle(
@@ -149,7 +148,7 @@ class _ProfileUserState extends State<ProfileUser> {
                                             Navigator.of(context)
                                                 .push(MaterialPageRoute(
                                               builder: (context) =>
-                                                  BookingCalendarDemoApp(),
+                                                  CheckoutOnePage(),
                                             ));
                                           },
                                           icon: Icon(

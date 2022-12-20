@@ -3,12 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/SportBooking.dart';
 import 'package:intl/date_symbol_data_local.dart';
+import 'package:oracle_diamond_02/booking_calendar.dart';
 
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
-import 'package:oracle_diamond_02/booking_calendar.dart';
 import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
@@ -212,9 +211,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
 CollectionReference bookings = FirebaseFirestore.instance.collection('bookings');
 
-  ///This is how can you get the reference to your data from the collection, and serialize the data with the help of the Firestore [withConverter]. This function would be in your repository.
-  CollectionReference<SportBooking> getBookingStream({required String placeId}) {
-    return bookings.doc(placeId).collection('bookings').withConverter<SportBooking>(
+  ///This is how can you get the reference to your data from the collection, and serialize the data with the help of the Firestore [//withConverter]. This function would be in your repository.
+  CollectionReference<SportBooking> getBookingStream() {
+    return bookings.doc().collection('bookings').withConverter<SportBooking>(
           fromFirestore: (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
           toFirestore: (snapshots, _) => snapshots.toJson(),
         );
@@ -296,6 +295,9 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     return Stream.value([]);
   }
 
+
+
+  
   Future<dynamic> uploadBookingMock(
       {required BookingService newBooking}) async {
     await Future.delayed(const Duration(seconds: 1));
@@ -303,6 +305,12 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
         start: newBooking.bookingStart, end: newBooking.bookingEnd));
     print('${newBooking.toJson()} has been uploaded');
   }
+
+
+  
+
+
+
 
   List<DateTimeRange> converted = [];
 
@@ -365,4 +373,12 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
   }
 }
 //feature: booking calendar - end
+
+
+
+
+
+
+
+
 

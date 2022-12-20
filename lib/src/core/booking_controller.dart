@@ -1,5 +1,5 @@
 import 'package:oracle_diamond_02/src/model/booking_service.dart';
-import 'package:oracle_diamond_02/src/util/booking_util.dart';
+import 'package:oracle_diamond_02/src/util/BookingUtil.dart';
 
 import 'package:flutter/material.dart';
 

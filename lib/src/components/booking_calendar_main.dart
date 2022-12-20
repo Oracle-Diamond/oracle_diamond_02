@@ -12,7 +12,7 @@ import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:table_calendar/table_calendar.dart' as tc
     show StartingDayOfWeek;
-import 'package:oracle_diamond_02/src/util/booking_util.dart';
+import 'package:oracle_diamond_02/src/util/BookingUtil.dart';
 
 class BookingCalendarMain extends StatefulWidget {
   const BookingCalendarMain({

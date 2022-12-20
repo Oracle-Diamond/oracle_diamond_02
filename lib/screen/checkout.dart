@@ -9,6 +9,7 @@ class CheckoutOnePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xfff0f0f0),
       body: Stack(children: [
         Column(
           children: [

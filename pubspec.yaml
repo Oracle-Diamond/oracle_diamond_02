@@ -50,6 +50,7 @@ dependencies:
 
 dev_dependencies:
   icons_launcher: ^1.1.7
+  flare_flutter: ^3.0.1
 
 flutter_launcher_name:
   name: "UTM SPORT BOOKING"

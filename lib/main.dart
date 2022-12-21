@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
+import 'package:oracle_diamond_02/intro.dart';
 import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/screen/profile_user.dart';
 import 'package:oracle_diamond_02/user_select.dart';
@@ -23,8 +24,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: UserSelect(),
+    return MaterialApp(
+      home: IntroPage(),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -168,7 +169,6 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             width: double.infinity,
             child: RawMaterialButton(
-              fillColor: const Color.fromARGB(255, 206, 84, 84),
               elevation: 0.0,
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               shape: RoundedRectangleBorder(

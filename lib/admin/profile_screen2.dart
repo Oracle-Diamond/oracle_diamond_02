@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/facilities_manage.dart';
 import 'package:oracle_diamond_02/screen/rounded_container.dart';
+import 'package:oracle_diamond_02/assets.dart';
 
 class ProfileScreen extends StatelessWidget {
-  static final String path = "lib/src/pages/dashboard/dash3.dart";
   String get avatar => avatar[0];
   final TextStyle whiteText = TextStyle(color: Colors.white);
   @override
@@ -52,7 +52,7 @@ class ProfileScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 16.0),
             child: Text(
-              "Appointments",
+              "Dashboard",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
             ),
           ),
@@ -81,12 +81,6 @@ class ProfileScreen extends StatelessWidget {
                             height: 25,
                             width: 8.0,
                             color: Colors.grey.shade300,
-                          ),
-                          const SizedBox(width: 4.0),
-                          Container(
-                            height: 40,
-                            width: 8.0,
-                            color: Colors.blue,
                           ),
                           const SizedBox(width: 4.0),
                           Container(

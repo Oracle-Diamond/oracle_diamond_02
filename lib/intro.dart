@@ -3,6 +3,7 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
 class IntroPage extends StatefulWidget {
+  static final String path = "lib/intro.dart";
   @override
   _IntroPageState createState() => _IntroPageState();
 }
@@ -16,11 +17,11 @@ class _IntroPageState extends State<IntroPage> {
     return Scaffold(
       backgroundColor: brightYellow,
       body: Column(
-        children: [
+        children: <Widget>[
           Flexible(
             flex: 8,
             child: FlareActor(
-              'assets\images\flare\bus.flr',
+              'assets/images/flare/bus.flr',
               alignment: Alignment.center,
               fit: BoxFit.contain,
               animation: 'driving',

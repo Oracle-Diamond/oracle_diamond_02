@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flare_flutter/flare_actor.dart';
+import 'package:lottie/lottie.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
 class IntroPage extends StatefulWidget {
@@ -8,7 +8,7 @@ class IntroPage extends StatefulWidget {
   _IntroPageState createState() => _IntroPageState();
 }
 
-const brightYellow = Color(0xFFFFD300);
+const brightYellow = Color.fromARGB(255, 255, 255, 251);
 const darkYellow = Color(0xFFFFB900);
 
 class _IntroPageState extends State<IntroPage> {
@@ -20,12 +20,7 @@ class _IntroPageState extends State<IntroPage> {
         children: <Widget>[
           Flexible(
             flex: 8,
-            child: FlareActor(
-              'assets/images/flare/bus.flr',
-              alignment: Alignment.center,
-              fit: BoxFit.contain,
-              animation: 'driving',
-            ),
+            child: Lottie.asset('assets/images/LottieLogo1.json'),
           ),
           Flexible(
             flex: 2,

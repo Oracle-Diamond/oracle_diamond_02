@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/facilities_manage.dart';
+import 'package:oracle_diamond_02/admin/home.dart';
 import 'package:oracle_diamond_02/screen/rounded_container.dart';
 import 'package:oracle_diamond_02/assets.dart';
 import 'package:oracle_diamond_02/user_select.dart';
@@ -12,33 +13,6 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: _buildBody(context),
-    );
-  }
-
-  Widget _buildBottomBar() {
-    return BottomNavigationBar(
-      selectedItemColor: Colors.grey.shade800,
-      unselectedItemColor: Colors.grey,
-      currentIndex: 0,
-      onTap: (i) {},
-      items: [
-        BottomNavigationBarItem(
-          icon: Icon(Icons.home),
-          label: "Home",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_add),
-          label: "Refer",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.history),
-          label: "History",
-        ),
-        BottomNavigationBarItem(
-          icon: Icon(Icons.person_outline),
-          label: "Profile",
-        ),
-      ],
     );
   }
 
@@ -162,7 +136,7 @@ class ProfileScreen extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => FacilitiesManagePage(),
+                builder: (context) => HomePage(),
               ));
             },
             child: RoundedContainer(
@@ -243,16 +217,15 @@ class ProfileScreen extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           ListTile(
-            title: Text(
-              "Welcome, Admin!",
-              style: whiteText.copyWith(
-                  fontWeight: FontWeight.bold, fontSize: 24.0),
-            ),
-            trailing: CircleAvatar(
-              radius: 25.0,
-              //backgroundImage: CachedNetworkImageProvider(avatar),
-            ),
-          ),
+              title: Text(
+                "Welcome, Admin!",
+                style: whiteText.copyWith(
+                    fontWeight: FontWeight.bold, fontSize: 24.0),
+              ),
+              trailing: CircleAvatar(
+                backgroundImage: NetworkImage(
+                    "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/profile.jpg?alt=media"),
+              )),
           const SizedBox(height: 10.0),
           Padding(
             padding: const EdgeInsets.only(left: 16.0),

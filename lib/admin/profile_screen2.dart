@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/facilities_manage.dart';
+import 'package:oracle_diamond_02/screen/rounded_container.dart';
 
 class ProfileScreen extends StatelessWidget {
   static final String path = "lib/src/pages/dashboard/dash3.dart";
@@ -54,6 +56,7 @@ class ProfileScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
             ),
           ),
+
           Card(
             elevation: 4.0,
             color: Colors.white,
@@ -140,7 +143,92 @@ class ProfileScreen extends StatelessWidget {
               ],
             ),
           ),
-
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => FacilitiesManagePage(),
+              ));
+            },
+            child: RoundedContainer(
+              margin: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.bookmark,
+                    color: Color.fromARGB(255, 28, 151, 182),
+                  ),
+                ),
+                title: Text("Facilities Management"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => FacilitiesManagePage(),
+              ));
+            },
+            child: RoundedContainer(
+              margin: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.event_busy,
+                    color: Color.fromARGB(255, 224, 214, 66),
+                  ),
+                ),
+                title: Text("Maintainance Scheduling"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {},
+            child: RoundedContainer(
+              margin: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
+              child: ListTile(
+                leading: IconButton(
+                  onPressed: () {},
+                  icon: Icon(
+                    Icons.list,
+                    color: Color.fromARGB(255, 22, 189, 111),
+                  ),
+                ),
+                title: Text("Reservation Detail"),
+                trailing: Icon(Icons.arrow_forward_ios),
+              ),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+              vertical: 6.0,
+              horizontal: 32.0,
+            ),
+            child: RawMaterialButton(
+              fillColor: const Color.fromARGB(255, 206, 84, 84),
+              elevation: 0,
+              padding: const EdgeInsets.all(24.0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: const Text("Log out",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  )),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => AdminPage(),
+                ));
+              },
+            ),
+          )
           //const SizedBox(height: 20.0),
         ],
       ),

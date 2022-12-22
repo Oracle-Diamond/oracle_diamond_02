@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/facilities_manage.dart';
-import 'package:oracle_diamond_02/admin/home.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
 import 'package:oracle_diamond_02/screen/rounded_container.dart';
 import 'package:oracle_diamond_02/assets.dart';
 import 'package:oracle_diamond_02/user_select.dart';

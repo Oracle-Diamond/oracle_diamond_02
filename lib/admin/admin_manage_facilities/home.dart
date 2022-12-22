@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/detail.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/detail.dart';
 
 class HomePage extends StatefulWidget {
   @override

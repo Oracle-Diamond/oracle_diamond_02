@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/admin_login.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/detail.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
 
 class EditProfilePage extends StatefulWidget {
@@ -29,7 +27,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         ),
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
+        padding: const EdgeInsets.only(left: 16, top: 10, right: 16),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -37,51 +35,48 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: ListView(
             children: [
               const Text(
-                "Facilities Management",
+                "Mon, 15/11/2022",
+                style: TextStyle(fontSize: 15),
+              ),
+              const Text(
+                "Maintenance Scheduling",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
               const SizedBox(
                 height: 15,
               ),
-              Container(
-                width: 130,
-                height: 130,
-                decoration: BoxDecoration(
-                    border: Border.all(
-                        width: 4,
-                        color: Theme.of(context).scaffoldBackgroundColor),
-                    boxShadow: [
-                      BoxShadow(
-                          spreadRadius: 2,
-                          blurRadius: 10,
-                          color: Colors.black.withOpacity(0.1),
-                          offset: const Offset(0, 10))
-                    ],
-                    shape: BoxShape.circle,
-                    image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media",
-                        ))),
-              ),
               const SizedBox(
-                height: 35,
+                height: 15,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Maintenance Facilities: ",
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
               TextField(
                 decoration: const InputDecoration(
-                  labelText: "Name",
+                  labelText: "Badminton Court",
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.teal)),
-                  hintText: 'Input Name',
+                  hintText: 'Input Court name',
                 ),
                 keyboardType: TextInputType.name,
               ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Court Number: ",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
               TextField(
                 decoration: const InputDecoration(
-                  labelText: "Age",
+                  labelText: "court 2",
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.teal)),
-                  hintText: 'Input Age',
+                  hintText: 'Input Court number',
                 ),
                 //
                 keyboardType: TextInputType.number,
@@ -89,36 +84,37 @@ class _EditProfilePageState extends State<EditProfilePage> {
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Email: ",
-                  style: TextStyle(fontSize: 20),
+                  "Maintenance Date: ",
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
-              const SizedBox(
-                height: 35,
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: "15/11/2022 - Monday",
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.teal)),
+                  hintText: 'Input Court date',
+                ),
+                //
+                keyboardType: TextInputType.number,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("CANCEL",
-                        style: TextStyle(
-                            fontSize: 14,
-                            letterSpacing: 2.2,
-                            color: Colors.black)),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "SAVE",
-                      style: TextStyle(
-                          fontSize: 14,
-                          letterSpacing: 2.2,
-                          color: Colors.white),
-                    ),
-                  )
-                ],
-              )
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Maintenance Time: ",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: "7:00 AM - 9:00 AM",
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.teal)),
+                  hintText: 'Input Court time',
+                ),
+                //
+                keyboardType: TextInputType.number,
+              ),
             ],
           ),
         ),

@@ -5,7 +5,6 @@ import 'package:oracle_diamond_02/SportBooking.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
 
-
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
@@ -17,6 +16,10 @@ void main() async {
     //firebase line
     options: DefaultFirebaseOptions.currentPlatform, //firebase line
   ); //firebase line
+
+  //firebase connection test
+  // FirebaseFirestore.instance.collection('bookings').doc('document-01').set({'field-01':456}); //write
+  // FirebaseFirestore.instance.collection('bookings').doc('document-01').get(); //read, assign to a variable and check while debugging
 
   //runApp(const MyApp());
 
@@ -50,7 +53,7 @@ class _HomePageState extends State<HomePage> {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
-//---------------------afiq - put here?
+//---------------------afiq
 //Hi
   @override
   Widget build(BuildContext context) {
@@ -211,6 +214,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
 CollectionReference bookings = FirebaseFirestore.instance.collection('bookings');
 
+// *1 replacement
   ///This is how can you get the reference to your data from the collection, and serialize the data with the help of the Firestore [//withConverter]. This function would be in your repository.
   CollectionReference<SportBooking> getBookingStream() {
     return bookings.doc().collection('bookings').withConverter<SportBooking>(
@@ -218,19 +222,6 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
           toFirestore: (snapshots, _) => snapshots.toJson(),
         );
   }
-
-  ///How you actually get the stream of data from Firestore with the help of the previous function
-  ///note that this query filters are for my data structure, you need to adjust it to your solution.
-  
-  //afiq manual comment
-  // Stream<dynamic>? getBookingStreamFirebase(
-  //   {required DateTime end, required DateTime start}) {
-  //      return ApiRepository.
-  //                       .getBookingStream(placeId: 'YOUR_DOC_ID')
-  //                       .where('bookingStart', isGreaterThanOrEqualTo: start)
-  //                       .where('bookingStart', isLessThanOrEqualTo: end)
-  //                       .snapshots(),
-  // }
 
   ///After you fetched the data from firestore, we only need to have a list of datetimes from the bookings:
   List<DateTimeRange> convertStreamResultFirebase(
@@ -249,8 +240,8 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
   Future<dynamic> uploadBookingFirebase(
     {required BookingService newBooking}) async {
     await bookings
-        .doc()
-        .collection('bookings')
+        .doc() 
+        //.collection('bookings')
         .add(newBooking.toJson())
         .then((value) => print("Booking Added"))
         .catchError((error) => print("Failed to add booking: $error"));
@@ -290,6 +281,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
         bookingStart: DateTime(now.year, now.month, now.day, 8, 0));
   }
 
+  // not for firebase
   Stream<dynamic>? getBookingStreamMock(
       {required DateTime end, required DateTime start}) {
     return Stream.value([]);
@@ -297,7 +289,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
 
 
 
-  
+  //not for firebase?
   Future<dynamic> uploadBookingMock(
       {required BookingService newBooking}) async {
     await Future.delayed(const Duration(seconds: 1));
@@ -356,14 +348,15 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
             child: BookingCalendar(
               bookingService: mockBookingService,
               convertStreamResultToDateTimeRanges: convertStreamResultMock,
-              getBookingStream: getBookingStreamMock,
-              uploadBooking: uploadBookingMock,
+              // getBookingStream: getBookingStreamMock,
+              // uploadBooking: uploadBookingMock,
+              getBookingStream: getBookingStreamMock,   //direction not correct
+              uploadBooking: uploadBookingFirebase,
               pauseSlots: generatePauseSlots(),
               pauseSlotText: 'LUNCH',
               hideBreakTime: false,
               loadingWidget: const Text('Fetching data...'),
               uploadingWidget: const CircularProgressIndicator(),
-              // locale: 'hu_HU',
               locale: 'en_US',    //myedit
               startingDayOfWeek: StartingDayOfWeek.tuesday,
               disabledDays: const [6, 7],

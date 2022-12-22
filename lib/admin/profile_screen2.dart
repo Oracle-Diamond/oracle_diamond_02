@@ -1,3 +1,4 @@
+import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
@@ -20,7 +21,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFCCCCCC),
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -29,9 +30,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             children: [
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 175,
                 decoration: BoxDecoration(
-                  color: Color(0xFF700500),
+                  color: Color.fromARGB(255, 165, 15, 7),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(45),
                     bottomRight: Radius.circular(45),
@@ -70,8 +71,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                             ),
-                            child: Image.asset(
-                              'assets/images/3135715.png',
+                            child: Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/profile.jpg?alt=media',
                               fit: BoxFit.contain,
                             ),
                           ),
@@ -122,8 +123,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 child: InkWell(
                   onTap: () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => FacilitiesManagePage(),
-                  ));
+                      builder: (context) => FacilitiesManagePage(),
+                    ));
                   },
                   child: Container(
                     width: double.infinity,
@@ -320,7 +321,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               FFButtonWidget(
                 onPressed: () {
-                  print('Button pressed ...');
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => AdminPage(),
+                  ));
                 },
                 text: 'Log Out',
                 options: FFButtonOptions(

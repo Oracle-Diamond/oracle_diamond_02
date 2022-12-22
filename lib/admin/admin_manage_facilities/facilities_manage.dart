@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:oracle_diamond_02/assets.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/network_image.dart';
 
@@ -80,6 +81,16 @@ class FacilitiesManagePage extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
+                          IconButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => HomePageWidget()));
+                            },
+                            icon: Icon(
+                              Icons.arrow_back_ios,
+                              color: Colors.white,
+                            ),
+                          ),
                           Text("Facilities",
                               style: TextStyle(
                                   fontSize: 32,

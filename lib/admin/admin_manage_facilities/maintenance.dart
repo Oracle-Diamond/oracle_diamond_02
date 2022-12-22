@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
-import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -20,11 +18,11 @@ class _EditProfilePageState extends State<EditProfilePage> {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.black,
+            color: Colors.green,
           ),
           onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => HomePageWidget()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => HomePage()));
           },
         ),
       ),
@@ -36,6 +34,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
           },
           child: ListView(
             children: [
+              const Text(
+                "Mon, 15/11/2022",
+                style: TextStyle(fontSize: 15),
+              ),
               const Text(
                 "Maintenance Scheduling",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
@@ -130,7 +132,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   horizontal: 32.0,
                 ),
                 child: RawMaterialButton(
-                  fillColor: Color(0xFF700500),
+                  fillColor: Color(0xFFCE5454),
                   elevation: 0,
                   padding: const EdgeInsets.all(24.0),
                   shape: RoundedRectangleBorder(
@@ -142,7 +144,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       )),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => AdminPage(),
+                      builder: (context) => HomePage(),
                     ));
                   },
                 ),

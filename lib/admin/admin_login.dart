@@ -179,7 +179,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 print(user);
                 if (user != null) {
                   Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                      MaterialPageRoute(builder: (context) => HomePageWidget()));
                 }
               },
               child: const Text("Login",

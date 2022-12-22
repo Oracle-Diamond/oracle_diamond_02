@@ -1,282 +1,359 @@
+import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
-import 'package:oracle_diamond_02/screen/rounded_container.dart';
-import 'package:oracle_diamond_02/assets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:oracle_diamond_02/user_select.dart';
 
-class ProfileScreen extends StatelessWidget {
-  String get avatar => avatar[0];
-  final TextStyle whiteText = TextStyle(color: Colors.white);
+import 'admin_manage_facilities/facilities_manage.dart';
+
+class HomePageWidget extends StatefulWidget {
+  const HomePageWidget({Key? key}) : super(key: key);
+
+  @override
+  _HomePageWidgetState createState() => _HomePageWidgetState();
+}
+
+class _HomePageWidgetState extends State<HomePageWidget> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: Colors.white,
-      body: _buildBody(context),
-    );
-  }
-
-  Widget _buildBody(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          _buildHeader(),
-          const SizedBox(height: 20.0),
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Text(
-              "Dashboard",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
-            ),
-          ),
-
-          Card(
-            elevation: 4.0,
-            color: Colors.white,
-            margin: const EdgeInsets.all(16.0),
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: ListTile(
-                    leading: Container(
-                      alignment: Alignment.bottomCenter,
-                      width: 45.0,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          Container(
-                            height: 20,
-                            width: 8.0,
-                            color: Colors.grey.shade300,
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 175,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 165, 15, 7),
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(45),
+                    bottomRight: Radius.circular(45),
+                    topLeft: Radius.circular(0),
+                    topRight: Radius.circular(0),
+                  ),
+                ),
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(15, 10, 10, 0),
+                            child: Text(
+                              'Welcome, Admin',
+                              style:
+                                  FlutterFlowTheme.of(context).title1.override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontSize: 28,
+                                      ),
+                            ),
                           ),
-                          const SizedBox(width: 4.0),
-                          Container(
-                            height: 25,
-                            width: 8.0,
-                            color: Colors.grey.shade300,
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                          child: Container(
+                            width: 70,
+                            height: 70,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/profile.jpg?alt=media',
+                              fit: BoxFit.contain,
+                            ),
                           ),
-                          const SizedBox(width: 4.0),
-                          Container(
-                            height: 30,
-                            width: 8.0,
-                            color: Colors.grey.shade300,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 10, 0),
+                          child: Text(
+                            'Mohd Amin bin Yaakob',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 10, 0),
+                          child: Text(
+                            'Pegawai',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 20),
+                child: InkWell(
+                  onTap: () async {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => FacilitiesManagePage(),
+                    ));
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x99000000),
+                          offset: Offset(1, 3),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12, 12, 12, 12),
+                                child: Image.asset(
+                                  'assets/images/management.png',
+                                  width: 85,
+                                  height: 85,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Facilities Management',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                            child: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.black,
+                              size: 24,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                child: InkWell(
+                  onTap: () async {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => EditProfilePage(),
+                    ));
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x99000000),
+                          offset: Offset(1, 3),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12, 12, 12, 12),
+                                child: Image.asset(
+                                  'assets/images/5073718.png',
+                                  width: 85,
+                                  height: 85,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Maintenance Scheduling',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                          child: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.black,
+                            size: 24,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                child: Container(
+                  width: double.infinity,
+                  height: 100,
+                  decoration: BoxDecoration(
+                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    boxShadow: [
+                      BoxShadow(
+                        blurRadius: 5,
+                        color: Color(0x99000000),
+                        offset: Offset(1, 3),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  12, 12, 12, 12),
+                              child: Image.asset(
+                                'assets/images/booking.png',
+                                width: 85,
+                                height: 85,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           ),
                         ],
                       ),
-                    ),
-                    title: Text("Available"),
-                    subtitle: Text("18 courts"),
-                  ),
-                ),
-                VerticalDivider(),
-                Expanded(
-                  child: ListTile(
-                    leading: Container(
-                      alignment: Alignment.bottomCenter,
-                      width: 45.0,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          Container(
-                            height: 20,
-                            width: 8.0,
-                            color: Colors.grey.shade300,
-                          ),
-                          const SizedBox(width: 4.0),
-                          Container(
-                            height: 25,
-                            width: 8.0,
-                            color: Colors.grey.shade300,
-                          ),
-                          const SizedBox(width: 4.0),
-                          Container(
-                            height: 40,
-                            width: 8.0,
-                            color: Colors.red,
-                          ),
-                          const SizedBox(width: 4.0),
-                          Container(
-                            height: 30,
-                            width: 8.0,
-                            color: Colors.grey.shade300,
-                          ),
-                        ],
+                      Expanded(
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                'Reservation Details',
+                                textAlign: TextAlign.center,
+                                style: FlutterFlowTheme.of(context).bodyText1,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                    title: Text("In use"),
-                    subtitle: Text("700 courts"),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                        child: Icon(
+                          Icons.arrow_forward_ios_rounded,
+                          color: Colors.black,
+                          size: 24,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => FacilitiesManagePage(),
-              ));
-            },
-            child: RoundedContainer(
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.bookmark,
-                    color: Color.fromARGB(255, 28, 151, 182),
-                  ),
-                ),
-                title: Text("Facilities Management"),
-                trailing: Icon(Icons.arrow_forward_ios),
               ),
-            ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => HomePage(),
-              ));
-            },
-            child: RoundedContainer(
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.event_busy,
-                    color: Color.fromARGB(255, 224, 214, 66),
+              FFButtonWidget(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => UserSelect(),
+                  ));
+                },
+                text: 'Log Out',
+                options: FFButtonOptions(
+                  width: 130,
+                  height: 40,
+                  color: Color(0xFF700500),
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                        fontFamily: 'Poppins',
+                        color: Colors.white,
+                      ),
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
                   ),
+                  //borderRadius: BorderRadius.circular(15),
                 ),
-                title: Text("Maintainance Scheduling"),
-                trailing: Icon(Icons.arrow_forward_ios),
               ),
-            ),
+            ],
           ),
-          GestureDetector(
-            onTap: () {},
-            child: RoundedContainer(
-              margin: const EdgeInsets.all(8.0),
-              padding: const EdgeInsets.all(8.0),
-              child: ListTile(
-                leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.list,
-                    color: Color.fromARGB(255, 22, 189, 111),
-                  ),
-                ),
-                title: Text("Reservation Detail"),
-                trailing: Icon(Icons.arrow_forward_ios),
-              ),
-            ),
-          ),
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(
-              vertical: 6.0,
-              horizontal: 32.0,
-            ),
-            child: RawMaterialButton(
-              fillColor: const Color.fromARGB(255, 206, 84, 84),
-              elevation: 0,
-              padding: const EdgeInsets.all(24.0),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10.0)),
-              child: const Text("Log out",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18.0,
-                  )),
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => UserSelect(),
-                ));
-              },
-            ),
-          )
-          //const SizedBox(height: 20.0),
-        ],
-      ),
-    );
-  }
-
-  Container _buildHeader() {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(0, 50.0, 0, 32.0),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20.0),
-          bottomRight: Radius.circular(20.0),
         ),
-        color: Color.fromARGB(255, 206, 84, 84),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ListTile(
-              title: Text(
-                "Welcome, Admin!",
-                style: whiteText.copyWith(
-                    fontWeight: FontWeight.bold, fontSize: 24.0),
-              ),
-              trailing: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/profile.jpg?alt=media"),
-              )),
-          const SizedBox(height: 10.0),
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Text(
-              "Ahmad bin Yaakob",
-              style: whiteText.copyWith(
-                fontSize: 18.0,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          const SizedBox(height: 5.0),
-          Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: Text(
-              "Pegawai",
-              style: whiteText,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Container _buildTile(
-      {Color? color, IconData? icon, String? title, String? data}) {
-    return Container(
-      padding: const EdgeInsets.all(8.0),
-      height: 150.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(4.0),
-        color: color,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: <Widget>[
-          Icon(
-            icon,
-            color: Colors.white,
-          ),
-          Text(
-            title!,
-            style: whiteText.copyWith(fontWeight: FontWeight.bold),
-          ),
-          Text(
-            data!,
-            style:
-                whiteText.copyWith(fontWeight: FontWeight.bold, fontSize: 20.0),
-          ),
-        ],
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -21,25 +23,13 @@ class _EditProfilePageState extends State<EditProfilePage> {
             color: Colors.green,
           ),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (BuildContext context) => const AdminPage()));
+            Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => HomePageWidget()));
           },
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.green,
-            ),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const AdminPage()));
-            },
-          ),
-        ],
       ),
       body: Container(
-        padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
+        padding: const EdgeInsets.only(left: 16, top: 10, right: 16),
         child: GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -47,51 +37,58 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: ListView(
             children: [
               const Text(
-                "Facilities Manage",
+                "Mon, 15/11/2022",
+                style: TextStyle(fontSize: 15),
+              ),
+              const Text(
+                "Maintenance Scheduling",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
-              const SizedBox(
-                height: 15,
-              ),
-              Container(
-                width: 130,
-                height: 130,
-                decoration: BoxDecoration(
-                    border: Border.all(
-                        width: 4,
-                        color: Theme.of(context).scaffoldBackgroundColor),
-                    boxShadow: [
-                      BoxShadow(
-                          spreadRadius: 2,
-                          blurRadius: 10,
-                          color: Colors.black.withOpacity(0.1),
-                          offset: const Offset(0, 10))
-                    ],
-                    shape: BoxShape.circle,
-                    image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media",
-                        ))),
-              ),
-              const SizedBox(
-                height: 35,
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Maintenance Facilities: ",
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
               TextField(
                 decoration: const InputDecoration(
-                  labelText: "Name",
+                  labelText: "Badminton Court",
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.teal)),
-                  hintText: 'Input Name',
+                  hintText: 'Input Court name',
                 ),
                 keyboardType: TextInputType.name,
               ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Maintenance Name:  ",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
               TextField(
                 decoration: const InputDecoration(
-                  labelText: "Age",
+                  labelText: "Flooring",
                   border: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.teal)),
-                  hintText: 'Input Age',
+                  hintText: 'Input Court name',
+                ),
+                keyboardType: TextInputType.name,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Court Number: ",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: "Court 2",
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.teal)),
+                  hintText: 'Input Court number',
                 ),
                 //
                 keyboardType: TextInputType.number,
@@ -99,35 +96,60 @@ class _EditProfilePageState extends State<EditProfilePage> {
               const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
-                  "Email: ",
-                  style: TextStyle(fontSize: 20),
+                  "Maintenance Date: ",
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
-              const SizedBox(
-                height: 35,
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: "15/11/2022 - Monday",
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.teal)),
+                  hintText: 'Input Court date',
+                ),
+                //
+                keyboardType: TextInputType.datetime,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text("CANCEL",
-                        style: TextStyle(
-                            fontSize: 14,
-                            letterSpacing: 2.2,
-                            color: Colors.black)),
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: const Text(
-                      "SAVE",
+              const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  "Maintenance Time: ",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ),
+              TextField(
+                decoration: const InputDecoration(
+                  labelText: "7:00 AM - 9:00 AM",
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.teal)),
+                  hintText: 'Input Court time',
+                ),
+                //
+                keyboardType: TextInputType.datetime,
+              ),
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(
+                  vertical: 6.0,
+                  horizontal: 32.0,
+                ),
+                child: RawMaterialButton(
+                  fillColor: Color(0xFF700500),
+                  elevation: 0,
+                  padding: const EdgeInsets.all(24.0),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: const Text("Schedule",
                       style: TextStyle(
-                          fontSize: 14,
-                          letterSpacing: 2.2,
-                          color: Colors.white),
-                    ),
-                  )
-                ],
+                        color: Colors.white,
+                        fontSize: 18.0,
+                      )),
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => AdminPage(),
+                    ));
+                  },
+                ),
               )
             ],
           ),

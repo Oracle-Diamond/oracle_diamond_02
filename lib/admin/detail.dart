@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/facilities_manage_details.dart';
 import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class DetailPage extends StatefulWidget {
@@ -29,7 +30,7 @@ class _DetailPageState extends State<DetailPage> {
             )),
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => ProfileScreen(),
+            builder: (context) => EditProfilePage(),
           ));
         },
       ),

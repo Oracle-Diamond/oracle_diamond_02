@@ -20,7 +20,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.green,
+            color: Colors.black,
           ),
           onPressed: () {
             Navigator.of(context).push(
@@ -36,10 +36,6 @@ class _EditProfilePageState extends State<EditProfilePage> {
           },
           child: ListView(
             children: [
-              const Text(
-                "Mon, 15/11/2022",
-                style: TextStyle(fontSize: 15),
-              ),
               const Text(
                 "Maintenance Scheduling",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),

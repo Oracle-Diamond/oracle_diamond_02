@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/model/facilities.dart';
 import 'package:oracle_diamond_02/screen/facilities_details_screen.dart';
+import 'package:oracle_diamond_02/assets.dart';
 
 class FacilitiesListScreen extends StatefulWidget {
   FacilitiesListScreen({Key? key}) : super(key: key);
@@ -14,37 +15,6 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
 
   final primary = Color.fromARGB(255, 206, 84, 84);
   final secondary = Color(0xfff29a94);
-
-  final List<Map> facilitiesListMap = [
-    {
-      "name": "Badminton Court",
-      "location": "UTM Convention Hall",
-      "type": "Indoor Courts",
-      "logoText":
-          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media"
-    },
-    {
-      "name": "Tennis Court",
-      "location": "UTM Convention Hall",
-      "type": "Outdoor Courts",
-      "logoText":
-          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media"
-    },
-    {
-      "name": "PingPong Court",
-      "location": "UTM Convention Hall",
-      "type": "Indoor Courts",
-      "logoText":
-          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/pinpong.jpg?alt=media"
-    },
-    {
-      "name": "Futsal Court",
-      "location": "UTM Convention Hall",
-      "type": "Indoor Courts",
-      "logoText":
-          "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/futsal.jpg?alt=media"
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {

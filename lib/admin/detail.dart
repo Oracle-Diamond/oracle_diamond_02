@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class DetailPage extends StatefulWidget {
   final String url;
@@ -14,14 +16,23 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: Chip(
-          backgroundColor: Colors.orange,
-          padding: EdgeInsets.fromLTRB(55, 12, 55, 12),
-          label: Text("Manage Facilities",
-              style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white))),
+      floatingActionButton: RawMaterialButton(
+        fillColor: const Color.fromARGB(255, 206, 84, 84),
+        elevation: 0,
+        padding: const EdgeInsets.all(24.0),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+        child: const Text("Manage Facilities",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 18.0,
+            )),
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => AdminPage(),
+          ));
+        },
+      ),
       body: Stack(
         children: <Widget>[
           Hero(

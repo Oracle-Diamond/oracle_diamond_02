@@ -29,7 +29,7 @@ class _DetailPageState extends State<DetailPage> {
             )),
         onPressed: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => AdminPage(),
+            builder: (context) => ProfileScreen(),
           ));
         },
       ),

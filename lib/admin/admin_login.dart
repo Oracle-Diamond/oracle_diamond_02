@@ -4,7 +4,7 @@ import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manag
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/admin/profile_screen2.dart';
-import 'package:oracle_diamond_02/user_select.dart';
+import 'package:oracle_diamond_02/user/user_select.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //firebase line
@@ -178,8 +178,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => HomePageWidget()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => HomePageWidget()));
                 }
               },
               child: const Text("Login",

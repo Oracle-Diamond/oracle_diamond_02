@@ -5,7 +5,7 @@ import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oracle_diamond_02/user_select.dart';
+import 'package:oracle_diamond_02/user/user_select.dart';
 
 import 'admin_manage_facilities/facilities_manage.dart';
 

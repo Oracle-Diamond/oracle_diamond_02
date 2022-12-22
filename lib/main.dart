@@ -2,11 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:oracle_diamond_02/booking_calendar.dart';
-import 'package:oracle_diamond_02/intro.dart';
-import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
-import 'package:oracle_diamond_02/screen/profile_user.dart';
-import 'package:oracle_diamond_02/user_select.dart';
+import 'package:oracle_diamond_02/user/booking_calendar.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
+import 'package:oracle_diamond_02/user/user_select.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //firebase line

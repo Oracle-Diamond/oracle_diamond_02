@@ -1,4 +1,4 @@
-import 'package:oracle_diamond_02/src/components/common_card.dart';
+import 'package:oracle_diamond_02/user/booking%20calendar/src/components/common_card.dart';
 import 'package:flutter/material.dart';
 
 class BookingSlot extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/model/facilities.dart';
-import 'package:oracle_diamond_02/screen/facilities_details_screen.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/facilities_details_screen.dart';
 import 'package:oracle_diamond_02/assets.dart';
 
 class FacilitiesListScreen extends StatefulWidget {

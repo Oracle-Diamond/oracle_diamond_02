@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/main.dart';
-import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
-import 'package:oracle_diamond_02/screen/rounded_container.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/rounded_container.dart';
 import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/user_select.dart';
+import 'package:oracle_diamond_02/user/user_select.dart';
 
 class ProfileUser extends StatelessWidget {
   @override

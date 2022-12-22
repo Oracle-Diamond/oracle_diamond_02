@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/main.dart';
-import 'package:oracle_diamond_02/model/facilities.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 
 class FacilitiesDetailsScreen extends StatelessWidget {
   final Facilities facilities;

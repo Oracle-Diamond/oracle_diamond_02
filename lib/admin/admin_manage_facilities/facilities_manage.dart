@@ -55,7 +55,7 @@ class FacilitiesManagePage extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(30),
                       bottomRight: Radius.circular(30)),
-                  color: Colors.orangeAccent.shade700,
+                  color: Colors.redAccent.shade700,
                 ),
                 width: double.infinity,
               ),
@@ -64,7 +64,7 @@ class FacilitiesManagePage extends StatelessWidget {
                 width: 299,
                 height: 279,
                 decoration: BoxDecoration(
-                    color: Colors.orangeAccent.shade400,
+                    color: Colors.redAccent.shade400,
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(160),
                         bottomLeft: Radius.circular(290),

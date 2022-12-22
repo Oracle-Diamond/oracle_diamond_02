@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/detail.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -21,22 +23,10 @@ class _EditProfilePageState extends State<EditProfilePage> {
             color: Colors.green,
           ),
           onPressed: () {
-            Navigator.of(context).push(MaterialPageRoute(
-                builder: (BuildContext context) => const AdminPage()));
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => HomePage()));
           },
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(
-              Icons.settings,
-              color: Colors.green,
-            ),
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (BuildContext context) => const AdminPage()));
-            },
-          ),
-        ],
       ),
       body: Container(
         padding: const EdgeInsets.only(left: 16, top: 25, right: 16),
@@ -47,7 +37,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           child: ListView(
             children: [
               const Text(
-                "Facilities Manage",
+                "Facilities Management",
                 style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
               ),
               const SizedBox(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/admin/network_image.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/network_image.dart';
 
 class FacilitiesManagePage extends StatelessWidget {
   const FacilitiesManagePage({Key? key}) : super(key: key);

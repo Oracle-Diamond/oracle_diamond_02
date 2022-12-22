@@ -1,4 +1,5 @@
 import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
@@ -196,63 +197,71 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
-                child: Container(
-                  width: double.infinity,
-                  height: 100,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryBtnText,
-                    boxShadow: [
-                      BoxShadow(
-                        blurRadius: 5,
-                        color: Color(0x99000000),
-                        offset: Offset(1, 3),
-                      )
-                    ],
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Expanded(
-                            child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12, 12, 12, 12),
-                              child: Image.asset(
-                                'assets/images/5073718.png',
-                                width: 85,
-                                height: 85,
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        child: Row(
+                child: InkWell(
+                  onTap: () async {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => EditProfilePage(),
+                    ));
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x99000000),
+                          offset: Offset(1, 3),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Expanded(
-                              child: Text(
-                                'Maintenance Scheduling',
-                                textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).bodyText1,
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12, 12, 12, 12),
+                                child: Image.asset(
+                                  'assets/images/5073718.png',
+                                  width: 85,
+                                  height: 85,
+                                  fit: BoxFit.contain,
+                                ),
                               ),
                             ),
                           ],
                         ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
-                        child: Icon(
-                          Icons.arrow_forward_ios_rounded,
-                          color: Colors.black,
-                          size: 24,
+                        Expanded(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Maintenance Scheduling',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding:
+                              EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                          child: Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.black,
+                            size: 24,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

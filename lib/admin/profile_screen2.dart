@@ -1,4 +1,6 @@
 import 'package:oracle_diamond_02/admin/admin_login.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_detail.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
@@ -125,8 +127,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 child: InkWell(
                   onTap: () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => FacilitiesManagePage(),
-                    ));
+                        builder: (context) => FacilitiesAdmin()));
                   },
                   child: Container(
                     width: double.infinity,

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/main.dart';
-import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});

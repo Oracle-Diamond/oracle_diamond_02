@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/user/booking_calendar.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
 import 'package:oracle_diamond_02/user/user_select.dart';
 
@@ -104,13 +104,13 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 5.0,
           ),
-          const Text("User Login",
+          Text("User Login",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              )),
+              style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  color: Colors.black,
+                  letterSpacing: 0.168,
+                  fontWeight: FontWeight.w500)),
           const SizedBox(
             height: 25.0,
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_detail.dart';
 import 'package:oracle_diamond_02/assets.dart';
@@ -50,9 +51,14 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePageWidget()));
+                        },
                         icon: Icon(
-                          Icons.menu,
+                          Icons.arrow_back,
                           color: Colors.white,
                         ),
                       ),
@@ -63,7 +69,7 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
-                          Icons.filter_list,
+                          Icons.menu,
                           color: Colors.white,
                         ),
                       ),

@@ -134,7 +134,7 @@ class ProfileUser extends StatelessWidget {
                 horizontal: 32.0,
               ),
               child: RawMaterialButton(
-                fillColor: const Color.fromARGB(255, 206, 84, 84),
+                fillColor: Colors.red[900],
                 elevation: 0,
                 padding: const EdgeInsets.all(24.0),
                 shape: RoundedRectangleBorder(

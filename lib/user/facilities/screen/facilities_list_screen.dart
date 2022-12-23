@@ -13,7 +13,7 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
   final TextStyle dropdownMenuItem =
       TextStyle(color: Colors.black, fontSize: 18);
 
-  final primary = Color.fromARGB(255, 206, 84, 84);
+  final primary = Colors.red[900];
   final secondary = Color(0xfff29a94);
 
   @override

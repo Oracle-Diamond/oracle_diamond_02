@@ -33,66 +33,62 @@ class _UserSelectState extends State<UserSelect> {
             height: 25.0,
           ),
           Container(
-            margin: EdgeInsets.all(16),
-            height: 225,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.red[400],
-            ),
-            width: double.infinity,
-            child: ElevatedButton(
-                child: Text(
-                  "Admin",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AdminPage(),
-                    ),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(255, 239, 83, 80)),
-                )),
+            height: 0.6,
+            width: 350.0,
+            color: Colors.grey,
           ),
-          Container(
-            margin: EdgeInsets.all(16),
-            height: 225,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: Colors.red[400],
-            ),
-            width: double.infinity,
-            child: ElevatedButton(
-                child: Text(
-                  "Student/Staff",
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 22.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => HomePage(),
+          const SizedBox(
+            height: 25.0,
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => AdminPage()));
+            },
+            child: Container(
+              margin: EdgeInsets.all(16),
+              height: 225,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.red[900],
+              ),
+              width: double.infinity,
+              child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Admin",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
                     ),
-                  );
-                },
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(255, 239, 83, 80)),
-                )),
+                  )),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => HomePage()));
+            },
+            child: Container(
+              margin: EdgeInsets.all(16),
+              height: 225,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: Colors.red[900],
+              ),
+              width: double.infinity,
+              child: Align(
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Student/Staff",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 22.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
+            ),
           ),
         ],
       ),

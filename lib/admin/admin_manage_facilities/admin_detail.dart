@@ -50,6 +50,7 @@ class FacilitiesAdminDetails extends StatelessWidget {
                       child: CircleAvatar(
                         radius: 75.0,
                         backgroundImage: NetworkImage(facilities.ImageUrl),
+                        child: Icon(Icons.camera_alt),
                       ),
                     ),
                     SizedBox(width: 20.0),

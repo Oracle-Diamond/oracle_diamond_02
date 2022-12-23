@@ -25,7 +25,23 @@ class _UserSelectState extends State<UserSelect> {
           ),
           child: ListView(
             children: [
-              SizedBox(height: 400),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 40, vertical: 50),
+                child: Column(
+                  children: [
+                    Padding(padding: EdgeInsets.only()),
+                    Center(
+                      child: Image.network(
+                        'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
+                        height: 150,
+                        width: 290,
+                        alignment: const Alignment(0, 0.5),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 200),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -154,93 +155,123 @@ class FacilitiesAdminDetails extends StatelessWidget {
                 ),
                 SizedBox(height: 20, width: 20),
                 Row(children: <Widget>[
-                  Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red,
-                      ),
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Court 1",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          )),
-                      width: 100.0,
-                      height: 100.0),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FacilitiesAdmin()));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.red,
+                          ),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Court 1",
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              )),
+                          width: 100.0,
+                          height: 100.0)),
                   SizedBox(height: 10, width: 35),
-                  Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red,
-                      ),
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Court 2",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          )),
-                      width: 100.0,
-                      height: 100.0),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FacilitiesAdmin()));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.red,
+                          ),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Court 2",
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              )),
+                          width: 100.0,
+                          height: 100.0)),
                   SizedBox(height: 10, width: 35),
-                  Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red,
-                      ),
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Court 3",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          )),
-                      width: 100.0,
-                      height: 100.0)
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FacilitiesAdmin()));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.red,
+                          ),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Court 3",
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              )),
+                          width: 100.0,
+                          height: 100.0))
                 ]),
                 SizedBox(
                   height: 20,
                 ),
                 Row(children: <Widget>[
-                  Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red,
-                      ),
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Court 4",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          )),
-                      width: 100.0,
-                      height: 100.0),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FacilitiesAdmin()));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.red,
+                          ),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Court 4",
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              )),
+                          width: 100.0,
+                          height: 100.0)),
                   SizedBox(height: 10, width: 35),
-                  Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red,
-                      ),
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Court 5",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          )),
-                      width: 100.0,
-                      height: 100.0),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FacilitiesAdmin()));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.red,
+                          ),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Court 5",
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              )),
+                          width: 100.0,
+                          height: 100.0)),
                   SizedBox(height: 10, width: 35),
-                  Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        color: Colors.red,
-                      ),
-                      child: Align(
-                          alignment: Alignment.center,
-                          child: Text(
-                            "Court 6",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          )),
-                      width: 100.0,
-                      height: 100.0)
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => FacilitiesAdmin()));
+                      },
+                      child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.red,
+                          ),
+                          child: Align(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "Court 6",
+                                style: TextStyle(fontWeight: FontWeight.normal),
+                              )),
+                          width: 100.0,
+                          height: 100.0))
                 ]),
               ],
             ),

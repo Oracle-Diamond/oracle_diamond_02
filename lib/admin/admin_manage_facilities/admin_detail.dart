@@ -17,7 +17,7 @@ class FacilitiesAdminDetails extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios_new,
-            color: Colors.black,
+            color: Colors.white,
           ),
           onPressed: () {
             Navigator.of(context).push(

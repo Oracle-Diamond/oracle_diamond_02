@@ -79,7 +79,10 @@ class ProfileUser extends StatelessWidget {
                                   color: Colors.white,
                                   fontSize: 15.0,
                                 ),
-                              )
+                              ),
+                              SizedBox(
+                                height: 15.0,
+                              ),
                             ]),
                           ),
                         ),

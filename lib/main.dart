@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/SportBooking.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:oracle_diamond_02/booking_calendar.dart';
+import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
@@ -53,7 +54,7 @@ class _HomePageState extends State<HomePage> {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
-//---------------------afiq
+
 //Hi
   @override
   Widget build(BuildContext context) {
@@ -214,15 +215,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
 CollectionReference bookings = FirebaseFirestore.instance.collection('bookings');
 
-// *1 replacement
-  ///This is how can you get the reference to your data from the collection, and serialize the data with the help of the Firestore [//withConverter]. This function would be in your repository.
   // CollectionReference<SportBooking> getBookingStream() {
-  CollectionReference<SportBooking> getBookingStream({required String placeId}) {
-    return bookings.doc().collection('bookings').withConverter<SportBooking>(
-          fromFirestore: (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
-          toFirestore: (snapshots, _) => snapshots.toJson(),
-        );
-  }
+
+    //commented 260124H Dec 2022
+  // CollectionReference<SportBooking> getBookingStream({required String placeId}) {
+  //   return bookings.doc().collection('bookings').withConverter<SportBooking>(
+  //         fromFirestore: (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
+  //         toFirestore: (snapshots, _) => snapshots.toJson(),
+  //       );
+  // }
 
 
 
@@ -232,10 +233,13 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
         fromFirestore:  (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
           toFirestore: (snapshots, _) => snapshots.toJson(),)
         
+        
         .where('bookingStart', isGreaterThanOrEqualTo: start)
         .where('bookingStart', isLessThanOrEqualTo: end)
         .snapshots();
+        
   }
+
 
   ///How you actually get the stream of data from Firestore with the help of the previous function
   ///note that this query filters are for my data structure, you need to adjust it to your solution.
@@ -284,6 +288,7 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
         .add(newBooking.toJson())
         .then((value) => print("Booking Added"))
         .catchError((error) => print("Failed to add booking: $error"));
+        
     }
   
 
@@ -389,14 +394,20 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
               convertStreamResultToDateTimeRanges: convertStreamResultMock,
               // getBookingStream: getBookingStreamMock,
               // uploadBooking: uploadBookingMock,
-              getBookingStream: getBookingStreamFirebase,   //direction not correct
+              getBookingStream: getBookingStreamFirebase,
               uploadBooking: uploadBookingFirebase,
-              pauseSlots: generatePauseSlots(),
-              pauseSlotText: 'LUNCH',
-              hideBreakTime: false,
+              
+              
+
+              // pauseSlots: generatePauseSlots(),
+              // pauseSlotText: 'LUNCH',
+              // hideBreakTime: false,
               loadingWidget: const Text('Fetching data...'),
-              uploadingWidget: const CircularProgressIndicator(),
-              locale: 'en_US',    //myedit
+
+              // uploadingWidget: const CircularProgressIndicator(),
+              uploadingWidget: const Text('Booking Your Court'),
+              
+              //locale: 'en_US',    //myedit
               startingDayOfWeek: StartingDayOfWeek.tuesday,
               disabledDays: const [6, 7],
             ),

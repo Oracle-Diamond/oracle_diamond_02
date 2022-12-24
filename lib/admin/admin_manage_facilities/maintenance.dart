@@ -13,12 +13,12 @@ class _EditProfilePageState extends State<EditProfilePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        backgroundColor: Color.fromARGB(255, 165, 15, 7),
         elevation: 1,
         leading: IconButton(
           icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.green,
+            Icons.arrow_back_ios_new,
+            color: Colors.black,
           ),
           onPressed: () {
             Navigator.of(context)

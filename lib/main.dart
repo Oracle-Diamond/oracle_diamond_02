@@ -216,12 +216,50 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
 
 // *1 replacement
   ///This is how can you get the reference to your data from the collection, and serialize the data with the help of the Firestore [//withConverter]. This function would be in your repository.
-  CollectionReference<SportBooking> getBookingStream() {
+  // CollectionReference<SportBooking> getBookingStream() {
+  CollectionReference<SportBooking> getBookingStream({required String placeId}) {
     return bookings.doc().collection('bookings').withConverter<SportBooking>(
           fromFirestore: (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
           toFirestore: (snapshots, _) => snapshots.toJson(),
         );
   }
+
+
+
+  Stream<QuerySnapshot<SportBooking>> getBookingStreamFirebase(
+    {required DateTime end, required DateTime start}) {
+       return FirebaseFirestore.instance.collection('bookings').withConverter<SportBooking>(
+        fromFirestore:  (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
+          toFirestore: (snapshots, _) => snapshots.toJson(),)
+        
+        .where('bookingStart', isGreaterThanOrEqualTo: start)
+        .where('bookingStart', isLessThanOrEqualTo: end)
+        .snapshots();
+  }
+
+  ///How you actually get the stream of data from Firestore with the help of the previous function
+  ///note that this query filters are for my data structure, you need to adjust it to your solution.
+  // Stream<dynamic>? getBookingStreamFirebase(
+  //   {required DateTime end, required DateTime start}) {
+  //      return ApiRepository.
+  //                       .getBookingStream(placeId: 'YOUR_DOC_ID')
+  //                       .where('bookingStart', isGreaterThanOrEqualTo: start)
+  //                       .where('bookingStart', isLessThanOrEqualTo: end)
+  //                       .snapshots(),
+  // }
+
+
+  // Stream<dynamic>? getBookingStreamFirebase(
+  //   {required DateTime end, required DateTime start}) {
+  //      return getBookingStream().
+  //                       // .getBookingStream(placeId: 'YOUR_DOC_ID')
+  //                       .where('bookingStart', isGreaterThanOrEqualTo: start)
+  //                       .where('bookingStart', isLessThanOrEqualTo: end)
+  //                       .snapshots();
+  // }
+
+  
+
 
   ///After you fetched the data from firestore, we only need to have a list of datetimes from the bookings:
   List<DateTimeRange> convertStreamResultFirebase(
@@ -239,9 +277,10 @@ CollectionReference bookings = FirebaseFirestore.instance.collection('bookings')
   ///This is how you upload data to Firestore
   Future<dynamic> uploadBookingFirebase(
     {required BookingService newBooking}) async {
-    await bookings
-        .doc() 
-        //.collection('bookings')
+    // await bookings
+    return bookings
+        // .doc() 
+        // .collection('bookings')
         .add(newBooking.toJson())
         .then((value) => print("Booking Added"))
         .catchError((error) => print("Failed to add booking: $error"));
@@ -338,11 +377,11 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     return MaterialApp(
         title: 'UTM Court Booking',
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.red,  //afiq edit
         ),
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('UTM Court Booking'),
+            title: const Text('UTM Court Booking'), //afiq edit
           ),
           body: Center(
             child: BookingCalendar(
@@ -350,7 +389,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
               convertStreamResultToDateTimeRanges: convertStreamResultMock,
               // getBookingStream: getBookingStreamMock,
               // uploadBooking: uploadBookingMock,
-              getBookingStream: getBookingStreamMock,   //direction not correct
+              getBookingStream: getBookingStreamFirebase,   //direction not correct
               uploadBooking: uploadBookingFirebase,
               pauseSlots: generatePauseSlots(),
               pauseSlotText: 'LUNCH',

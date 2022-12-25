@@ -24,9 +24,9 @@ void main() async {
 
   //runApp(const MyApp());
 
-  initializeDateFormatting()
-      .then((_) => runApp(const BookingCalendarDemoApp()));
+  initializeDateFormatting().then((_) => (const BookingCalendarDemoApp()));
 
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -55,7 +55,6 @@ class _HomePageState extends State<HomePage> {
     return firebaseApp;
   }
 
-//Hi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -209,96 +208,82 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 }
 
-
-
 //mynew edit - start
 
-CollectionReference bookings = FirebaseFirestore.instance.collection('bookings');
+CollectionReference bookings =
+    FirebaseFirestore.instance.collection('bookings');
 
-  // CollectionReference<SportBooking> getBookingStream() {
+// CollectionReference<SportBooking> getBookingStream() {
 
-    //commented 260124H Dec 2022
-  // CollectionReference<SportBooking> getBookingStream({required String placeId}) {
-  //   return bookings.doc().collection('bookings').withConverter<SportBooking>(
-  //         fromFirestore: (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
-  //         toFirestore: (snapshots, _) => snapshots.toJson(),
-  //       );
-  // }
+//commented 260124H Dec 2022
+// CollectionReference<SportBooking> getBookingStream({required String placeId}) {
+//   return bookings.doc().collection('bookings').withConverter<SportBooking>(
+//         fromFirestore: (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
+//         toFirestore: (snapshots, _) => snapshots.toJson(),
+//       );
+// }
 
-
-
-  Stream<QuerySnapshot<SportBooking>> getBookingStreamFirebase(
+Stream<QuerySnapshot<SportBooking>> getBookingStreamFirebase(
     {required DateTime end, required DateTime start}) {
-       return FirebaseFirestore.instance.collection('bookings').withConverter<SportBooking>(
-        fromFirestore:  (snapshots, _) => SportBooking.fromJson(snapshots.data()!),
-          toFirestore: (snapshots, _) => snapshots.toJson(),)
-        
-        
-        .where('bookingStart', isGreaterThanOrEqualTo: start)
-        .where('bookingStart', isLessThanOrEqualTo: end)
-        .snapshots();
-        
-  }
+  return FirebaseFirestore.instance
+      .collection('bookings')
+      .withConverter<SportBooking>(
+        fromFirestore: (snapshots, _) =>
+            SportBooking.fromJson(snapshots.data()!),
+        toFirestore: (snapshots, _) => snapshots.toJson(),
+      )
+      .where('bookingStart', isGreaterThanOrEqualTo: start)
+      .where('bookingStart', isLessThanOrEqualTo: end)
+      .snapshots();
+}
 
+///How you actually get the stream of data from Firestore with the help of the previous function
+///note that this query filters are for my data structure, you need to adjust it to your solution.
+// Stream<dynamic>? getBookingStreamFirebase(
+//   {required DateTime end, required DateTime start}) {
+//      return ApiRepository.
+//                       .getBookingStream(placeId: 'YOUR_DOC_ID')
+//                       .where('bookingStart', isGreaterThanOrEqualTo: start)
+//                       .where('bookingStart', isLessThanOrEqualTo: end)
+//                       .snapshots(),
+// }
 
-  ///How you actually get the stream of data from Firestore with the help of the previous function
-  ///note that this query filters are for my data structure, you need to adjust it to your solution.
-  // Stream<dynamic>? getBookingStreamFirebase(
-  //   {required DateTime end, required DateTime start}) {
-  //      return ApiRepository.
-  //                       .getBookingStream(placeId: 'YOUR_DOC_ID')
-  //                       .where('bookingStart', isGreaterThanOrEqualTo: start)
-  //                       .where('bookingStart', isLessThanOrEqualTo: end)
-  //                       .snapshots(),
-  // }
+// Stream<dynamic>? getBookingStreamFirebase(
+//   {required DateTime end, required DateTime start}) {
+//      return getBookingStream().
+//                       // .getBookingStream(placeId: 'YOUR_DOC_ID')
+//                       .where('bookingStart', isGreaterThanOrEqualTo: start)
+//                       .where('bookingStart', isLessThanOrEqualTo: end)
+//                       .snapshots();
+// }
 
-
-  // Stream<dynamic>? getBookingStreamFirebase(
-  //   {required DateTime end, required DateTime start}) {
-  //      return getBookingStream().
-  //                       // .getBookingStream(placeId: 'YOUR_DOC_ID')
-  //                       .where('bookingStart', isGreaterThanOrEqualTo: start)
-  //                       .where('bookingStart', isLessThanOrEqualTo: end)
-  //                       .snapshots();
-  // }
-
-  
-
-
-  ///After you fetched the data from firestore, we only need to have a list of datetimes from the bookings:
-  List<DateTimeRange> convertStreamResultFirebase(
+///After you fetched the data from firestore, we only need to have a list of datetimes from the bookings:
+List<DateTimeRange> convertStreamResultFirebase(
     {required dynamic streamResult}) {
-    ///here you can parse the streamresult and convert to [List<DateTimeRange>]
-    ///Note that this is dynamic, so you need to know what properties are available on your result, in our case the [SportBooking] has bookingStart and bookingEnd property
-      List<DateTimeRange> converted = [];
-      for (var i = 0; i < streamResult.size; i++) {
-        final item = streamResult.docs[i].data();
-        converted.add(DateTimeRange(start: (item.bookingStart!), end: (item.bookingEnd!)));
-      }
+  ///here you can parse the streamresult and convert to [List<DateTimeRange>]
+  ///Note that this is dynamic, so you need to know what properties are available on your result, in our case the [SportBooking] has bookingStart and bookingEnd property
+  List<DateTimeRange> converted = [];
+  for (var i = 0; i < streamResult.size; i++) {
+    final item = streamResult.docs[i].data();
+    converted.add(
+        DateTimeRange(start: (item.bookingStart!), end: (item.bookingEnd!)));
+  }
   return converted;
 }
 
-  ///This is how you upload data to Firestore
-  Future<dynamic> uploadBookingFirebase(
+///This is how you upload data to Firestore
+Future<dynamic> uploadBookingFirebase(
     {required BookingService newBooking}) async {
-    // await bookings
-    return bookings
-        // .doc() 
-        // .collection('bookings')
-        .add(newBooking.toJson())
-        .then((value) => print("Booking Added"))
-        .catchError((error) => print("Failed to add booking: $error"));
-        
-    }
-  
-
-
-
+  // await bookings
+  return bookings
+      // .doc()
+      // .collection('bookings')
+      .add(newBooking.toJson())
+      .then((value) => print("Booking Added"))
+      .catchError((error) => print("Failed to add booking: $error"));
+}
 
 //mynew edit end
-
-
-
 
 //feature: booking calendar - start
 class BookingCalendarDemoApp extends StatefulWidget {
@@ -319,8 +304,8 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     // DateTime.now().endOfDay
     mockBookingService = BookingService(
         serviceName: 'Booking Court',
-        // serviceDuration: 30,  
-        serviceDuration: 60,    //myedit
+        // serviceDuration: 30,
+        serviceDuration: 60, //myedit
         bookingEnd: DateTime(now.year, now.month, now.day, 18, 0),
         bookingStart: DateTime(now.year, now.month, now.day, 8, 0));
   }
@@ -331,8 +316,6 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     return Stream.value([]);
   }
 
-
-
   //not for firebase?
   Future<dynamic> uploadBookingMock(
       {required BookingService newBooking}) async {
@@ -341,12 +324,6 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
         start: newBooking.bookingStart, end: newBooking.bookingEnd));
     print('${newBooking.toJson()} has been uploaded');
   }
-
-
-  
-
-
-
 
   List<DateTimeRange> converted = [];
 
@@ -382,7 +359,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
     return MaterialApp(
         title: 'UTM Court Booking',
         theme: ThemeData(
-          primarySwatch: Colors.red,  //afiq edit
+          primarySwatch: Colors.red, //afiq edit
         ),
         home: Scaffold(
           appBar: AppBar(
@@ -396,8 +373,6 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
               // uploadBooking: uploadBookingMock,
               getBookingStream: getBookingStreamFirebase,
               uploadBooking: uploadBookingFirebase,
-              
-              
 
               // pauseSlots: generatePauseSlots(),
               // pauseSlotText: 'LUNCH',
@@ -406,7 +381,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
 
               // uploadingWidget: const CircularProgressIndicator(),
               uploadingWidget: const Text('Booking Your Court'),
-              
+
               //locale: 'en_US',    //myedit
               startingDayOfWeek: StartingDayOfWeek.tuesday,
               disabledDays: const [6, 7],
@@ -416,12 +391,3 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
   }
 }
 //feature: booking calendar - end
-
-
-
-
-
-
-
-
-

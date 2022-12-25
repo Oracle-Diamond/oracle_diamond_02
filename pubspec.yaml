@@ -34,6 +34,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  auto_size_text: 3.0.0
+  cached_network_image: 3.2.1
+  flutter_animate: 1.0.0
+  flutter_cache_manager: 3.3.0
+  font_awesome_flutter: 10.1.0
+  from_css_color: 2.0.0
+  google_fonts: 3.0.1
+  json_path: 0.4.1
+  page_transition: 2.0.4
+  shared_preferences: 2.0.15
+  sqflite: 2.2.0+2
+  timeago: 3.2.2
+  url_launcher: 6.1.5
+  flow_builder: 0.0.9
+  latlng: any
+  flutter_native_splash:
   #firebase_core: ^2.1.1
 
   #afiq
@@ -52,6 +68,8 @@ dependencies:
 
 dev_dependencies:
   icons_launcher: ^1.1.7
+  flare_flutter: ^3.0.1
+  lottie: ^2.1.0
 
   #afiq
   build_runner: ^2.1.7
@@ -84,6 +102,10 @@ flutter_icons:
 flutter:
   assets:
     - assets/images/
+    - assets/videos/
+    - assets/audios/
+    - assets/rive_animations/
+    - assets/pdfs/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

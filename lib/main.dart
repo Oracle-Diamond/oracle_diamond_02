@@ -3,13 +3,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/SportBooking.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:oracle_diamond_02/booking_calendar.dart';
+import 'package:oracle_diamond_02/user/booking_calendar.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
-import 'package:oracle_diamond_02/screen/facilities_list_screen.dart';
-import 'package:oracle_diamond_02/user_select.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
+import 'package:oracle_diamond_02/user/user_select.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); //firebase line
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: UserSelect(),
       debugShowCheckedModeBanner: false,
     );
@@ -116,13 +117,13 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 5.0,
           ),
-          const Text("User Login",
+          Text("User Login",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              )),
+              style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  color: Colors.black,
+                  letterSpacing: 0.168,
+                  fontWeight: FontWeight.w500)),
           const SizedBox(
             height: 25.0,
           ),
@@ -180,7 +181,7 @@ class _LoginScreenState extends State<LoginScreen> {
           Container(
             width: double.infinity,
             child: RawMaterialButton(
-              fillColor: const Color.fromARGB(255, 206, 84, 84),
+              fillColor: Colors.red[900],
               elevation: 0.0,
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               shape: RoundedRectangleBorder(
@@ -192,8 +193,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => FacilitiesListScreen()));
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => ProfileUser()));
                 }
               },
               child: const Text("Login",

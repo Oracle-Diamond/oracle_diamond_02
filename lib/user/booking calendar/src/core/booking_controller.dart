@@ -1,10 +1,5 @@
-<<<<<<< HEAD:lib/src/core/booking_controller.dart
 import 'package:oracle_diamond_02/src/model/booking_service.dart';
 import 'package:oracle_diamond_02/src/util/BookingUtil.dart';
-=======
-import 'package:oracle_diamond_02/user/booking%20calendar/src/model/booking_service.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/util/booking_util.dart';
->>>>>>> zul-edit:lib/user/booking calendar/src/core/booking_controller.dart
 
 import 'package:flutter/material.dart';
 

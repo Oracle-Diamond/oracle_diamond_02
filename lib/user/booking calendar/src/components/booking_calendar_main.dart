@@ -1,23 +1,18 @@
-import 'package:oracle_diamond_02/user/booking%20calendar/src/components/booking_dialog.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/components/booking_explanation.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/components/booking_slot.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/components/common_button.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/components/common_card.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/core/booking_controller.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/model/booking_service.dart';
-import 'package:oracle_diamond_02/user/booking%20calendar/src/model/enums.dart'
-    as bc;
+import 'package:oracle_diamond_02/src/components/booking_dialog.dart';
+import 'package:oracle_diamond_02/src/components/booking_explanation.dart';
+import 'package:oracle_diamond_02/src/components/booking_slot.dart';
+import 'package:oracle_diamond_02/src/components/common_button.dart';
+import 'package:oracle_diamond_02/src/components/common_card.dart';
+import 'package:oracle_diamond_02/src/core/booking_controller.dart';
+import 'package:oracle_diamond_02/src/model/booking_service.dart';
+import 'package:oracle_diamond_02/src/model/enums.dart' as bc;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:table_calendar/table_calendar.dart' as tc
     show StartingDayOfWeek;
-<<<<<<< HEAD:lib/src/components/booking_calendar_main.dart
 import 'package:oracle_diamond_02/src/util/BookingUtil.dart';
-=======
-import 'package:oracle_diamond_02/user/booking%20calendar/src/util/booking_util.dart';
->>>>>>> zul-edit:lib/user/booking calendar/src/components/booking_calendar_main.dart
 
 class BookingCalendarMain extends StatefulWidget {
   const BookingCalendarMain({

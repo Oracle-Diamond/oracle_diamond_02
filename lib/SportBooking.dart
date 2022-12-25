@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
 // import 'package:sport.bp/util/app_util.dart';
-import 'package:oracle_diamond_02/src/util/BookingUtil.dart';
+import 'package:oracle_diamond_02/user/booking calendar/src/util/BookingUtil.dart';
 part 'SportBooking.g.dart';
 
 @JsonSerializable(explicitToJson: true)
@@ -24,10 +24,10 @@ class SportBooking {
   }
 
   // @JsonKey(fromJson: AppUtil.timeStampToDateTime, toJson: AppUtil.dateTimeToTimeStamp)
-  @JsonKey (fromJson: timeStampToDateTime, toJson: dateTimeToTimeStamp)
+  @JsonKey(fromJson: timeStampToDateTime, toJson: dateTimeToTimeStamp)
   final DateTime? bookingStart;
   // @JsonKey(fromJson: AppUtil.timeStampToDateTime, toJson: AppUtil.dateTimeToTimeStamp)
-  @JsonKey (fromJson: timeStampToDateTime, toJson: dateTimeToTimeStamp)
+  @JsonKey(fromJson: timeStampToDateTime, toJson: dateTimeToTimeStamp)
   final DateTime? bookingEnd;
   final String? email;
   final String? phoneNumber;
@@ -48,7 +48,8 @@ class SportBooking {
 
   /// Connect the generated [//_$SportBookingFromJson] function to the `fromJson`
   /// factory.
-  factory SportBooking.fromJson(Map<String, dynamic> json) => _$SportBookingFromJson(json);
+  factory SportBooking.fromJson(Map<String, dynamic> json) =>
+      _$SportBookingFromJson(json);
 
   /// Connect the generated [//_$SportBookingToJson] function to the `toJson` method.
   Map<String, dynamic> toJson() => _$SportBookingToJson(this);

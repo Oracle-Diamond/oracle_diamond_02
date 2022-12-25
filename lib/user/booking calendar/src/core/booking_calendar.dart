@@ -1,7 +1,7 @@
-import 'package:oracle_diamond_02/src/components/booking_calendar_main.dart';
-import 'package:oracle_diamond_02/src/core/booking_controller.dart';
-import 'package:oracle_diamond_02/src/model/booking_service.dart';
-import 'package:oracle_diamond_02/src/model/enums.dart';
+import 'package:oracle_diamond_02/user/booking calendar/src/components/booking_calendar_main.dart';
+import 'package:oracle_diamond_02/user/booking calendar/src/core/booking_controller.dart';
+import 'package:oracle_diamond_02/user/booking calendar/src/model/booking_service.dart';
+import 'package:oracle_diamond_02/user/booking calendar/src/model/enums.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

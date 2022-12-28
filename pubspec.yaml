@@ -102,10 +102,10 @@ flutter_icons:
 flutter:
   assets:
     - assets/images/
-    - assets/videos/
-    - assets/audios/
-    - assets/rive_animations/
-    - assets/pdfs/
+    # - assets/videos/
+    # - assets/audios/
+    # - assets/rive_animations/
+    # - assets/pdfs/
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

@@ -3,6 +3,7 @@ import 'package:oracle_diamond_02/main.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/rounded_container.dart';
 import 'package:oracle_diamond_02/assets.dart';
+import 'package:oracle_diamond_02/user/reservation/home.dart';
 import 'package:oracle_diamond_02/user/user_select.dart';
 
 class ProfileUser extends StatelessWidget {
@@ -110,7 +111,11 @@ class ProfileUser extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => ReservationPage(),
+                ));
+              },
               child: RoundedContainer(
                 margin: const EdgeInsets.all(8.0),
                 padding: const EdgeInsets.all(8.0),

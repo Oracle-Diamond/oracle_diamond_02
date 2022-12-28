@@ -54,14 +54,19 @@ class _ReservationPageState extends State<ReservationPage> {
                   child: ListView(
                 children: <Widget>[
                   buildItem(
-                      "Indoor Game",
+                      "Badminton Court Indoor",
                       "UTM SPORT HALL",
                       "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media",
                       4.5),
                   buildItem(
-                      "Outdoor Game",
+                      "Tennis Court Indoor",
                       "UTM SPORT HALL",
                       "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media",
+                      4.5),
+                  buildItem(
+                      "Futsal Court Indoor",
+                      "UTM SPORT HALL",
+                      "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/futsal.jpg?alt=media",
                       4.5),
                 ],
               )),
@@ -87,7 +92,7 @@ class _ReservationPageState extends State<ReservationPage> {
             Hero(
               tag: url,
               child: Container(
-                height: 100,
+                height: 60,
                 decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(url),

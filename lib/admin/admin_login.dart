@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_old.txt';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage.dart';
 import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:oracle_diamond_02/admin/profile_screen2.dart';
@@ -120,8 +120,8 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 25.0,
           ),
-          Image.network(
-            'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
+          Image.asset(
+            'assets/images/utmlogo.jpg',
             height: 150,
             width: 290,
             alignment: const Alignment(0, 0.5),

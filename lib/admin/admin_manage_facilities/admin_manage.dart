@@ -34,7 +34,7 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
                   child: ListView.builder(
                       itemCount: facilitiesList.length,
                       itemBuilder: (BuildContext context, int index) {
-                        Facilities facilities = facilitiesList[index];
+                        facilitiesList[index];
                         return buildList(context, index);
                       })),
               Container(

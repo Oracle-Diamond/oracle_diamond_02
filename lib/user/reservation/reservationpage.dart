@@ -64,7 +64,7 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                 ],
               ),
               Container(
-                width: 400.3,
+                width: 410,
                 height: 50,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -99,7 +99,7 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                 ),
               ),
               Container(
-                width: 400,
+                width: 420,
                 height: 40,
                 decoration: BoxDecoration(
                   color: Color(0xFFE61A26),
@@ -117,16 +117,12 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                   ),
                 ),
               ),
-              Container(
-                width: 402.2,
-                height: 29.1,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                ),
+              SizedBox(
+                height: 10,
               ),
               Container(
                 width: 450,
-                height: 350,
+                height: 420,
                 decoration: BoxDecoration(
                   color: Color(0xFFCD4449),
                 ),

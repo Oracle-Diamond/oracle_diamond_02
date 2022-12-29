@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:oracle_diamond_02/admin/oval-right-clipper.dart';
 import 'package:oracle_diamond_02/assets.dart';
+import 'package:oracle_diamond_02/user/user_select.dart';
 
 class HomePageWidgetPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
@@ -16,7 +17,7 @@ class HomePageWidgetPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _key,
-      drawer: _buildDrawer(),
+      drawer: _buildDrawer(context),
       body: SingleChildScrollView(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -361,7 +362,7 @@ class HomePageWidgetPage extends StatelessWidget {
     );
   }
 
-  _buildDrawer() {
+  _buildDrawer(BuildContext context) {
     return ClipPath(
       clipper: OvalRightBorderClipper(),
       child: Drawer(
@@ -406,15 +407,33 @@ class HomePageWidgetPage extends StatelessWidget {
                     style: TextStyle(color: active, fontSize: 16.0),
                   ),
                   SizedBox(height: 30.0),
-                  _buildRow(Icons.home, "Home"),
+                  _buildRow(Icons.home, "Home", () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return UserSelect();
+                        },
+                      ),
+                    );
+                  }),
                   _buildDivider(),
-                  _buildRow(Icons.person_pin, "Your profile"),
+                  _buildRow(Icons.person_pin, "Your profile", () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return HomePageWidgetPage();
+                        },
+                      ),
+                    );
+                  }),
                   _buildDivider(),
-                  _buildRow(Icons.settings, "Settings"),
+                  _buildRow(Icons.settings, "Settings", () {}),
                   _buildDivider(),
-                  _buildRow(Icons.email, "Contact us"),
+                  _buildRow(Icons.email, "Contact us", () {}),
                   _buildDivider(),
-                  _buildRow(Icons.info_outline, "Help"),
+                  _buildRow(Icons.info_outline, "Help", () {}),
                   _buildDivider(),
                 ],
               ),
@@ -431,21 +450,26 @@ class HomePageWidgetPage extends StatelessWidget {
     );
   }
 
-  Widget _buildRow(IconData icon, String title) {
+  Widget _buildRow(IconData icon, String title, VoidCallback onTap) {
     final TextStyle tStyle = TextStyle(color: active, fontSize: 16.0);
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 8.0),
-      child: Row(children: [
-        Icon(
-          icon,
-          color: active,
+    return InkWell(
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Row(
+          children: [
+            Icon(
+              icon,
+              color: active,
+            ),
+            SizedBox(width: 10.0),
+            Text(
+              title,
+              style: tStyle,
+            ),
+          ],
         ),
-        SizedBox(width: 10.0),
-        Text(
-          title,
-          style: tStyle,
-        ),
-      ]),
+      ),
+      onTap: onTap,
     );
   }
 }

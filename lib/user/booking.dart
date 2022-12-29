@@ -153,6 +153,7 @@ class _BookingCalendarDemoAppState extends State<BookingCalendarDemoApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'UTM Court Booking',
         theme: ThemeData(
           primarySwatch: Colors.red, //afiq edit

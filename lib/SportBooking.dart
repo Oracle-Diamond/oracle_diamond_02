@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:json_annotation/json_annotation.dart';
-// import 'package:sport.bp/util/app_util.dart';
-import 'package:oracle_diamond_02/user/booking calendar/src/util/BookingUtil.dart';
 part 'SportBooking.g.dart';
 
 @JsonSerializable(explicitToJson: true)

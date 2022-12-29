@@ -1,47 +1,23 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:oracle_diamond_02/admin/profile_screen2.dart';
-import 'package:oracle_diamond_02/user/user_select.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); //firebase line
-  await Firebase.initializeApp(
-    //firebase line
-    options: DefaultFirebaseOptions.currentPlatform, //firebase line
-  ); //firebase line
-
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: UserSelect(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
-
-class AdminPage extends StatefulWidget {
-  const AdminPage({super.key});
+class HomeScreenPage extends StatefulWidget {
+  const HomeScreenPage({super.key});
 
   @override
-  State<AdminPage> createState() => _AdminPageState();
+  State<HomeScreenPage> createState() => _HomeScreenPageState();
 }
 
-class _AdminPageState extends State<AdminPage> {
+class _HomeScreenPageState extends State<HomeScreenPage> {
   Future<FirebaseApp> _initializeFirebase() async {
     FirebaseApp firebaseApp = await Firebase.initializeApp();
     return firebaseApp;
   }
 
-//Hi
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -97,17 +73,18 @@ class _LoginScreenState extends State<LoginScreen> {
       padding: const EdgeInsets.all(16.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
+        //crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
             height: 5.0,
           ),
-          const Text("Admin Login",
+          Text("User Login",
               textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 20.0,
-                fontWeight: FontWeight.bold,
-              )),
+              style: GoogleFonts.poppins(
+                  fontSize: 20,
+                  color: Colors.black,
+                  letterSpacing: 0.168,
+                  fontWeight: FontWeight.w500)),
           const SizedBox(
             height: 25.0,
           ),
@@ -135,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
-                hintText: "UTM username",
+                hintText: "UTM Username",
                 prefixIcon: Icon(Icons.mail, color: Colors.black),
                 enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(12.0)))),
@@ -177,8 +154,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => HomePageWidget()));
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => ProfileUser()));
                 }
               },
               child: const Text("Login",

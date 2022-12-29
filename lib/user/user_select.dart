@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
-import 'package:oracle_diamond_02/main.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oracle_diamond_02/user/loginscreen.dart';
 
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});
@@ -44,8 +44,8 @@ class _UserSelectState extends State<UserSelect> {
               SizedBox(height: 200),
               GestureDetector(
                 onTap: () {
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => HomeScreenPage()));
                 },
                 child: Container(
                   margin: EdgeInsets.all(16),

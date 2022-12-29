@@ -1,12 +1,9 @@
 import 'dart:io';
-
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:json_path/json_path.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:url_launcher/url_launcher.dart';
-import 'package:latlng/latlng.dart';
 
 //import 'lat_lng.dart';
 
@@ -32,7 +29,7 @@ String dateTimeFormat(String format, DateTime? dateTime) {
 Future launchURL(String url) async {
   var uri = Uri.parse(url).toString();
   try {
-    await launch(uri);
+    await (uri);
   } catch (e) {
     throw 'Could not launch $uri: $e';
   }

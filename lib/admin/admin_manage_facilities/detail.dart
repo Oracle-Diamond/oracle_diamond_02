@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
-import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class DetailPage extends StatefulWidget {
   final String url;

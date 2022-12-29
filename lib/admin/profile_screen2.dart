@@ -3,24 +3,21 @@ import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manag
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/user/user_select.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:oracle_diamond_02/admin/oval-right-clipper.dart';
+import 'package:oracle_diamond_02/assets.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
-
-  @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
-}
-
-class _HomePageWidgetState extends State<HomePageWidget> {
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+class HomePageWidgetPage extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
+  final Color primary = Color(0xFF700500);
+  final Color active = Color.fromARGB(255, 235, 235, 236);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
-      backgroundColor: Colors.white,
-      body: SafeArea(
+      key: _key,
+      drawer: _buildDrawer(),
+      body: SingleChildScrollView(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
@@ -46,22 +43,35 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       children: [
                         Expanded(
                           child: Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(15, 10, 10, 0),
-                            child: Text(
-                              'Welcome, Admin',
-                              style:
-                                  FlutterFlowTheme.of(context).title1.override(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Icon(Icons.menu),
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    _key.currentState!.openDrawer();
+                                  },
+                                ),
+                                Text(
+                                  "Welcome Admin",
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
                                         fontFamily: 'Poppins',
                                         color: Colors.white,
-                                        fontSize: 28,
+                                        fontSize: 26,
+                                        fontWeight: FontWeight.w500,
                                       ),
+                                ),
+                              ],
                             ),
                           ),
                         ),
                         Padding(
                           padding:
-                              EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                              EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
                           child: Container(
                             width: 70,
                             height: 70,
@@ -81,7 +91,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 10, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(70, 0, 0, 0),
                           child: Text(
                             'Mohd Amin bin Yaakob',
                             style:
@@ -99,14 +109,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(15, 0, 10, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(70, 0, 10, 0),
                           child: Text(
                             'Pegawai',
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
                                       color: Colors.white,
-                                      fontSize: 12,
+                                      fontSize: 14,
                                       fontWeight: FontWeight.w300,
                                     ),
                           ),
@@ -326,9 +336,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
               FFButtonWidget(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => UserSelect(),
-                  ));
+                  FirebaseAuth.instance.signOut();
                 },
                 text: 'Log Out',
                 options: FFButtonOptions(
@@ -350,6 +358,94 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           ),
         ),
       ),
+    );
+  }
+
+  _buildDrawer() {
+    return ClipPath(
+      clipper: OvalRightBorderClipper(),
+      child: Drawer(
+        child: Container(
+          padding: const EdgeInsets.only(left: 16.0, right: 40),
+          decoration: BoxDecoration(
+              color: primary, boxShadow: [BoxShadow(color: Colors.black45)]),
+          width: 300,
+          child: SafeArea(
+            child: SingleChildScrollView(
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    alignment: Alignment.centerRight,
+                    child: IconButton(
+                      icon: Icon(
+                        Icons.power_settings_new,
+                        color: active,
+                      ),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    height: 90,
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient:
+                            LinearGradient(colors: [Colors.pink, Colors.red])),
+                    child: CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(profile),
+                    ),
+                  ),
+                  SizedBox(height: 5.0),
+                  Text(
+                    "Mohd Amin bin Yaakob",
+                    style: TextStyle(color: Colors.white, fontSize: 18.0),
+                  ),
+                  Text(
+                    "Pegawai",
+                    style: TextStyle(color: active, fontSize: 16.0),
+                  ),
+                  SizedBox(height: 30.0),
+                  _buildRow(Icons.home, "Home"),
+                  _buildDivider(),
+                  _buildRow(Icons.person_pin, "Your profile"),
+                  _buildDivider(),
+                  _buildRow(Icons.settings, "Settings"),
+                  _buildDivider(),
+                  _buildRow(Icons.email, "Contact us"),
+                  _buildDivider(),
+                  _buildRow(Icons.info_outline, "Help"),
+                  _buildDivider(),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Divider _buildDivider() {
+    return Divider(
+      color: active,
+    );
+  }
+
+  Widget _buildRow(IconData icon, String title) {
+    final TextStyle tStyle = TextStyle(color: active, fontSize: 16.0);
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(children: [
+        Icon(
+          icon,
+          color: active,
+        ),
+        SizedBox(width: 10.0),
+        Text(
+          title,
+          style: tStyle,
+        ),
+      ]),
     );
   }
 }

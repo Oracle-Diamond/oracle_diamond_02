@@ -55,7 +55,7 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomePageWidget()));
+                                  builder: (context) => HomePageWidgetPage()));
                         },
                         icon: Icon(
                           Icons.arrow_back_ios_new,
@@ -69,7 +69,7 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
                       IconButton(
                         onPressed: () {},
                         icon: Icon(
-                          Icons.menu,
+                          Icons.arrow_forward_ios,
                           color: Colors.white,
                         ),
                       ),

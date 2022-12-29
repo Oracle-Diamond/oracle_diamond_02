@@ -84,7 +84,7 @@ class _ManageFacilitiesDetailsWidgetState extends State<EditProfilePage> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                HomePageWidget()));
+                                                HomePageWidgetPage()));
                                   },
                                   icon: Icon(
                                     Icons.arrow_back_ios_new,

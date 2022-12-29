@@ -1,6 +1,7 @@
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -57,8 +58,8 @@ class _ManageFacilitiesDetailsWidgetState extends State<EditProfilePage> {
                 decoration: BoxDecoration(
                   color: Color(0xFF700500),
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(45),
-                    bottomRight: Radius.circular(45),
+                    bottomLeft: Radius.circular(30),
+                    bottomRight: Radius.circular(30),
                     topLeft: Radius.circular(0),
                     topRight: Radius.circular(0),
                   ),
@@ -73,16 +74,29 @@ class _ManageFacilitiesDetailsWidgetState extends State<EditProfilePage> {
                         Expanded(
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
-                            child: Text(
-                              'Maintenance Scheduling',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Poppins',
+                                EdgeInsetsDirectional.fromSTEB(30, 50, 60, 0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: <Widget>[
+                                IconButton(
+                                  onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomePageWidget()));
+                                  },
+                                  icon: Icon(
+                                    Icons.arrow_back_ios_new,
                                     color: Colors.white,
-                                    fontSize: 28,
                                   ),
+                                ),
+                                Text(
+                                  "Scheduling Maintenance",
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 24),
+                                ),
+                              ],
                             ),
                           ),
                         ),

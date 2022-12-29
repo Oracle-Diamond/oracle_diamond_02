@@ -58,7 +58,7 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
                                   builder: (context) => HomePageWidget()));
                         },
                         icon: Icon(
-                          Icons.arrow_back,
+                          Icons.arrow_back_ios_new,
                           color: Colors.white,
                         ),
                       ),

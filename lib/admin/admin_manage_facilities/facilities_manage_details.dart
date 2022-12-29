@@ -1,9 +1,6 @@
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
-import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -13,8 +10,7 @@ class EditProfilePage extends StatefulWidget {
       _ManageFacilitiesDetailsWidgetState();
 }
 
-class _ManageFacilitiesDetailsWidgetState
-    extends State<EditProfilePage> {
+class _ManageFacilitiesDetailsWidgetState extends State<EditProfilePage> {
   TextEditingController? textController1;
   TextEditingController? textController2;
   TextEditingController? textController3;
@@ -48,8 +44,7 @@ class _ManageFacilitiesDetailsWidgetState
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: Color(0xFFCCCCCC),
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
@@ -58,7 +53,7 @@ class _ManageFacilitiesDetailsWidgetState
             children: [
               Container(
                 width: double.infinity,
-                height: 200,
+                height: 150,
                 decoration: BoxDecoration(
                   color: Color(0xFF700500),
                   borderRadius: BorderRadius.only(
@@ -78,9 +73,9 @@ class _ManageFacilitiesDetailsWidgetState
                         Expanded(
                           child: Padding(
                             padding:
-                                EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                                EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
                             child: Text(
-                              'Maintenance\nScheduling',
+                              'Maintenance Scheduling',
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/facilities_details_screen.dart';
-import 'package:oracle_diamond_02/assets.dart';
+import 'package:oracle_diamond_02/user/reservation/reservation_detail.dart';
+import 'package:oracle_diamond_02/user/reservation/reservation.dart';
 
 class ReservationRecordPage extends StatefulWidget {
   ReservationRecordPage({Key? key}) : super(key: key);
@@ -31,9 +30,9 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                   height: MediaQuery.of(context).size.height,
                   width: double.infinity,
                   child: ListView.builder(
-                      itemCount: facilitiesList.length,
+                      itemCount: reservationList.length,
                       itemBuilder: (BuildContext context, int index) {
-                        facilitiesList[index];
+                        reservationList[index];
                         return buildList(context, index);
                       })),
               Container(
@@ -85,8 +84,7 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
     return GestureDetector(
         onTap: () {
           Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) =>
-                FacilitiesDetailsScreen(facilitiesList[index]),
+            builder: (context) => ReservationDetails(reservationList[index]),
           ));
         },
         child: Container(
@@ -109,7 +107,8 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                   borderRadius: BorderRadius.circular(50),
                   border: Border.all(width: 3, color: secondary),
                   image: DecorationImage(
-                      image: NetworkImage(facilitiesListMap[index]['logoText']),
+                      image:
+                          NetworkImage(reservationListMap[index]['logoText']),
                       fit: BoxFit.fill),
                 ),
               ),
@@ -118,7 +117,7 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
-                      facilitiesListMap[index]['name'],
+                      reservationListMap[index]['name'],
                       style: TextStyle(
                           color: primary,
                           fontWeight: FontWeight.bold,
@@ -137,7 +136,7 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(facilitiesListMap[index]['location'],
+                        Text(reservationListMap[index]['location'],
                             style: TextStyle(
                                 color: primary,
                                 fontSize: 13,
@@ -157,7 +156,7 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                         SizedBox(
                           width: 5,
                         ),
-                        Text(facilitiesListMap[index]['type'],
+                        Text(reservationListMap[index]['type'],
                             style: TextStyle(
                                 color: primary,
                                 fontSize: 13,

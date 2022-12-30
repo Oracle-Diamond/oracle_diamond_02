@@ -340,7 +340,7 @@ class HomePageWidgetPage extends StatelessWidget {
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
                   Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => AdminPage()));
+                      MaterialPageRoute(builder: (context) => UserSelect()));
                 },
                 text: 'Log Out',
                 options: FFButtonOptions(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/facilities_details_screen.dart';
 import 'package:oracle_diamond_02/assets.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
 
 class FacilitiesListScreen extends StatefulWidget {
   FacilitiesListScreen({Key? key}) : super(key: key);
@@ -50,9 +51,14 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfileUser()));
+                        },
                         icon: Icon(
-                          Icons.menu,
+                          Icons.arrow_back_ios_new,
                           color: Colors.white,
                         ),
                       ),

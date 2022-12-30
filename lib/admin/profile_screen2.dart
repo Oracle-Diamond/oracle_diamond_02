@@ -1,3 +1,4 @@
+import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
@@ -338,6 +339,8 @@ class HomePageWidgetPage extends StatelessWidget {
               FFButtonWidget(
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => AdminPage()));
                 },
                 text: 'Log Out',
                 options: FFButtonOptions(
@@ -352,7 +355,6 @@ class HomePageWidgetPage extends StatelessWidget {
                     color: Colors.transparent,
                     width: 1,
                   ),
-                  //borderRadius: BorderRadius.circular(15),
                 ),
               ),
             ],

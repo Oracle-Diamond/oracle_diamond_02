@@ -97,15 +97,44 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                               color: Colors.white,
                               fontSize: 20.0,
                             )),
-                        _buildRow("Student ID"),
-                        _buildDivider(),
-                        _buildRow("Facilities Type"),
-                        _buildDivider(),
-                        _buildRow("Facilities No"),
-                        _buildDivider(),
-                        _buildRow("Time Request"),
-                        _buildDivider(),
-                        _buildRow("Status"),
+                        SizedBox(height: 30.0),
+                        _buildRow("Student ID : ", " A20EC0045"),
+                        Container(
+                          height: 0.6,
+                          width: 350.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 10.0),
+                        _buildRow("Facilities Name : ", " Badminton"),
+                        Container(
+                          height: 0.6,
+                          width: 350.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 10.0),
+                        _buildRow("Facilities Type : ", " Indoor"),
+                        Container(
+                          height: 0.6,
+                          width: 350.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 10.0),
+                        _buildRow("Facilities No : ", " Court 1"),
+                        Container(
+                          height: 0.6,
+                          width: 350.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 10.0),
+                        _buildRow("Pax : ", " 1"),
+                        Container(
+                          height: 0.6,
+                          width: 350.0,
+                          color: Colors.white,
+                        ),
+                        SizedBox(height: 10.0),
+                        _buildRow(
+                            "Time Request : ", " 27 April 2022, 16:50-18:50"),
                         _buildDivider(),
                       ],
                     ),
@@ -180,7 +209,7 @@ Divider _buildDivider() {
   );
 }
 
-Widget _buildRow(String title) {
+Widget _buildRow(String title, String text) {
   final TextStyle tStyle = TextStyle(color: active, fontSize: 16.0);
   return Container(
     padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -188,6 +217,11 @@ Widget _buildRow(String title) {
       Text(
         title,
         style: tStyle,
+      ),
+      Text(
+        text,
+        style: tStyle,
+        textAlign: TextAlign.right,
       ),
     ]),
   );

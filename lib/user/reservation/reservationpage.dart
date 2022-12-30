@@ -77,7 +77,7 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                 decoration: BoxDecoration(
                     color: primary,
                     boxShadow: [BoxShadow(color: Colors.black45)]),
-                height: 500,
+                height: 480,
                 width: double.infinity,
                 child: SafeArea(
                   child: SingleChildScrollView(
@@ -123,11 +123,38 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                   onPressed: () {
                     print('Button pressed ...');
                   },
-                  text: 'Approve',
+                  text: 'Edit Reservation',
                   options: FFButtonOptions(
                     width: 130,
                     height: 40,
-                    color: Colors.lightGreenAccent[400],
+                    color: Color.fromARGB(255, 14, 155, 21),
+                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Poppins',
+                          color: Colors.black,
+                        ),
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1,
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 10.0),
+              Container(
+                width: 200,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                ),
+                child: FFButtonWidget(
+                  onPressed: () {
+                    print('Button pressed ...');
+                  },
+                  text: 'Cancel Reservation',
+                  options: FFButtonOptions(
+                    width: 130,
+                    height: 40,
+                    color: Color.fromARGB(255, 233, 99, 81),
                     textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                           fontFamily: 'Poppins',
                           color: Colors.black,

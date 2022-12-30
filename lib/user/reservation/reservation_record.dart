@@ -100,8 +100,8 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Container(
-                width: 50,
-                height: 50,
+                width: 70,
+                height: 70,
                 margin: EdgeInsets.only(right: 15),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -130,7 +130,7 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                       children: <Widget>[
                         Text(reservationListMap[index]['location'],
                             style: TextStyle(
-                                color: primary,
+                                color: Colors.black,
                                 fontSize: 13,
                                 letterSpacing: .3)),
                       ],

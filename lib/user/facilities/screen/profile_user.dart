@@ -360,7 +360,12 @@ _buildDrawer(BuildContext context) {
       child: Container(
         padding: const EdgeInsets.only(left: 16.0, right: 40),
         decoration: BoxDecoration(
-            color: Color(0xFF700500),
+            gradient: LinearGradient(
+              colors: [
+                Color.fromARGB(255, 177, 9, 23),
+                Color.fromARGB(255, 27, 19, 102)
+              ],
+            ),
             boxShadow: [BoxShadow(color: Colors.black45)]),
         width: 300,
         child: SafeArea(

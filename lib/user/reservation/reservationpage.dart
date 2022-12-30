@@ -176,9 +176,24 @@ class _ReservationPageWidgetState extends State<ReservationPageWidget> {
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                 ),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
-                  },
+                  onPressed: () => showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Alert'),
+                      content: const Text(
+                          'Are you sure want to cancel the reservation?'),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'NO'),
+                          child: const Text('NO'),
+                        ),
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'YES'),
+                          child: const Text('YES'),
+                        ),
+                      ],
+                    ),
+                  ),
                   text: 'Cancel Reservation',
                   options: FFButtonOptions(
                     width: 130,

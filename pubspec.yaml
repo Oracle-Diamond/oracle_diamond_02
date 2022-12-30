@@ -50,6 +50,7 @@ dependencies:
   flow_builder: 0.0.9
   latlng: any
   flutter_native_splash:
+  quickalert: 
   #firebase_core: ^2.1.1
 
   #afiq
@@ -70,6 +71,7 @@ dev_dependencies:
   icons_launcher: ^1.1.7
   flare_flutter: ^3.0.1
   lottie: ^2.1.0
+ 
 
   #afiq
   build_runner: ^2.1.7

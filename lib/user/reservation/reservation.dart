@@ -1,25 +1,30 @@
 class Reservation {
   String name;
+  String type;
   String ImageUrl;
 
-  Reservation({required this.name, required this.ImageUrl});
+  Reservation({required this.name, required this.type, required this.ImageUrl});
 }
 
 List<Reservation> reservationList = [
   Reservation(
       name: 'Badminton Court ',
+      type: 'Indoor',
       ImageUrl:
           'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media'),
   Reservation(
       name: 'Tennis Court ',
+      type: 'Outdoor',
       ImageUrl:
           'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media'),
   Reservation(
       name: 'PingPong Court ',
+      type: 'Indoor',
       ImageUrl:
           'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/pinpong.jpg?alt=media'),
   Reservation(
       name: 'Futsal Court ',
+      type: 'Indoor',
       ImageUrl:
           'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/futsal.jpg?alt=media'),
 ];
@@ -27,28 +32,28 @@ List<Reservation> reservationList = [
 final List<Map> reservationListMap = [
   {
     "name": "Badminton Court ",
-    "location": "Facilities - Court 8",
+    "location": "Facilities ",
     "type": "Indoor Courts",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media"
   },
   {
     "name": "Tennis Court",
-    "location": "Facilities - Court 19",
+    "location": "Facilities ",
     "type": "Outdoor Courts",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media"
   },
   {
     "name": "PingPong Court",
-    "location": "Facilities - Court 5",
+    "location": "Facilities ",
     "type": "Indoor Courts",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/pinpong.jpg?alt=media"
   },
   {
     "name": "Futsal Court",
-    "location": "Facilities - Court 1",
+    "location": "Facilities",
     "type": "Indoor Courts",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/futsal.jpg?alt=media"

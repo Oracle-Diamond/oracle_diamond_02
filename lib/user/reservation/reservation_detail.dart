@@ -108,7 +108,7 @@ class ReservationDetails extends StatelessWidget {
                           color: Colors.white,
                         ),
                         SizedBox(height: 10.0),
-                        _buildRow("Facilities Type : ", " Indoor"),
+                        _buildRow("Facilities Type : ", reservation.type),
                         Container(
                           height: 0.6,
                           width: 350.0,

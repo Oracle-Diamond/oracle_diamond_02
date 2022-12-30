@@ -33,28 +33,28 @@ final List<Map> reservationListMap = [
   {
     "name": "Badminton Court ",
     "location": "Facilities ",
-    "type": "Indoor Courts",
+    "type": "To be check in",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/badminton.jpg?alt=media"
   },
   {
     "name": "Tennis Court",
     "location": "Facilities ",
-    "type": "Outdoor Courts",
+    "type": "Complete | Rebook ",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media"
   },
   {
     "name": "PingPong Court",
     "location": "Facilities ",
-    "type": "Indoor Courts",
+    "type": "To be check in",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/pinpong.jpg?alt=media"
   },
   {
     "name": "Futsal Court",
     "location": "Facilities",
-    "type": "Indoor Courts",
+    "type": "Complete | Rebook",
     "logoText":
         "https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/futsal.jpg?alt=media"
   },

@@ -128,14 +128,6 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                     ),
                     Row(
                       children: <Widget>[
-                        Icon(
-                          Icons.location_on,
-                          color: secondary,
-                          size: 20,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
                         Text(reservationListMap[index]['location'],
                             style: TextStyle(
                                 color: primary,
@@ -148,17 +140,9 @@ class _ReservationRecordPageState extends State<ReservationRecordPage> {
                     ),
                     Row(
                       children: <Widget>[
-                        Icon(
-                          Icons.sports_tennis,
-                          color: secondary,
-                          size: 20,
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
                         Text(reservationListMap[index]['type'],
                             style: TextStyle(
-                                color: primary,
+                                color: Colors.green,
                                 fontSize: 13,
                                 letterSpacing: .3)),
                       ],

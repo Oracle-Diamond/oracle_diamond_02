@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/user/reservation/reservationpage.dart';
+import 'package:oracle_diamond_02/user/reservation/reservation_record.dart';
 import 'package:oracle_diamond_02/user/user_select.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
@@ -241,7 +241,7 @@ class ProfileUser extends StatelessWidget {
                 child: InkWell(
                   onTap: () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ReservationPageWidget(),
+                      builder: (context) => ReservationRecordPage(),
                     ));
                   },
                   child: Container(

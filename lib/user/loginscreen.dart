@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
+import 'package:oracle_diamond_02/user/homescreen/userhomescreen.dart';
 
 class HomeScreenPage extends StatefulWidget {
   const HomeScreenPage({super.key});
@@ -154,8 +155,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     context: context);
                 print(user);
                 if (user != null) {
-                  Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(builder: (context) => ProfileUser()));
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                      builder: (context) => UserHomeScreen()));
                 }
               },
               child: const Text("Login",

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/user/booking.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/user/reservation/reservation_record.dart';
+import 'package:oracle_diamond_02/user/homescreen/userhomescreen.dart';
 import 'package:oracle_diamond_02/user/user_select.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
-import 'package:oracle_diamond_02/user/booking.dart';
+import 'package:oracle_diamond_02/user/reservation/reservation_record.dart';
 
 class ProfileUser extends StatelessWidget {
   final scaffoldKey = GlobalKey<ScaffoldState>();
@@ -315,19 +316,17 @@ class ProfileUser extends StatelessWidget {
                 },
                 text: 'Log Out',
                 options: FFButtonOptions(
-                  width: 130,
-                  height: 40,
-                  color: Color.fromARGB(255, 170, 11, 2),
-                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
-                        fontFamily: 'Poppins',
-                        color: Colors.white,
-                      ),
-                  borderSide: BorderSide(
-                    color: Colors.transparent,
-                    width: 1,
-                  ),
-                  //borderRadius: BorderRadius.circular(15),
-                ),
+                    width: 130,
+                    height: 40,
+                    color: Color.fromARGB(255, 170, 11, 2),
+                    textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                          fontFamily: 'Poppins',
+                          color: Colors.white,
+                        ),
+                    borderSide: BorderSide(
+                      color: Colors.transparent,
+                      width: 1,
+                    )),
               ),
             ],
           ),

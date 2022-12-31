@@ -3,6 +3,7 @@ import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/facilities_details_screen.dart';
 import 'package:oracle_diamond_02/assets.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
+import 'package:oracle_diamond_02/user/homescreen/userhomescreen.dart';
 
 class FacilitiesListScreen extends StatefulWidget {
   FacilitiesListScreen({Key? key}) : super(key: key);
@@ -55,7 +56,7 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ProfileUser()));
+                                  builder: (context) => UserHomeScreen()));
                         },
                         icon: Icon(
                           Icons.arrow_back_ios_new,
@@ -67,9 +68,14 @@ class _FacilitiesListScreenState extends State<FacilitiesListScreen> {
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                       IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ProfileUser()));
+                        },
                         icon: Icon(
-                          Icons.filter_list,
+                          Icons.person,
                           color: Colors.white,
                         ),
                       ),

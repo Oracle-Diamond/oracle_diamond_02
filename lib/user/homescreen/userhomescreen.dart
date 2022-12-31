@@ -85,7 +85,7 @@ class _HomeScreenTopState extends State<HomeScreenTop> {
                           ),
                           PopupMenuItem(
                             child: Text(
-                              locations[1],
+                              locations[3],
                               style: dropdownMenuItem,
                             ),
                             value: 1,

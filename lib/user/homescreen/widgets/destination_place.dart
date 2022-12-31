@@ -15,7 +15,7 @@ class DestinationPlacePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                'Currently Watched Facilities',
+                'Type of Facilities ',
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,

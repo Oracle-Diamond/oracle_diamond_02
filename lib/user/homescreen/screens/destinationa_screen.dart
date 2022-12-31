@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/user/homescreen/models/activity_model.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/user/homescreen/models/destination_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -13,217 +13,131 @@ class DestinationScreen extends StatefulWidget {
 }
 
 class _DestinationScreenState extends State<DestinationScreen> {
-  Text _buildRatingStars(int rating) {
-    String stars = '';
-    for (int i = 0; i < rating; i++) {
-      stars += '⭐ ';
-    }
-    stars.trim();
-    return Text(stars);
-  }
+  final Color icon = Color(0xffEF412D);
+  final Color color1 = Color(0xffCF3529);
+  final Color color2 = Color(0xffE1372F);
+  final Color color3 = Color(0xffFF6C1C);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          Stack(
-            children: <Widget>[
-              Container(
-                height: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30.0),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black26,
-                      offset: Offset(0.0, 2.0),
-                      blurRadius: 6.0,
-                    ),
-                  ],
-                ),
-                child: Hero(
-                  tag: widget.destination!.imageUrl!,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30.0),
-                    child: Image(
-                      image: NetworkImage(widget.destination!.imageUrl!),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    IconButton(
-                      icon: Icon(Icons.arrow_back),
-                      iconSize: 30.0,
-                      color: Colors.black,
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                    Row(
-                      children: <Widget>[
-                        IconButton(
-                          icon: Icon(Icons.search),
-                          iconSize: 30.0,
-                          color: Colors.black,
-                          onPressed: () => Navigator.pop(context),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                left: 20.0,
-                bottom: 20.0,
+      body: Container(
+        height: double.infinity,
+        child: Stack(
+          children: <Widget>[
+            Positioned(
+                top: 350,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [color2, color3],
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter)),
+                )),
+            Positioned(
+                top: 350,
+                left: 0,
+                right: 150,
+                bottom: 80,
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                      color: color1,
+                      borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(50.0))),
+                )),
+            Positioned(
+              top: 350,
+              left: 0,
+              right: 0,
+              child: Container(
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
+                    SizedBox(height: 40.0),
                     Text(
-                      widget.destination!.name!,
+                      "Indoor\nOutdoor".toUpperCase(),
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35.0,
-                        fontWeight: FontWeight.w600,
-                        letterSpacing: 1.2,
-                      ),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 30.0),
                     ),
-                    Row(
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.locationArrow,
-                          size: 15.0,
-                          color: Colors.white70,
-                        ),
-                        SizedBox(width: 5.0),
-                        Text(
-                          widget.destination!.location!,
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 20.0,
-                          ),
-                        ),
-                      ],
+                    SizedBox(height: 20.0),
+                    Text(
+                      "Book the sports facilities easily.",
+                      style: TextStyle(color: Colors.white70),
                     ),
-                  ],
-                ),
-              ),
-              Positioned(
-                right: 20.0,
-                bottom: 20.0,
-                child: Icon(
-                  Icons.location_on,
-                  color: Colors.white70,
-                  size: 25.0,
-                ),
-              ),
-            ],
-          ),
-          Expanded(
-            child: ListView.builder(
-              padding: EdgeInsets.only(top: 10.0, bottom: 15.0),
-              itemCount: widget.destination!.activities!.length,
-              itemBuilder: (BuildContext context, int index) {
-                Activity activity = widget.destination!.activities![index];
-                return Stack(
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.fromLTRB(40.0, 5.0, 20.0, 5.0),
-                      height: 170.0,
+                    SizedBox(height: 100.0),
+                    SizedBox(
+                      height: 30.0,
                       width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.fromLTRB(100.0, 20.0, 20.0, 20.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  width: 120.0,
-                                  child: Text(
-                                    activity.name!,
-                                    style: TextStyle(
-                                      fontSize: 18.0,
-                                      fontWeight: FontWeight.w600,
-                                    ),
-                                    overflow: TextOverflow.ellipsis,
-                                    maxLines: 2,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              activity.type!,
-                              style: TextStyle(
-                                color: Colors.grey,
-                              ),
-                            ),
-                            _buildRatingStars(activity.rating!),
-                            SizedBox(height: 10.0),
-                            Expanded(
-                              child: Row(
-                                children: <Widget>[
-                                  Container(
-                                    padding: EdgeInsets.all(5.0),
-                                    width: 70.0,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      activity.startTimes![0],
-                                    ),
-                                  ),
-                                  SizedBox(width: 20.0),
-                                  Container(
-                                    padding: EdgeInsets.all(5.0),
-                                    width: 70.0,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10.0),
-                                    ),
-                                    alignment: Alignment.center,
-                                    child: Text(
-                                      activity.startTimes![1],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 20.0,
-                      top: 15.0,
-                      bottom: 15.0,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Image(
-                          width: 110.0,
-                          image: NetworkImage(
-                            activity.imageUrl!,
+                      child: Row(
+                        children: <Widget>[
+                          Icon(FontAwesomeIcons.fire, color: Colors.white),
+                          Spacer(),
+                          VerticalDivider(color: Colors.white),
+                          Spacer(),
+                          Text(
+                            "First Come First Serve",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 18.0),
                           ),
-                          fit: BoxFit.cover,
-                        ),
+                          Spacer(),
+                          VerticalDivider(color: Colors.white),
+                          Spacer(),
+                          Icon(FontAwesomeIcons.stopwatch, color: Colors.white),
+                        ],
                       ),
-                    ),
+                    )
                   ],
-                );
-              },
+                ),
+              ),
             ),
-          ),
-        ],
+            Container(
+              height: 380,
+              alignment: Alignment.topCenter,
+              decoration: BoxDecoration(boxShadow: [
+                BoxShadow(color: Colors.black38, blurRadius: 30.0)
+              ]),
+              child: SizedBox(
+                height: 350,
+                child: Image(
+                  image: NetworkImage(widget.destination!.imageUrl!),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            Positioned(
+              top: 325,
+              right: 20,
+              child: RawMaterialButton(
+                child: Text("Book Now".toUpperCase(),
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      fontSize: 14.0,
+                    )),
+                fillColor: Colors.red[900],
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (_) => FacilitiesListScreen()));
+                },
+              ),
+            ),
+            Container(
+                height: 70.0,
+                child: AppBar(
+                  backgroundColor: Colors.transparent,
+                  elevation: 0,
+                )),
+          ],
+        ),
       ),
     );
   }

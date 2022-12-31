@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/user/booking.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
 import 'package:oracle_diamond_02/user/homescreen/models/destination_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

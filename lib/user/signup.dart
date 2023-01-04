@@ -54,8 +54,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
             height: MediaQuery.of(context).size.height * 1,
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-              Color.fromARGB(255, 69, 60, 187),
-              Color.fromARGB(255, 228, 17, 98)
+              Color.fromARGB(255, 15, 7, 129),
+              Color.fromARGB(255, 134, 11, 58)
             ])),
             child: Align(
               alignment: AlignmentDirectional(0, 1),

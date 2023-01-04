@@ -42,7 +42,7 @@ class _UserSelectState extends State<UserSelect> {
                   ],
                 ),
               ),
-              SizedBox(height: 200),
+              SizedBox(height: 100),
               GestureDetector(
                 onTap: () {
                   Navigator.of(context).push(MaterialPageRoute(
@@ -60,6 +60,32 @@ class _UserSelectState extends State<UserSelect> {
                     alignment: Alignment.center,
                     child: Text(
                       "User Login ",
+                      style: GoogleFonts.poppins(
+                          fontSize: 18,
+                          color: Colors.white,
+                          letterSpacing: 0.168,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => CreateAccountWidget()));
+                },
+                child: Container(
+                  margin: EdgeInsets.all(16),
+                  height: 75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: Colors.black,
+                  ),
+                  width: double.infinity,
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Sign Up Here ",
                       style: GoogleFonts.poppins(
                           fontSize: 18,
                           color: Colors.white,
@@ -88,20 +114,6 @@ class _UserSelectState extends State<UserSelect> {
                         MaterialPageRoute(builder: (context) => AdminPage()));
                   },
                 ),
-                InkWell(
-                  child: Text(
-                    "Sign Up Here",
-                    style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
-                        color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) =>CreateAccountWidget()));
-                  },
-                )
               ])
             ],
           ),

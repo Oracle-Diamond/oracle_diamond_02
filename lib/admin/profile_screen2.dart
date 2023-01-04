@@ -3,8 +3,14 @@ import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manag
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:oracle_diamond_02/admin/oval-right-clipper.dart';
+=======
+import 'package:oracle_diamond_02/user_select.dart';
+import 'package:oracle_diamond_02/admin/facilities_manage.dart';
+import 'package:oracle_diamond_02/screen/rounded_container.dart';
+>>>>>>> Stashed changes
 import 'package:oracle_diamond_02/assets.dart';
 import 'package:oracle_diamond_02/user/user_select.dart';
 
@@ -13,6 +19,13 @@ class HomePageWidgetPage extends StatelessWidget {
   final Color primary = Color(0xFF700500);
   final Color active = Color.fromARGB(255, 235, 235, 236);
 
+<<<<<<< Updated upstream
+=======
+
+class ProfileScreen extends StatelessWidget {
+  String get avatar => avatar[0];
+  final TextStyle whiteText = TextStyle(color: Colors.white);
+>>>>>>> Stashed changes
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -358,7 +371,36 @@ class HomePageWidgetPage extends StatelessWidget {
               ),
             ],
           ),
+<<<<<<< Updated upstream
         ),
+=======
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(
+              vertical: 6.0,
+              horizontal: 32.0,
+            ),
+            child: RawMaterialButton(
+              fillColor: const Color.fromARGB(255, 206, 84, 84),
+              elevation: 0,
+              padding: const EdgeInsets.all(24.0),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: const Text("Log out",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18.0,
+                  )),
+              onPressed: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => UserSelect(),
+                ));
+              },
+            ),
+          )
+          //const SizedBox(height: 20.0),
+        ],
+>>>>>>> Stashed changes
       ),
     );
   }

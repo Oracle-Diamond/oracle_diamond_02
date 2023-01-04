@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oracle_diamond_02/user/loginscreen.dart';
+import 'package:oracle_diamond_02/user/signup.dart';
 
 class UserSelect extends StatefulWidget {
   const UserSelect({super.key});
@@ -85,6 +86,20 @@ class _UserSelectState extends State<UserSelect> {
                   onTap: () {
                     Navigator.of(context).push(
                         MaterialPageRoute(builder: (context) => AdminPage()));
+                  },
+                ),
+                InkWell(
+                  child: Text(
+                    "Sign Up Here",
+                    style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                        color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) =>CreateAccountWidget()));
                   },
                 )
               ])

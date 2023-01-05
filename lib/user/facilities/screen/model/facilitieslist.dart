@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/model/badminton.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/facilities_details_screen.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/profile_user.dart';
-import 'package:oracle_diamond_02/user/homescreen/userhomescreen.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 
 class ListFacilitiesPage extends StatelessWidget {
   final TextStyle dropdownMenuItem =
@@ -47,7 +47,7 @@ class ListFacilitiesPage extends StatelessWidget {
                         ),
                       ),
                       Text(
-                        "List of Facilities",
+                        "Badminton",
                         style: TextStyle(color: Colors.white, fontSize: 24),
                       ),
                       IconButton(
@@ -55,7 +55,7 @@ class ListFacilitiesPage extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => ProfileUser()));
+                                  builder: (context) => BadmintonScreen()));
                         },
                         icon: Icon(
                           Icons.person,
@@ -99,7 +99,82 @@ class ListFacilitiesPage extends StatelessWidget {
                     ),
                   ],
                 ),
-              )
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(20, 200, 20, 20),
+                child: InkWell(
+                  onTap: () async {
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ListFacilitiesPage()));
+                  },
+                  child: Container(
+                    width: double.infinity,
+                    height: 100,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).primaryBtnText,
+                      boxShadow: [
+                        BoxShadow(
+                          blurRadius: 5,
+                          color: Color(0x99000000),
+                          offset: Offset(1, 3),
+                        )
+                      ],
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Column(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    12, 12, 12, 12),
+                                child: Image.asset(
+                                  'assets/images/management.png',
+                                  width: 85,
+                                  height: 85,
+                                  fit: BoxFit.contain,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  'Facilities Available',
+                                  textAlign: TextAlign.center,
+                                  style: FlutterFlowTheme.of(context).bodyText1,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0, 0),
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(12, 12, 12, 12),
+                            child: Icon(
+                              Icons.arrow_forward_ios_rounded,
+                              color: Colors.black,
+                              size: 24,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

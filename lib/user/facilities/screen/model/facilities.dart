@@ -17,7 +17,7 @@ List<Facilities> facilitiesList = [
   Facilities(
       name: 'Tennis Court',
       description:
-          'Table tennis, also known as ping-pong and whiff-whaff, is a sport in which two or four players hit a lightweight ball, also known as the ping-pong ball, back and forth across a table using small rackets. The game takes place on a hard table divided by a net.',
+          'A tennis court is the venue where the sport of tennis is played. It is a firm rectangular surface with a low net stretched across the centre. The same surface can be used to play both doubles and singles matches.',
       ImageUrl:
           'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/tennis.jpg?alt=media'),
   Facilities(

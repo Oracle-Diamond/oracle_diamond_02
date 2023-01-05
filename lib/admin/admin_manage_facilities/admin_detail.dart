@@ -1,281 +1,467 @@
-import 'package:flutter/material.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/maintenance.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
 import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class FacilitiesAdminDetails extends StatelessWidget {
-  final Facilities facilities;
+class FacilitiesAdminDetails extends StatefulWidget {
+  const FacilitiesAdminDetails({Key? key}) : super(key: key);
 
-  FacilitiesAdminDetails(this.facilities);
+  @override
+  _FacilitiesAdminDetailsState createState() =>
+      _FacilitiesAdminDetailsState();
+}
+
+class _FacilitiesAdminDetailsState
+    extends State<FacilitiesAdminDetails> {
+  TextEditingController? textController1;
+  TextEditingController? textController2;
+  final _unfocusNode = FocusNode();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    textController1 = TextEditingController(text: 'Indoor');
+    textController2 = TextEditingController(text: '9');
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    textController1?.dispose();
+    textController2?.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
+    var ffButtonOptions = FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF700500),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
+    var ffButtonOptions2 = FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF700500),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
+    var ffButtonOptions3 = FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF700500),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
+    var ffButtonOptions4 = FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF700500),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
+    var ffButtonOptions5 = FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF700500),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
+    var ffButtonOptions6 = FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF700500),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
+    var ffButtonOptions7 = FFButtonOptions(
+                                width: double.infinity,
+                                height: 50,
+                                color: Colors.white,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              );
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 1,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.black,
-          ),
-          onPressed: () {
-            Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => FacilitiesAdmin()));
-          },
-        ),
-      ),
-      body: Container(
-          padding: const EdgeInsets.only(left: 16, top: 10, right: 16),
-          child: GestureDetector(
-            onTap: () {
-              FocusScope.of(context).unfocus();
-            },
-            child: ListView(
-              children: [
-                const Text(
-                  "Mon, 15/11/2022",
-                  style: TextStyle(fontSize: 15),
-                ),
-                const Text(
-                  "Facilities Management",
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w500),
-                ),
-                SizedBox(height: 20.0),
-                Row(
-                  children: <Widget>[
-                    SizedBox(width: 20.0),
-                    Container(
-                      width: 150.0,
-                      height: 200.0,
-                      child: CircleAvatar(
-                        radius: 75.0,
-                        backgroundImage: NetworkImage(facilities.ImageUrl),
-                        child: Icon(Icons.camera_alt),
-                      ),
-                    ),
-                    SizedBox(width: 20.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Row(
-                          children: <Widget>[
-                            SizedBox(height: 20.0),
-                            Text(
-                              "Facility Name",
-                              style: TextStyle(fontSize: 18.0),
-                            ),
-                            SizedBox(width: 10.0),
-                            Icon(
-                              FontAwesomeIcons.pen,
-                              size: 12.0,
-                              color: Colors.black54,
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          facilities.name,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18.0),
-                        ),
-                        SizedBox(height: 10.0),
-                        Row(
-                          children: <Widget>[
-                            Text(
-                              "Facility Type",
-                              style: TextStyle(fontSize: 18.0),
-                            ),
-                            SizedBox(width: 10.0),
-                            Icon(
-                              FontAwesomeIcons.pen,
-                              size: 12.0,
-                              color: Colors.black54,
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          "Indoor",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18.0),
-                        ),
-                        SizedBox(height: 10.0),
-                        Row(
-                          children: <Widget>[
-                            Text(
-                              "No of Court",
-                              style: TextStyle(fontSize: 18.0),
-                            ),
-                            SizedBox(width: 10.0),
-                            Icon(
-                              FontAwesomeIcons.pen,
-                              size: 12.0,
-                              color: Colors.black54,
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10.0),
-                        Text(
-                          "9",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18.0),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-                Container(
-                  color: Colors.white,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      const SizedBox(height: 30.0),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                          child: Text(
-                            "View Overall Time Table",
-                            style: TextStyle(fontWeight: FontWeight.normal),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (_) => FacilitiesAdmin()));
-                          },
-                          style: ButtonStyle(
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.red),
-                          ),
-                        ),
-                      ),
-                    ],
+      key: scaffoldKey,
+      backgroundColor: Color(0xFFCCCCCC),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          child: Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(45),
+                    bottomRight: Radius.circular(45),
+                    topLeft: Radius.circular(0),
+                    topRight: Radius.circular(0),
                   ),
                 ),
-                SizedBox(height: 20, width: 20),
-                Row(children: <Widget>[
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FacilitiesAdmin()));
-                      },
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.red,
-                          ),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Court 1",
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              )),
-                          width: 100.0,
-                          height: 100.0)),
-                  SizedBox(height: 10, width: 35),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FacilitiesAdmin()));
-                      },
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.red,
-                          ),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Court 2",
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              )),
-                          width: 100.0,
-                          height: 100.0)),
-                  SizedBox(height: 10, width: 35),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FacilitiesAdmin()));
-                      },
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.red,
-                          ),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Court 3",
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              )),
-                          width: 100.0,
-                          height: 100.0))
-                ]),
-                SizedBox(
-                  height: 20,
+                child: Stack(
+                  children: [
+                    ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(45),
+                        bottomRight: Radius.circular(45),
+                        topLeft: Radius.circular(0),
+                        topRight: Radius.circular(0),
+                      ),
+                      child: Image.asset(
+                        'assets/images/badminton.jpg',
+                        width: double.infinity,
+                        height: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                      child: Text(
+                        'Badminton Court',
+                        style: FlutterFlowTheme.of(context).title1.override(
+                              fontFamily: 'Poppins',
+                              color: Colors.white,
+                              fontSize: 28,
+                            ),
+                      ),
+                    ),
+                  ],
                 ),
-                Row(children: <Widget>[
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FacilitiesAdmin()));
-                      },
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.red,
+              ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 10),
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 5, 10),
+                            child: TextFormField(
+                              controller: textController1,
+                              autofocus: true,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'Facility type',
+                                hintStyle:
+                                    FlutterFlowTheme.of(context).bodyText2,
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                errorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                focusedErrorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                suffixIcon: FaIcon(
+                                  FontAwesomeIcons.edit,
+                                  color: Color(0xFF757575),
+                                  size: 20,
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF700500),
+                                  ),
+                            ),
                           ),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Court 4",
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              )),
-                          width: 100.0,
-                          height: 100.0)),
-                  SizedBox(height: 10, width: 35),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FacilitiesAdmin()));
-                      },
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.red,
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(5, 10, 20, 10),
+                            child: TextFormField(
+                              controller: textController2,
+                              autofocus: true,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                labelText: 'No. of courts',
+                                hintStyle:
+                                    FlutterFlowTheme.of(context).bodyText2,
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                errorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                focusedErrorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1,
+                                  ),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                filled: true,
+                                fillColor: Colors.white,
+                                suffixIcon: FaIcon(
+                                  FontAwesomeIcons.edit,
+                                  color: Color(0xFF757575),
+                                  size: 22,
+                                ),
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Poppins',
+                                    color: Color(0xFF700500),
+                                  ),
+                              inputFormatters: [
+                                FilteringTextInputFormatter.allow(
+                                    RegExp('[0-9]'))
+                              ],
+                            ),
                           ),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Court 5",
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              )),
-                          width: 100.0,
-                          height: 100.0)),
-                  SizedBox(height: 10, width: 35),
-                  GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => FacilitiesAdmin()));
-                      },
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            color: Colors.red,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 10, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'Court 1',
+                              options: ffButtonOptions,
+                            ),
                           ),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Court 6",
-                                style: TextStyle(fontWeight: FontWeight.normal),
-                              )),
-                          width: 100.0,
-                          height: 100.0))
-                ]),
-              ],
-            ),
-          )),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 20, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'Court 2',
+                              options: ffButtonOptions2,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 10, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'Court 3',
+                              options: ffButtonOptions3,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 20, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'Court 4',
+                              options: ffButtonOptions4,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 10, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'Court 5',
+                              options: ffButtonOptions5,
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 10, 20, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'Court 6',
+                              options: ffButtonOptions6,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 10, 10, 10),
+                            child: FFButtonWidget(
+                              onPressed: () async {
+                                Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => FacilitiesAdmin()));
+                              },
+                              text: 'View Overall Time Table',
+                              options: ffButtonOptions7,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_detail.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);

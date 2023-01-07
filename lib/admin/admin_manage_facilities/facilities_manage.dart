@@ -1,145 +1,406 @@
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_bad.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_futsal.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_pong.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_ten.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
+import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/profile_screen2.dart';
-import 'package:oracle_diamond_02/assets.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/network_image.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class FacilitiesManagePage extends StatelessWidget {
+class FacilitiesManagePage extends StatefulWidget {
   const FacilitiesManagePage({Key? key}) : super(key: key);
 
-  Widget cards(image, title) {
-    return Container(
-      height: 200,
-      width: 200,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey,
-            blurRadius: 6.0,
-          ),
-        ],
-        color: Colors.white,
-      ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            PNetworkImage(
-              image,
-              height: 80,
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(title,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
-            Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(top: 4),
-            )
-          ],
-        ),
-      ),
-    );
+  @override
+  _FacilitiesManagePageState createState() => _FacilitiesManagePageState();
+}
+
+class _FacilitiesManagePageState extends State<FacilitiesManagePage> {
+  TextEditingController? textController;
+  final _unfocusNode = FocusNode();
+  final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    textController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _unfocusNode.dispose();
+    textController?.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white70.withOpacity(0.9),
-        body: SafeArea(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)),
-                  color: Colors.redAccent.shade700,
-                ),
-                width: double.infinity,
-              ),
-              Container(
-                margin: EdgeInsets.only(left: 90, bottom: 20),
-                width: 299,
-                height: 279,
-                decoration: BoxDecoration(
-                    color: Colors.redAccent.shade400,
+      key: scaffoldKey,
+      backgroundColor: Color(0xFFCCCCCC),
+      body: SafeArea(
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  width: double.infinity,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    color: Color(0xFF700500),
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(160),
-                        bottomLeft: Radius.circular(290),
-                        bottomRight: Radius.circular(160),
-                        topRight: Radius.circular(10))),
-              ),
-              CustomScrollView(
-                slivers: <Widget>[
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: const EdgeInsets.all(26.0),
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          IconButton(
-                            onPressed: () {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => HomePageWidget()));
-                            },
-                            icon: Icon(
-                              Icons.arrow_back_ios,
-                              color: Colors.white,
+                      bottomLeft: Radius.circular(45),
+                      bottomRight: Radius.circular(45),
+                      topLeft: Radius.circular(0),
+                      topRight: Radius.circular(0),
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(15, 15, 0, 0),
+                              child: Text(
+                                'Facilities\nManagement',
+                                style: FlutterFlowTheme.of(context)
+                                    .title1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                      fontSize: 28,
+                                    ),
+                              ),
                             ),
                           ),
-                          Text("Facilities",
-                              style: TextStyle(
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white)),
-                          Text("Management",
-                              style: TextStyle(
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.w800,
-                                  color: Colors.white)),
-                          SizedBox(
-                            height: 40,
-                          ),
-                          Material(
-                            elevation: 5.0,
-                            borderRadius: BorderRadius.all(Radius.circular(30)),
-                            child: TextField(
-                              controller:
-                                  TextEditingController(text: 'Search...'),
-                              cursorColor: Theme.of(context).primaryColor,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 18),
-                              decoration: InputDecoration(
-                                  suffixIcon: Material(
-                                    elevation: 2.0,
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(30)),
-                                    child: Icon(Icons.search),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  15, 15, 15, 15),
+                              child: Container(
+                                width: double.infinity,
+                                child: TextFormField(
+                                  controller: textController,
+                                  autofocus: true,
+                                  obscureText: false,
+                                  decoration: InputDecoration(
+                                    hintText: 'Search facility...',
+                                    hintStyle:
+                                        FlutterFlowTheme.of(context).bodyText2,
+                                    enabledBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    focusedBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0x00000000),
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    errorBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFFF0000),
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    focusedErrorBorder: UnderlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Color(0xFFFF0000),
+                                        width: 1,
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    filled: true,
+                                    fillColor: Colors.white,
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            10, 10, 10, 10),
                                   ),
-                                  border: InputBorder.none,
-                                  contentPadding: EdgeInsets.symmetric(
-                                      horizontal: 25, vertical: 13)),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Poppins',
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 20, 20, 20),
+                              child: InkWell(
+                                onTap: () async {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => FacilitiesBad()));
+                                },
+                                child: Container(
+                                  width: 150,
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 5,
+                                        color: Color(0x99000000),
+                                        offset: Offset(1, 3),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.asset(
+                                          'assets/images/badminton.jpg',
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 10, 10, 10),
+                                        child: Text(
+                                          'Badminton',
+                                          textAlign: TextAlign.start,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Expanded(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  20, 20, 20, 20),
+                              child: InkWell(
+                                onTap: () async {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => FacilitiesTen()));
+                                },
+                                child: Container(
+                                  width: 150,
+                                  height: 150,
+                                  decoration: BoxDecoration(
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 5,
+                                        color: Color(0x99000000),
+                                        offset: Offset(1, 3),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.asset(
+                                          'assets/images/tennis-2.jpg',
+                                          width: double.infinity,
+                                          height: double.infinity,
+                                          fit: BoxFit.none,
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 10, 10, 10),
+                                        child: Text(
+                                          'Tennis',
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                color: Colors.white,
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.w600,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                )
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                            child: InkWell(
+                                onTap: () async {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => FacilitiesFutsal()));
+                                },
+                              child: Container(
+                                width: 150,
+                                height: 150,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      blurRadius: 5,
+                                      color: Color(0x99000000),
+                                      offset: Offset(1, 3),
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Stack(
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(20),
+                                      child: Image.asset(
+                                        'assets/images/pinpong.jpg',
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        fit: BoxFit.none,
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10, 10, 10, 10),
+                                      child: Text(
+                                        'Pingpong',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.white,
+                                              fontSize: 16,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                  SliverPadding(
-                    padding: const EdgeInsets.all(26.0),
-                    sliver: SliverGrid.count(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 10,
-                      crossAxisSpacing: 10,
-                      children: <Widget>[
-                        cards(badminton, 'badminton'),
-                        cards(tennis, 'tennis'),
-                        cards(pingpong, 'pingpong'),
-                        cards(futsal, 'futsal'),
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(20, 20, 20, 20),
+                            child: InkWell(
+                                onTap: () async {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => FacilitiesTen()));
+                                },
+                            child: Container(
+                              width: 150,
+                              height: 150,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
+                                boxShadow: [
+                                  BoxShadow(
+                                    blurRadius: 5,
+                                    color: Color(0x33000000),
+                                    offset: Offset(1, 3),
+                                  )
+                                ],
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              child: Stack(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image.asset(
+                                      'assets/images/futsal-2.jpg',
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 10, 10, 10),
+                                    child: Text(
+                                      'Futsal',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Poppins',
+                                            color: Colors.white,
+                                            fontSize: 16,
+                                          ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),
@@ -147,6 +408,9 @@ class FacilitiesManagePage extends StatelessWidget {
               ),
             ],
           ),
-        ));
-  }
+        ),
+      ),
+    ),
+  );
+}
 }

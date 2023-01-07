@@ -1,27 +1,22 @@
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/maintenance.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
-import 'package:oracle_diamond_02/admin/profile_screen2.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FacilitiesAdminDetails extends StatefulWidget {
-  const FacilitiesAdminDetails({Key? key}) : super(key: key);
+class FacilitiesTen extends StatefulWidget {
+  const FacilitiesTen({Key? key}) : super(key: key);
 
   @override
-  _FacilitiesAdminDetailsState createState() =>
-      _FacilitiesAdminDetailsState();
+  _FacilitiesTenState createState() =>
+      _FacilitiesTenState();
 }
 
-class _FacilitiesAdminDetailsState
-    extends State<FacilitiesAdminDetails> {
+class _FacilitiesTenState
+    extends State<FacilitiesTen> {
   TextEditingController? textController1;
   TextEditingController? textController2;
   final _unfocusNode = FocusNode();
@@ -44,118 +39,6 @@ class _FacilitiesAdminDetailsState
 
   @override
   Widget build(BuildContext context) {
-    var ffButtonOptions = FFButtonOptions(
-                                width: double.infinity,
-                                height: 100,
-                                color: Color(0xFF700500),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
-    var ffButtonOptions2 = FFButtonOptions(
-                                width: double.infinity,
-                                height: 100,
-                                color: Color(0xFF700500),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
-    var ffButtonOptions3 = FFButtonOptions(
-                                width: double.infinity,
-                                height: 100,
-                                color: Color(0xFF700500),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
-    var ffButtonOptions4 = FFButtonOptions(
-                                width: double.infinity,
-                                height: 100,
-                                color: Color(0xFF700500),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
-    var ffButtonOptions5 = FFButtonOptions(
-                                width: double.infinity,
-                                height: 100,
-                                color: Color(0xFF700500),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
-    var ffButtonOptions6 = FFButtonOptions(
-                                width: double.infinity,
-                                height: 100,
-                                color: Color(0xFF700500),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
-    var ffButtonOptions7 = FFButtonOptions(
-                                width: double.infinity,
-                                height: 50,
-                                color: Colors.white,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.black,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                //borderRadius: BorderRadius.circular(15),
-                              );
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFCCCCCC),
@@ -186,7 +69,7 @@ class _FacilitiesAdminDetailsState
                         topRight: Radius.circular(0),
                       ),
                       child: Image.asset(
-                        'assets/images/badminton.jpg',
+                        'assets/images/tennis-2.jpg',
                         width: double.infinity,
                         height: double.infinity,
                         fit: BoxFit.cover,
@@ -195,10 +78,10 @@ class _FacilitiesAdminDetailsState
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
                       child: Text(
-                        'Badminton Court',
+                        'Tennis Court',
                         style: FlutterFlowTheme.of(context).title1.override(
                               fontFamily: 'Poppins',
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 28,
                             ),
                       ),
@@ -349,7 +232,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'Court 1',
-                              options: ffButtonOptions,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF709378),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),
@@ -363,7 +261,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'Court 2',
-                              options: ffButtonOptions2,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF709378),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),
@@ -382,7 +295,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'Court 3',
-                              options: ffButtonOptions3,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF709378),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),
@@ -396,7 +324,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'Court 4',
-                              options: ffButtonOptions4,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF709378),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),
@@ -415,7 +358,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'Court 5',
-                              options: ffButtonOptions5,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF709378),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),
@@ -429,7 +387,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'Court 6',
-                              options: ffButtonOptions6,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 100,
+                                color: Color(0xFF709378),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.white,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),
@@ -449,7 +422,22 @@ class _FacilitiesAdminDetailsState
                                 builder: (context) => FacilitiesAdmin()));
                               },
                               text: 'View Overall Time Table',
-                              options: ffButtonOptions7,
+                              options: FFButtonOptions(
+                                width: double.infinity,
+                                height: 50,
+                                color: Colors.white,
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                //borderRadius: BorderRadius.circular(15),
+                              ),
                             ),
                           ),
                         ),

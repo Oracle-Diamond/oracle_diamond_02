@@ -61,7 +61,7 @@ class _DestinationScreenState extends State<DestinationScreen> {
                   children: <Widget>[
                     SizedBox(height: 40.0),
                     Text(
-                      "Indoor\nOutdoor".toUpperCase(),
+                      "Indoor\nOutdoor Court".toUpperCase(),
                       style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w600,
@@ -69,10 +69,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     ),
                     SizedBox(height: 20.0),
                     Text(
-                      "Book the sports facilities easily.",
-                      style: TextStyle(color: Colors.white70),
+                      "Sports facilities allow \nstudents and staff of \nUniversity Teknologi Malaysia(UTM)\nto book the desired facilities\nbased on a first come first serve ",
+                      style: TextStyle(color: Colors.white70, fontSize: 16),
                     ),
-                    SizedBox(height: 100.0),
+                    SizedBox(height: 50.0),
                     SizedBox(
                       height: 30.0,
                       width: double.infinity,
@@ -116,10 +116,10 @@ class _DestinationScreenState extends State<DestinationScreen> {
               top: 325,
               right: 20,
               child: RawMaterialButton(
-                child: Text("Book Now".toUpperCase(),
+                child: Text("See All",
                     style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
-                      fontSize: 14.0,
+                      fontSize: 18.0,
                     )),
                 fillColor: Colors.red[900],
                 onPressed: () {

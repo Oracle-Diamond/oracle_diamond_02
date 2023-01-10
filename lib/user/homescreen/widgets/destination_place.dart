@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/facilities_list_screen.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/model/facilitieslist.dart';
 import 'package:oracle_diamond_02/user/homescreen/models/destination_model.dart';
 import 'package:oracle_diamond_02/user/homescreen/screens/destinationa_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -24,7 +24,7 @@ class DestinationPlacePage extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => FacilitiesListScreen())),
+                    builder: (context) => ListFacilitiesPage())),
                 child: Text(
                   'See All',
                   style: TextStyle(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/user/booking.dart';
+import 'package:oracle_diamond_02/user/facilities/screen/model/facilitieslist.dart';
 import 'package:oracle_diamond_02/user/homescreen/models/destination_model.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -123,10 +123,8 @@ class _DestinationScreenState extends State<DestinationScreen> {
                     )),
                 fillColor: Colors.red[900],
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => BookingCalendarDemoApp()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => ListFacilitiesPage()));
                 },
               ),
             ),

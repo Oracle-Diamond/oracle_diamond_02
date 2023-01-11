@@ -42,7 +42,7 @@ class DestinationPlacePage extends StatelessWidget {
           height: 300.0,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            itemCount: 4,
+            itemCount: 2,
             itemBuilder: (BuildContext context, int index) {
               Destination destination = destinations[index];
               return GestureDetector(

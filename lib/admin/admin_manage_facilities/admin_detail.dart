@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
-import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class FacilitiesAdminDetails extends StatelessWidget {
-  final Facilities facilities;
-
-  FacilitiesAdminDetails(this.facilities);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +45,8 @@ class FacilitiesAdminDetails extends StatelessWidget {
                       height: 200.0,
                       child: CircleAvatar(
                         radius: 75.0,
-                        backgroundImage: NetworkImage(facilities.ImageUrl),
+                        backgroundImage: NetworkImage(
+                            'https://firebasestorage.googleapis.com/v0/b/oracle-diamond-02.appspot.com/o/pinpong.jpg?alt=media'),
                         child: Icon(Icons.camera_alt),
                       ),
                     ),
@@ -74,7 +71,7 @@ class FacilitiesAdminDetails extends StatelessWidget {
                         ),
                         SizedBox(height: 10.0),
                         Text(
-                          facilities.name,
+                          'facilities.name',
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 18.0),
                         ),

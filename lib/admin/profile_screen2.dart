@@ -1,4 +1,4 @@
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/manage_faci.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
@@ -132,7 +132,7 @@ class HomePageWidgetPage extends StatelessWidget {
                 child: InkWell(
                   onTap: () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FacilitiesAdmin()));
+                        builder: (context) => FacilitiesManageWidget()));
                   },
                   child: Container(
                     width: double.infinity,

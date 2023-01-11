@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:oracle_diamond_02/admin/profile_screen2.dart';
 import 'package:oracle_diamond_02/user/facilities/screen/model/facilities.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_detail.dart';
 import 'package:oracle_diamond_02/assets.dart';
 
 class FacilitiesAdmin extends StatefulWidget {
@@ -120,11 +119,7 @@ class _FacilitiesAdminState extends State<FacilitiesAdmin> {
 
   Widget buildList(BuildContext context, int index) {
     return GestureDetector(
-        onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => FacilitiesAdminDetails(facilitiesList[index]),
-          ));
-        },
+        onTap: () {},
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(25),

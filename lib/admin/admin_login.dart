@@ -119,8 +119,8 @@ class _LoginScreenState extends State<LoginScreen> {
           const SizedBox(
             height: 25.0,
           ),
-          Image.network(
-            'https://upload.wikimedia.org/wikipedia/commons/c/cb/UTM-LOGO-FULL.png',
+          Image.asset(
+            'assets/images/utmlogo.jpg',
             height: 150,
             width: 290,
             alignment: const Alignment(0, 0.5),

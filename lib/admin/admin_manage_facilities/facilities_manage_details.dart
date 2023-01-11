@@ -58,8 +58,8 @@ class _ManageFacilitiesDetailsWidgetState extends State<EditProfilePage> {
                 decoration: BoxDecoration(
                   color: Color(0xFF700500),
                   borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
+                    bottomLeft: Radius.circular(45),
+                    bottomRight: Radius.circular(45),
                     topLeft: Radius.circular(0),
                     topRight: Radius.circular(0),
                   ),

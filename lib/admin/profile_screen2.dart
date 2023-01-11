@@ -1,4 +1,9 @@
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/manage_faci.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_bad.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_futsal.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_pong.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_ten.dart';
+import 'package:oracle_diamond_02/admin/admin_login.dart';
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage_details.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
@@ -7,7 +12,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:oracle_diamond_02/admin/oval-right-clipper.dart';
 import 'package:oracle_diamond_02/assets.dart';
 import 'package:oracle_diamond_02/user/user_select.dart';
-
 class HomePageWidgetPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   final Color primary = Color(0xFF700500);
@@ -28,7 +32,7 @@ class HomePageWidgetPage extends StatelessWidget {
                 width: double.infinity,
                 height: 175,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 165, 15, 7),
+                  color: Color(0xFF700500),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(45),
                     bottomRight: Radius.circular(45),
@@ -132,7 +136,7 @@ class HomePageWidgetPage extends StatelessWidget {
                 child: InkWell(
                   onTap: () async {
                     Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => FacilitiesManageWidget()));
+                        builder: (context) => FacilitiesAdmin()));
                   },
                   child: Container(
                     width: double.infinity,

@@ -106,7 +106,7 @@ class _FacilitiesBadState
                                   EdgeInsetsDirectional.fromSTEB(20, 10, 5, 10),
                               child: TextFormField(
                                 controller: textController1,
-                                autofocus: true,
+                                autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'Facility type',
@@ -163,7 +163,7 @@ class _FacilitiesBadState
                                   EdgeInsetsDirectional.fromSTEB(5, 10, 20, 10),
                               child: TextFormField(
                                 controller: textController2,
-                                autofocus: true,
+                                autofocus: false,
                                 obscureText: false,
                                 decoration: InputDecoration(
                                   labelText: 'No. of courts',
@@ -228,6 +228,7 @@ class _FacilitiesBadState
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   20, 10, 10, 10),
                               child: FFButtonWidget(
+                                //borderRadius: BorderRadius.circular(15),
                                 onPressed: () async {
                                   Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => FacilitiesAdmin()));
@@ -247,8 +248,8 @@ class _FacilitiesBadState
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
-                                  //borderRadius: BorderRadius.circular(15),
                                 ),
+                                
                               ),
                             ),
                           ),

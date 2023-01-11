@@ -38,7 +38,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 width: double.infinity,
                 height: 175,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 165, 15, 7),
+                  color: Color(0xFF700500),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(45),
                     bottomRight: Radius.circular(45),

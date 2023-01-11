@@ -94,7 +94,7 @@ class _FacilitiesManagePageState extends State<FacilitiesManagePage> {
                                 width: double.infinity,
                                 child: TextFormField(
                                   controller: textController,
-                                  autofocus: true,
+                                  autofocus: false,
                                   obscureText: false,
                                   decoration: InputDecoration(
                                     hintText: 'Search facility...',
@@ -294,7 +294,7 @@ class _FacilitiesManagePageState extends State<FacilitiesManagePage> {
                             child: InkWell(
                                 onTap: () async {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => FacilitiesFutsal()));
+                                  builder: (context) => FacilitiesPong()));
                                 },
                               child: Container(
                                 width: 150,
@@ -354,7 +354,7 @@ class _FacilitiesManagePageState extends State<FacilitiesManagePage> {
                             child: InkWell(
                                 onTap: () async {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => FacilitiesTen()));
+                                  builder: (context) => FacilitiesFutsal()));
                                 },
                             child: Container(
                               width: 150,

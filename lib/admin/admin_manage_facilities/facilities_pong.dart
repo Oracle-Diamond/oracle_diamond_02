@@ -1,11 +1,9 @@
 import 'package:oracle_diamond_02/admin/admin_manage_facilities/admin_manage.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_theme.dart';
-import 'package:oracle_diamond_02/admin/utils/flutter_flow_util.dart';
 import 'package:oracle_diamond_02/admin/utils/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class FacilitiesPong extends StatefulWidget {
   const FacilitiesPong({Key? key}) : super(key: key);
@@ -143,7 +141,7 @@ class _FacilitiesPongState
                                   filled: true,
                                   fillColor: Colors.white,
                                   suffixIcon: FaIcon(
-                                    FontAwesomeIcons.edit,
+                                    FontAwesomeIcons.penClip,
                                     color: Color(0xFF757575),
                                     size: 20,
                                   ),
@@ -200,7 +198,7 @@ class _FacilitiesPongState
                                   filled: true,
                                   fillColor: Colors.white,
                                   suffixIcon: FaIcon(
-                                    FontAwesomeIcons.edit,
+                                    FontAwesomeIcons.penClip,
                                     color: Color(0xFF757575),
                                     size: 22,
                                   ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/home.dart';
-import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_bad.dart';
+import 'package:oracle_diamond_02/admin/admin_manage_facilities/facilities_manage.dart';
 
 class EditProfilePage extends StatefulWidget {
   const EditProfilePage({Key? key}) : super(key: key);
@@ -23,7 +22,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
           ),
           onPressed: () {
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => HomePage()));
+                .push(MaterialPageRoute(builder: (context) => FacilitiesManagePage()));
           },
         ),
       ),
@@ -145,7 +144,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                       )),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => HomePage(),
+                      builder: (context) => FacilitiesManagePage(),
                     ));
                   },
                 ),
